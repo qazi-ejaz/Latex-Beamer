@@ -1,0 +1,11 @@
+\frametitle{File Input/Output}
+\begin{itemize}[<+->]
+\item C++ provides the following classes to perform output and input of characters to/from files
+\begin{itemize}[<+->]
+\item \alert{\textcolor{red}{ofstream}}: Stream class to write on files
+\item  \alert{\textcolor{red}{ifstream}}: Stream class to read from files
+\item  \alert{\textcolor{red}{fstream}}: Stream class to both read and write from/to files.
+\end{itemize}
+\item These classes are derived directly or indirectly from the classes \textcolor{blue}{istream} and \textcolor{blue}{ostream}
+\end{itemize}
+\lstinputlisting[language=C++]{C++/48.cpp}

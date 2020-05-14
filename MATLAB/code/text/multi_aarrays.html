@@ -1,0 +1,116 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>multi_aarrays</title><meta name="generator" content="MATLAB 7.12"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2013-10-07"><meta name="DC.source" content="multi_aarrays.m"><style type="text/css">
+
+body {
+  background-color: white;
+  margin:10px;
+}
+
+h1 {
+  color: #990000; 
+  font-size: x-large;
+}
+
+h2 {
+  color: #990000;
+  font-size: medium;
+}
+
+/* Make the text shrink to fit narrow windows, but not stretch too far in 
+wide windows. */ 
+p,h1,h2,div.content div {
+  max-width: 600px;
+  /* Hack for IE6 */
+  width: auto !important; width: 600px;
+}
+
+pre.codeinput {
+  background: #EEEEEE;
+  padding: 10px;
+}
+@media print {
+  pre.codeinput {word-wrap:break-word; width:100%;}
+} 
+
+span.keyword {color: #0000FF}
+span.comment {color: #228B22}
+span.string {color: #A020F0}
+span.untermstring {color: #B20000}
+span.syscmd {color: #B28C00}
+
+pre.codeoutput {
+  color: #666666;
+  padding: 10px;
+}
+
+pre.error {
+  color: red;
+}
+
+p.footer {
+  text-align: right;
+  font-size: xx-small;
+  font-weight: lighter;
+  font-style: italic;
+  color: gray;
+}
+
+  </style></head><body><div class="content"><pre class="codeinput">x = [1,2,3;4,5,6];
+y = 10*x;
+z = 10*y;
+w = 10*z;
+my_3D_array(:,:,1) = x;
+my_3D_array(:,:,2) = y;
+my_3D_array(:,:,3) = z;
+my_3D_array(:,:,4) = w;
+</pre><pre class="codeinput"><span class="comment">%%when you type my_3D_array in command window u would get result</span>
+my_3D_array <span class="comment">% now here is results</span>
+</pre><pre class="codeoutput">
+my_3D_array(:,:,1) =
+
+       1              2              3       
+       4              5              6       
+
+
+my_3D_array(:,:,2) =
+
+      10             20             30       
+      40             50             60       
+
+
+my_3D_array(:,:,3) =
+
+     100            200            300       
+     400            500            600       
+
+
+my_3D_array(:,:,4) =
+
+    1000           2000           3000       
+    4000           5000           6000       
+
+</pre><p class="footer"><br>
+      Published with MATLAB&reg; 7.12<br></p></div><!--
+##### SOURCE BEGIN #####
+x = [1,2,3;4,5,6];
+y = 10*x;
+z = 10*y;
+w = 10*z;
+my_3D_array(:,:,1) = x;
+my_3D_array(:,:,2) = y;
+my_3D_array(:,:,3) = z;
+my_3D_array(:,:,4) = w;
+%%
+%%when you type my_3D_array in command window u would get result
+my_3D_array % now here is results
+
+
+##### SOURCE END #####
+--></body></html>

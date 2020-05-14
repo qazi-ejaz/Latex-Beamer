@@ -1,0 +1,1069 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0048)http://www.cplusplus.com/doc/tutorial/files.html -->
+<HTML><HEAD><TITLE>Input/Output with files</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<STYLE type=text/css>BODY {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+TABLE {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+INPUT {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+SELECT {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+TEXTAREA {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+FORM {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+PRE {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+DT {
+	FONT-WEIGHT: bold
+}
+DD {
+	MARGIN-BOTTOM: 12px
+}
+UL {
+	MARGIN-BOTTOM: 12px
+}
+UL {
+	MARGIN-TOP: 4px
+}
+LI {
+	MARGIN-BOTTOM: 4px
+}
+A:link {
+	COLOR: #000070; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #000070; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #000070; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #0000a0; TEXT-DECORATION: underline
+}
+.imgbox {
+	LINE-HEIGHT: 1px
+}
+.stdform {
+	BORDER-RIGHT: #00007f 1px solid; BORDER-TOP: #00007f 1px solid; BORDER-LEFT: #00007f 1px solid; BORDER-BOTTOM: #00007f 1px solid
+}
+.stdform TH {
+	BORDER-RIGHT: #00007f 1px solid; BORDER-TOP: #00007f 1px solid; BORDER-LEFT: #00007f 1px solid; BORDER-BOTTOM: #00007f 1px solid
+}
+.stdform TD {
+	BORDER-RIGHT: #707080 1px solid; BORDER-TOP: #707080 1px solid; BORDER-LEFT: #707080 1px solid; BORDER-BOTTOM: #707080 1px solid; TEXT-ALIGN: left
+}
+.stdform TR TD {
+	BACKGROUND: #f0f0ff
+}
+.stdform TR.odd TD {
+	BACKGROUND: #e0e0ff
+}
+.stdform TH {
+	BACKGROUND: url(/img/blue.gif) blue; COLOR: #ffffff
+}
+.stdform TH A:link {
+	COLOR: white
+}
+.stdform TH A:visited {
+	COLOR: white
+}
+.stdform TH A:active {
+	COLOR: white
+}
+.stdform TH A:hover {
+	COLOR: yellow
+}
+.stdform .txt {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid; BACKGROUND-COLOR: #fffff0
+}
+.stdform SELECT {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid; BACKGROUND-COLOR: #fffff0
+}
+.stdform TEXTAREA {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid; BACKGROUND-COLOR: #fffff0
+}
+.stdform TEXTAREA {
+	FONT-FAMILY: monospace
+}
+.stdform .field {
+	FONT-WEIGHT: bold; TEXT-ALIGN: right
+}
+.stdform .value {
+	FONT-FAMILY: courier,monospace
+}
+.stdform .description {
+	FONT-SIZE: 80%
+}
+.stdform .buttons {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; TEXT-ALIGN: center
+}
+.stdform TR.separator TD {
+	FONT-WEIGHT: bold; BACKGROUND: white
+}
+.stdform .number {
+	TEXT-ALIGN: center
+}
+.secform {
+	BORDER-RIGHT: #ff6020 1px solid; BORDER-TOP: #ff6020 1px solid; BORDER-LEFT: #ff6020 1px solid; BORDER-BOTTOM: #ff6020 1px solid; BORDER-COLLAPSE: collapse
+}
+.secform TD {
+	BORDER-RIGHT: #ff6020 1px solid; BORDER-TOP: #ff6020 1px solid; BORDER-LEFT: #ff6020 1px solid; BORDER-BOTTOM: #ff6020 1px solid; BORDER-COLLAPSE: collapse
+}
+.secform TR {
+	BACKGROUND: #fffff0
+}
+.secform TR.odd TD {
+	BACKGROUND: #ffffd0
+}
+.secform TH {
+	BACKGROUND: url(/img/orange.gif) #ff6020; COLOR: #ffffff
+}
+.errors {
+	BORDER-RIGHT: #7f0000 1px solid; BORDER-TOP: #7f0000 1px solid; BORDER-LEFT: #7f0000 1px solid; BORDER-BOTTOM: #7f0000 1px solid
+}
+.errors TH {
+	BORDER-RIGHT: #7f0000 1px solid; BORDER-TOP: #7f0000 1px solid; BORDER-LEFT: #7f0000 1px solid; BORDER-BOTTOM: #7f0000 1px solid
+}
+.errors TD {
+	BORDER-RIGHT: #807070 1px solid; BORDER-TOP: #807070 1px solid; BORDER-LEFT: #807070 1px solid; BORDER-BOTTOM: #807070 1px solid; TEXT-ALIGN: left
+}
+.errors TH {
+	BACKGROUND: red; COLOR: #ffffff
+}
+.errors TD {
+	BACKGROUND: #ffe0e0
+}
+.bar {
+	BACKGROUND: url(/img/headbg.gif); COLOR: white; LINE-HEIGHT: 20px
+}
+.bar TABLE {
+	FONT-SIZE: 9px; COLOR: white; LINE-HEIGHT: 16px
+}
+.bar A:link {
+	COLOR: white
+}
+.bar A:visited {
+	COLOR: white
+}
+.bar A:active {
+	COLOR: white
+}
+.bar A:hover {
+	COLOR: yellow; TEXT-DECORATION: none
+}
+.bar .txt {
+	BORDER-RIGHT: 1px inset; BORDER-TOP: 1px inset; BORDER-LEFT: 1px inset; BORDER-BOTTOM: 1px inset; HEIGHT: 14px; BACKGROUND-COLOR: #c0c0ff
+}
+.bar .btn {
+	BORDER-RIGHT: 1px outset; BORDER-TOP: 1px outset; FONT-SIZE: 9px; BORDER-LEFT: 1px outset; BORDER-BOTTOM: 1px outset; HEIGHT: 18px; BACKGROUND-COLOR: #c0c0ff
+}
+.left {
+	BORDER-RIGHT: black 1px solid
+}
+.left TABLE {
+	BORDER-RIGHT: #00007f 1px solid; BORDER-TOP: #00007f 1px solid; MARGIN-TOP: 5px; BACKGROUND: white; BORDER-LEFT: #00007f 1px solid; WIDTH: 160px; BORDER-BOTTOM: #00007f 1px solid; BORDER-COLLAPSE: collapse
+}
+.left TD {
+	FONT-SIZE: x-small; COLOR: #000070; FONT-FAMILY: verdana,arial,helvetica,sans-serif; TEXT-ALIGN: left
+}
+.left TH {
+	FONT-SIZE: xx-small; BACKGROUND: url(/img/blue.gif) blue; COLOR: #ffffff; FONT-FAMILY: verdana,arial,helvetica,sans-serif; HEIGHT: 14px
+}
+.left TH A:link {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.left TH A:visited {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.left TH A:active {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.left TH A:hover {
+	COLOR: yellow; TEXT-DECORATION: none
+}
+.warning {
+	BORDER-RIGHT: red 2px solid; BORDER-TOP: red 2px solid; BACKGROUND: #ffc000; BORDER-LEFT: red 2px solid; BORDER-BOTTOM: red 2px solid
+}
+.content {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px
+}
+.boxed {
+	BORDER-COLLAPSE: collapse
+}
+.boxed TH {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BACKGROUND: #e0e0e0; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid
+}
+.boxed TD {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid
+}
+.code A:link {
+	COLOR: black; TEXT-DECORATION: none
+}
+.code A:visited {
+	COLOR: black; TEXT-DECORATION: none
+}
+.code A:active {
+	COLOR: black; TEXT-DECORATION: none
+}
+.code A:hover {
+	BACKGROUND: yellow; COLOR: black; TEXT-DECORATION: none
+}
+.codebox {
+	WIDTH: 100%
+}
+.snippet {
+	MARGIN-LEFT: 20px
+}
+.code {
+	BORDER-RIGHT: #c0c0d0 1px solid; BORDER-TOP: #c0c0d0 1px solid; BACKGROUND: #efefff; BORDER-LEFT: #c0c0d0 1px solid; BORDER-BOTTOM: #c0c0d0 1px solid
+}
+.result {
+	BORDER-RIGHT: #c0c0c0 1px solid; BORDER-TOP: #c0c0c0 1px solid; BACKGROUND: #e7e7e7; VERTICAL-ALIGN: top; BORDER-LEFT: #c0c0c0 1px solid; WIDTH: 50%; BORDER-BOTTOM: #c0c0c0 1px solid
+}
+.codebox {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-TOP-STYLE: none; PADDING-TOP: 0px; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+.kw {
+	COLOR: #0000b0
+}
+A.kw:hover {
+	COLOR: #0000b0
+}
+A.kw:link {
+	COLOR: #0000b0
+}
+A.kw:visited {
+	COLOR: #0000b0
+}
+A.kw:active {
+	COLOR: #0000b0
+}
+.prep {
+	COLOR: #500070
+}
+.comm {
+	COLOR: #007000
+}
+.str {
+	COLOR: #600030
+}
+</STYLE>
+
+<SCRIPT type=text/javascript>
+<!--
+function GetCookie(name) {
+  var dc = document.cookie;
+  var prefix = name + '=';
+  var begin = dc.indexOf('; ' + prefix);
+  if (begin == -1) {
+    begin = dc.indexOf(prefix);
+    if (begin != 0) return null;
+  } else
+    begin += 2;
+  var end = document.cookie.indexOf(';', begin);
+  if (end == -1)
+    end = dc.length;
+  var sret=unescape(dc.substring(begin + prefix.length, end));
+  var aret=sret.split('+'); sret=aret.join(' ');
+  return sret;
+}
+
+var user=GetCookie ('codehq_user');
+
+var mo = new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
+
+function When(ts) {
+ var dt = new Date(ts*1000);
+ document.write(mo[dt.getMonth()]+" "+dt.getDate()+", "+(dt.getYear()+(dt.getYear()<1900?1900:0)));
+ document.write(" at "+((dt.getHours()%12)==0?12:dt.getHours()%12)+":"+(dt.getMinutes()<10?"0":"")+dt.getMinutes()+(dt.getHours()<12?"am":"pm"));
+}
+
+function LoginBox() {
+if (!user)
+{
+	document.write ('<table cellspacing=2 cellpadding="0" valign="top">');
+	document.write ('<tr><td align="center"><b>user<\/b><\/td><td align="center"><b>pass<\/b><\/td><td align="center">[<a href="/member/signup.form">register<\/a>]<\/td><\/tr>');
+	document.write ('<tr><td align="center"><input class="txt" name="l" size="4" type="text"><\/td>');
+	document.write (' <td align="center"><input class="txt" name="p" size="4" type="password"><\/td>');
+	document.write (' <td align="center"><input class="btn" value="sign in" type="submit"><\/td><\/tr>');
+	document.write ('<\/table>');
+}
+else
+{
+	document.write ('<table width="150" cellspacing="2" cellpadding="0" valign="top">');
+	document.write ('<tr><td colspan="2" align="center">Logged in as: <b>'+user+'<\/b></td></tr>');	
+	document.write ('<tr><td align="right"><input class="btn" value="log out" type="submit"><input type="hidden" name="redirectto" value="/doc/tutorial/files.html"><input type="hidden" name="logout" value="sign out"></td>');
+	document.write ('<td align="left">[<b><a href="/member/">profile<\/a><\/b>]<\/font>');
+	document.write ('<\/td><\/tr>');
+	document.write ('<\/table>');
+}
+}
+
+var lowuser=user.toLowerCase();
+var faaccess=new Boolean ( (( GetCookie('codehq_access') & 256 )==256 ));
+function SuOptions() {
+	if ((faaccess==true)||(lowuser=="juan soulie"))
+	{
+		document.write(' [<a href="/doc/publish.form?what=edit&itemid=24">Edit this document<\/a>] ');
+	}
+}
+//-->
+</SCRIPT>
+
+<META content="MSHTML 6.00.2900.2180" name=GENERATOR></HEAD>
+<BODY bgColor=#d7d7d7>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=imgbox vAlign=top bgColor=#b0c0d0 rowSpan=2><A 
+      href="http://www.cplusplus.com/"><IMG height=75 
+      src="Input-Output with files_files/headlogo1.gif" width=165 
+    border=0></A></TD>
+    <TD class=imgbox vAlign=top bgColor=#ffffff><A 
+      href="http://www.cplusplus.com/"><IMG height=18 
+      src="Input-Output with files_files/headlogo2.gif" width=33 
+border=0></A></TD>
+    <TD width="95%" bgColor=#d7d7d7></TD>
+    <TD bgColor=#d7d7d7></TD></TR>
+  <TR>
+    <TD class=imgbox vAlign=top bgColor=#ffffff><A 
+      href="http://www.cplusplus.com/"><IMG height=57 
+      src="Input-Output with files_files/headlogo3.gif" width=33 
+border=0></A></TD>
+    <TD class=bar vAlign=top width="95%">&nbsp; <B><A 
+      href="http://www.cplusplus.com/">C++</A> : <A 
+      href="http://www.cplusplus.com/doc/">Documents</A> : <A 
+      href="http://www.cplusplus.com/doc/tutorial/">C++ Language Tutorial</A> : 
+      Input/Output with files </B><BR>
+      <FORM name=search action=/search/search.php method=get>&nbsp; Search: 
+      <INPUT class=txt size=13 name=q> <INPUT class=btn type=submit value=Search> </FORM></TD>
+    <TD class=bar vAlign=top>
+      <FORM name=login action=/member/login.form method=post><INPUT type=hidden 
+      value=1 name=login><INPUT type=hidden value=/doc/tutorial/files.html 
+      name=redirectto>
+      <SCRIPT type=text/javascript>
+<!--
+LoginBox();
+// -->
+</SCRIPT>
+       </FORM><NOSCRIPT>
+      <CENTER>javascript and cookies 
+required</CENTER></NOSCRIPT></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD style="BORDER-RIGHT: black 1px solid; LINE-HEIGHT: 1px" width=165 
+    bgColor=#b0c0d0><IMG height=1 
+      src="Input-Output with files_files/165x1.gif" width=165></TD>
+    <TD class=imgbox width="99%" bgColor=white><IMG height=1 
+      src="Input-Output with files_files/165x1.gif" width=165></TD></TR>
+  <TR><!-- left -->
+    <TD class=left vAlign=top align=middle width=165 bgColor=#b0c0d0>
+      <TABLE class=box>
+        <TBODY>
+        <TR>
+          <TH><A href="http://www.cplusplus.com/doc/tutorial/">C++ Language 
+            Tutorial</A></TH></TR>
+        <TR>
+          <TD><B>Introduction</B></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/introduction.html">· 
+            Instructions for use</A></TD></TR>
+        <TR>
+          <TD><B>Basics of C++</B></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/program_structure.html">· 
+            Structure of a program</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/variables.html">· 
+            Variables. Data Types.</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/constants.html">· 
+            Constants</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/operators.html">· 
+            Operators</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/basic_io.html">· 
+            Basic Input/Output</A></TD></TR>
+        <TR>
+          <TD><B>Control Structures</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/control.html">· 
+            Control Structures</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/functions.html">· 
+            Functions (I)</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/functions2.html">· 
+            Functions (II)</A></TD></TR>
+        <TR>
+          <TD><B>Compound Data Types</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/arrays.html">· 
+            Arrays</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/ntcs.html">· 
+            Character Sequences</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/pointers.html">· 
+            Pointers</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/dynamic.html">· 
+            Dynamic Memory</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/structures.html">· Data 
+            Structures</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/other_data_types.html">· 
+            Other Data Types</A></TD></TR>
+        <TR>
+          <TD><B>Object Oriented Programming</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/classes.html">· 
+            Classes (I)</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/classes2.html">· 
+            Classes (II)</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/inheritance.html">· 
+            Friendship and inheritance</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/polymorphism.html">· 
+            Polymorphism</A></TD></TR>
+        <TR>
+          <TD><B>Advanced Concepts</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/templates.html">· 
+            Templates</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/namespaces.html">· 
+            Namespaces</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/exceptions.html">· 
+            Exceptions</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/typecasting.html">· Type 
+            Casting</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/preprocessor.html">· 
+            Preprocessor directives</A></TD></TR>
+        <TR>
+          <TD><B>C++ Standard Library</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/files.html">· 
+            Input/Output with files</A></TD></TR></TBODY></TABLE>
+      <TABLE class=box>
+        <TBODY>
+        <TR>
+          <TH><A href="http://www.cplusplus.com/doc/">Document 
+          categories</A></TH></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/information/">Information 
+            about C++</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/">C++ Language 
+            Tutorial</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/papers/">Additional 
+            Papers</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/general/">User-contributed</A></TD></TR></TBODY></TABLE>
+      <TABLE class=box>
+        <TBODY>
+        <TR>
+          <TH><A href="http://www.cplusplus.com/">cplusplus.com</A></TH></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/">documents</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/ref/">reference</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/src/">sourcecodes</A></TD></TR>
+        <TR>
+          <TD><A 
+      href="http://www.cplusplus.com/forum/">forum</A></TD></TR></TBODY></TABLE><BR><IMG 
+      height=1 src="Input-Output with files_files/165x1.gif" width=165>
+      <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-5777024789006368";
+google_ad_width = 125;
+google_ad_height = 125;
+google_ad_format = "125x125_as";
+google_ad_type = "text_image";
+google_ad_channel ="5923551140";
+google_color_border = "3333CC";
+google_color_bg = "FFFFFF";
+google_color_link = "3333CC";
+google_color_url = "000000";
+google_color_text = "000000";
+//--></SCRIPT>
+
+      <SCRIPT language=javascript 
+      src="Input-Output with files_files/1x1.js"></SCRIPT>
+       <NOSCRIPT><A 
+      href="http://media.fastclick.net/w/click.here?sid=4636&amp;m=3&amp;c=1" 
+      target=_top><IMG height=600 src="Input-Output with files_files/1x1.gif" 
+      width=160 border=1></A></NOSCRIPT> <IMG height=1 
+      src="Input-Output with files_files/165x1.gif" width=165> </TD><!-- /left -->
+    <TD vAlign=top width="99%" bgColor=white>
+      <CENTER>
+      <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-5777024789006368";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text_image";
+google_ad_channel ="1922709837";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "000000";
+google_color_text = "000000";
+//--></SCRIPT>
+
+      <SCRIPT language=javascript 
+      src="Input-Output with files_files/show_ads.js"></SCRIPT>
+      <NOSCRIPT><A 
+      href="http://media.fastclick.net/w/click.here?sid=4636&amp;m=1&amp;c=1" 
+      target=_top><IMG height=90 
+      src="F:\New Folder\Input-Output with files_files\1x1(1).gif" width=728 
+      border=1></A></NOSCRIPT> </CENTER>
+      <DIV class=content>
+      <TABLE width="100%">
+        <TBODY>
+        <TR>
+          <TD>
+            <H1>Input/Output with files</H1></TD>
+          <TD align=right>
+            <TABLE>
+              <TBODY>
+              <TR>
+                <TD align=right>Published by <B><A 
+                  href="http://www.cplusplus.com/member/Juan_Soulie/">Juan 
+                  Soulie</A></B></TD></TR>
+              <TR>
+                <TD align=right><SMALL>Last update on
+                  <SCRIPT type=text/javascript>When(1147800764)</SCRIPT>
+                   </SMALL></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>C++ provides 
+      the following classes to perform output and input of characters to/from 
+      files: 
+      <P>
+      <UL>
+        <LI><B>ofstream:</B> Stream class to write on files 
+        <LI><B>ifstream:</B> Stream class to read from files 
+        <LI><B>fstream:</B> Stream class to both read and write from/to files. 
+        </LI></UL>
+      <P>These classes are derived directly or indirectly from the classes 
+      <TT>istream</TT>, and <TT>ostream</TT>. We have already used objects whose 
+      types were these classes: <TT>cin</TT> is an object of class 
+      <TT>istream</TT> and <TT>cout</TT> is an object of class <TT>ostream</TT>. 
+      Therfore, we have already been using classes that are related to our file 
+      streams. And in fact, we can use our file streams the same way we are 
+      already used to use <TT>cin</TT> and <TT>cout</TT>, with the only 
+      difference that we have to associate these streams with physical files. 
+      Let's see an example:
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// basic file operations</SPAN>
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=prep>#include &lt;fstream&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>int</SPAN> main () {
+  ofstream myfile;
+  myfile.open (<SPAN class=str>"example.txt"</SPAN>);
+  myfile &lt;&lt; <SPAN class=str>"Writing this to a file.\n"</SPAN>;
+  myfile.close();
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>[file example.txt]
+Writing this to a file
+</PRE></TD></TR></TBODY></TABLE>
+      <P>This code creates a file called <TT>example.txt</TT> and inserts a 
+      sentence into it in the same way we are used to do with <TT>cout</TT>, but 
+      using the file stream <TT>myfile</TT> instead.
+      <P>But let's go step by step:
+      <P><A name=""></A>
+      <H3>Open a file</H3>
+      <P>The first operation generally performed on an object of one of these 
+      classes is to associate it to a real file. This procedure is known as to 
+      <I>open a file</I>. An open file is represented within a program by a 
+      stream object (an instantiation of one of these classes, in the previous 
+      example this was <TT>myfile</TT>) and any input or output operation 
+      performed on this stream object will be applied to the physical file 
+      associated to it.
+      <P>In order to open a file with a stream object we use its member function 
+      <TT>open()</TT>:
+      <P><TT>open (filename, mode);<BR></TT>
+      <P>Where <TT>filename</TT> is a null-terminated character sequence of type 
+      <TT>const char *</TT> (the same type that string literals have) 
+      representing the name of the file to be opened, and <TT>mode</TT> is an 
+      optional parameter with a combination of the following flags:
+      <P>
+      <TABLE class=boxed>
+        <TBODY>
+        <TR>
+          <TD>ios::in</TD>
+          <TD>Open for input operations.</TD></TR>
+        <TR>
+          <TD>ios::out</TD>
+          <TD>Open for output operations.</TD></TR>
+        <TR>
+          <TD>ios::binary</TD>
+          <TD>Open in binary mode.</TD></TR>
+        <TR>
+          <TD>ios::ate</TD>
+          <TD>Set the initial position at the end of the file.<BR>If this flag 
+            is not set to any value, the initial position is the beginning of 
+            the file.</TD></TR>
+        <TR>
+          <TD>ios::app</TD>
+          <TD>All output operations are performed at the end of the file, 
+            appending the content to the current content of the file. This flag 
+            can only be used in streams open for output-only operations.</TD></TR>
+        <TR>
+          <TD>ios::trunc</TD>
+          <TD>If the file opened for output operations already existed before, 
+            its previous content is deleted and replaced by the new 
+        one.</TD></TR></TBODY></TABLE>
+      <P>All these flags can be combined using the bitwise operator OR 
+      (<TT>|</TT>). For example, if we want to open the file 
+      <TT>example.bin</TT> in binary mode to add data we could do it by the 
+      following call to member function <TT>open()</TT>:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>ofstream myfile;
+myfile.open (<SPAN class=str>"example.bin"</SPAN>, ios::out | ios::app | ios::binary); 
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Each one of the <TT>open()</TT> member functions of the classes 
+      <TT>ofstream</TT>, <TT>ifstream</TT> and <TT>fstream</TT> has a default 
+      mode that is used if the file is opened without a second argument:
+      <P>
+      <TABLE class=boxed>
+        <TBODY>
+        <TR>
+          <TH>class</TH>
+          <TH>default mode parameter</TH></TR>
+        <TR>
+          <TD>ofstream</TD>
+          <TD>ios::out</TD></TR>
+        <TR>
+          <TD>ifstream</TD>
+          <TD>ios::in</TD></TR>
+        <TR>
+          <TD>fstream</TD>
+          <TD>ios::in | ios::out</TD></TR></TBODY></TABLE>
+      <P>For <TT>ifstream</TT> and <TT>ofstream</TT> classes, <TT>ios::in</TT> 
+      and <TT>ios::out</TT> are automatically and respectivelly assumed, even if 
+      a mode that does not include them is passed as second argument to the 
+      <TT>open()</TT> member function.
+      <P>The default value is only applied if the function is called without 
+      specifying any value for the mode parameter. If the function is called 
+      with any value in that parameter the default mode is overridden, not 
+      combined.
+      <P>File streams opened in binary mode perform input and output operations 
+      independently of any format considerations. Non-binary files are known as 
+      <I>text files</I>, and some translations may occur due to formatting of 
+      some special characters (like newline and carriage return characters).
+      <P>Since the first task that is performed on a file stream object is 
+      generally to open a file, these three classes include a constructor that 
+      automatically calls the <TT>open()</TT> member function and has the exact 
+      same parameters as this member. Therefor, we could also have declared the 
+      previous <TT>myfile</TT> object and conducted the same opening operation 
+      in our previous example by writing:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>ofstream myfile (<SPAN class=str>"example.bin"</SPAN>, ios::out | ios::app | ios::binary);
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Combining object construction and stream opening in a single statement. 
+      Both forms to open a file are valid and equivalent.
+      <P>To check if a file stream was successful opening a file, you can do it 
+      by calling to member <TT>is_open()</TT> with no arguments. This member 
+      function returns a bool value of true in the case that indeed the stream 
+      object is associated with an open file, or false otherwise:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>if</SPAN> (myfile.is_open()) { <SPAN class=comm>/* ok, proceed with output */</SPAN> }
+</PRE></TD></TR></TBODY></TABLE>
+      <P><A name=""></A>
+      <H3>Closing a file</H3>When we are finished with our input and output 
+      operations on a file we shall close it so that its resources become 
+      available again. In order to do that we have to call the stream's member 
+      function <TT>close()</TT>. This member function takes no parameters, and 
+      what it does is to flush the associated buffers and close the file:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>myfile.close();
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Once this member function is called, the stream object can be used to 
+      open another file, and the file is available again to be opened by other 
+      processes.
+      <P>In case that an object is destructed while still associated with an 
+      open file, the destructor automatically calls the member function 
+      <TT>close()</TT>.
+      <P><A name=""></A>
+      <H3>Text files</H3>Text file streams are those where we do not include the 
+      <TT>ios::binary</TT> flag in their opening mode. These files are designed 
+      to store text and thus all values that we input or output from/to them can 
+      suffer some formatting transformations, which do not necessarily 
+      correspond to their literal binary value.
+      <P>Data output operations on text files are performed in the same way we 
+      operated with <TT>cout</TT>:
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// writing on a text file</SPAN>
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=prep>#include &lt;fstream&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>int</SPAN> main () {
+  ofstream myfile (<SPAN class=str>"example.txt"</SPAN>);
+  <SPAN class=kw>if</SPAN> (myfile.is_open())
+  {
+    myfile &lt;&lt; <SPAN class=str>"This is a line.\n"</SPAN>;
+    myfile &lt;&lt; <SPAN class=str>"This is another line.\n"</SPAN>;
+    myfile.close();
+  }
+  <SPAN class=kw>else</SPAN> cout &lt;&lt; <SPAN class=str>"Unable to open file"</SPAN>;
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>[file example.txt]
+This is a line.
+This is another line.
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Data input from a file can also be performed in the same way that we 
+      did with <TT>cin</TT>:
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// reading a text file</SPAN>
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=prep>#include &lt;fstream&gt;</SPAN>
+<SPAN class=prep>#include &lt;string&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>int</SPAN> main () {
+  string line;
+  ifstream myfile (<SPAN class=str>"example.txt"</SPAN>);
+  <SPAN class=kw>if</SPAN> (myfile.is_open())
+  {
+    <SPAN class=kw>while</SPAN> (! myfile.eof() )
+    {
+      getline (myfile,line);
+      cout &lt;&lt; line &lt;&lt; endl;
+    }
+    myfile.close();
+  }
+
+  <SPAN class=kw>else</SPAN> cout &lt;&lt; <SPAN class=str>"Unable to open file"</SPAN>; 
+
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>This is a line.
+This is another line.  
+</PRE></TD></TR></TBODY></TABLE>
+      <P>This last example reads a text file and prints out its content on the 
+      screen. Notice how we have used a new member function, called 
+      <TT>eof()</TT> that returns true in the case that the end of the file has 
+      been reached. We have created a while loop that finishes when indeed 
+      <TT>myfile.eof()</TT> becomes true (i.e., the end of the file has been 
+      reached).
+      <P><A name=""></A>
+      <H3>Checking state flags</H3>In addition to <TT>eof()</TT>, which checks 
+      if the end of file has been reached, other member functions exist to check 
+      the state of a stream (all of them return a bool value): 
+      <P>
+      <DL>
+        <DT>bad() 
+        <DD>Returns true if a reading or writing operation fails. For example in 
+        the case that we try to write to a file that is not open for writing or 
+        if the device where we try to write has no space left. 
+        <DT>fail() 
+        <DD>Returns true in the same cases as bad(), but also in the case that a 
+        format error happens, like when an alphabetical character is extracted 
+        when we are trying to read an integer number. 
+        <DT>eof() 
+        <DD>Returns true if a file open for reading has reached the end. 
+        <DT>good() 
+        <DD>It is the most generic state flag: it returns false in the same 
+        cases in which calling any of the previous functions would return true. 
+        </DD></DL>
+      <P>In order to reset the state flags checked by any of these member 
+      functions we have just seen we can use the member function 
+      <TT>clear()</TT>, which takes no parameters.
+      <P><A name=""></A>
+      <H3>get and put stream pointers</H3>All i/o streams objects have, at 
+      least, one internal stream pointer:
+      <P><TT>ifstream</TT>, like <TT>istream</TT>, has a pointer known as the 
+      <I>get pointer</I> that points to the element to be read in the next input 
+      operation.
+      <P><TT>ofstream</TT>, like <TT>ostream</TT>, has a pointer known as the 
+      <I>put pointer</I> that points to the location where the next element has 
+      to be written.
+      <P>Finally, <TT>fstream</TT>, inherits both, the get and the put pointers, 
+      from <TT>iostream</TT> (which is itself derived from both <TT>istream</TT> 
+      and <TT>ostream</TT>).
+      <P>These internal stream pointers that point to the reading or writing 
+      locations within a stream can be manipulated using the following member 
+      functions: 
+      <P><A name=""></A>
+      <H4>tellg() and tellp()</H4>These two member functions have no parameters 
+      and return a value of the member type <TT>pos_type</TT>, which is an 
+      integer data type representing the current position of the get stream 
+      pointer (in the case of <TT>tellg</TT>) or the put stream pointer (in the 
+      case of <TT>tellp</TT>).
+      <P><A name=""></A>
+      <H4>seekg() and seekp()</H4>These functions allow us to change the 
+      position of the get and put stream pointers. Both functions are overloaded 
+      with two different prototypes. The first prototype is:
+      <P><TT>seekg ( position );<BR>seekp ( position );<BR></TT>
+      <P>Using this prototype the stream pointer is changed to the absolute 
+      position <TT>position</TT> (counting from the beginning of the file). The 
+      type for this parameter is the same as the one returned by functions 
+      <TT>tellg</TT> and <TT>tellp</TT>: the member type <TT>pos_type</TT>, 
+      which is an integer value.
+      <P>The other prototype for these functions is:
+      <P><TT>seekg ( offset, direction );<BR>seekp ( offset, direction 
+      );<BR></TT>
+      <P>Using this prototype, the position of the get or put pointer is set to 
+      an offset value relative to some specific point determined by the 
+      parameter <TT>direction</TT>. <TT>offset</TT> is of the member type 
+      <TT>off_type</TT>, which is also an integer type. And <TT>direction</TT> 
+      is of type <TT>seekdir</TT>, which is an enumerated type (<TT>enum</TT>) 
+      that determines the point from where offset is counted from, and that can 
+      take any of the following values:
+      <P>
+      <TABLE class=boxed>
+        <TBODY>
+        <TR>
+          <TD>ios::beg</TD>
+          <TD>offset counted from the beginning of the stream</TD></TR>
+        <TR>
+          <TD>ios::cur</TD>
+          <TD>offset counted from the current position of the stream 
+        pointer</TD></TR>
+        <TR>
+          <TD>ios::end</TD>
+          <TD>offset counted from the end of the stream</TD></TR></TBODY></TABLE>
+      <P>The following example uses the member functions we have just seen to 
+      obtain the size of a file: 
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// obtaining file size</SPAN>
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=prep>#include &lt;fstream&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>int</SPAN> main () {
+  <SPAN class=kw>long</SPAN> begin,end;
+  ifstream myfile (<SPAN class=str>"example.txt"</SPAN>);
+  begin = myfile.tellg();
+  myfile.seekg (0, ios::end);
+  end = myfile.tellg();
+  myfile.close();
+  cout &lt;&lt; <SPAN class=str>"size is: "</SPAN> &lt;&lt; (end-begin) &lt;&lt; <SPAN class=str>" bytes.\n"</SPAN>;
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>size is: 40 bytes.
+</PRE></TD></TR></TBODY></TABLE>
+      <P><A name=""></A>
+      <H3>Binary files</H3>In binary files, to input and output data with the 
+      extraction and insertion operators (<TT>&lt;&lt;</TT> and 
+      <TT>&gt;&gt;</TT>) and functions like <TT>getline</TT> is not efficient, 
+      since we do not need to format any data, and data may not use the 
+      separation codes used by text files to separate elements (like space, 
+      newline, etc...).
+      <P>File streams include two member functions specifically designed to 
+      input and output binary data sequentially: <TT>write</TT> and 
+      <TT>read</TT>. The first one (<TT>write</TT>) is a member function of 
+      <TT>ostream</TT> inherited by <TT>ofstream</TT>. And <TT>read</TT> is a 
+      member function of <TT>istream</TT> that is inherited by 
+      <TT>ifstream</TT>. Objects of class <TT>fstream</TT> have both members. 
+      Their prototypes are:
+      <P><TT>write ( memory_block, size );<BR>read ( memory_block, size 
+      );<BR></TT>
+      <P>Where <TT>memory_block</TT> is of type "pointer to char" 
+      (<TT>char*</TT>), and represents the address of an array of bytes where 
+      the read data elements are stored or from where the data elements to be 
+      written are taken. The <TT>size</TT> parameter is an integer value that 
+      specifies the number of characters to be read or written from/to the 
+      memory block.
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// reading a complete binary file</SPAN>
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=prep>#include &lt;fstream&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+ifstream::pos_type size;
+<SPAN class=kw>char</SPAN> * memblock;
+
+<SPAN class=kw>int</SPAN> main () {
+  ifstream file (<SPAN class=str>"example.txt"</SPAN>, ios::in|ios::binary|ios::ate);
+  <SPAN class=kw>if</SPAN> (file.is_open())
+  {
+    size = file.tellg();
+    memblock = <SPAN class=kw>new</SPAN> <SPAN class=kw>char</SPAN> [size];
+    file.seekg (0, ios::beg);
+    file.read (memblock, size);
+    file.close();
+
+    cout &lt;&lt; <SPAN class=str>"the complete file content is in memory"</SPAN>;
+
+    <SPAN class=kw>delete</SPAN>[] memblock;
+  }
+  <SPAN class=kw>else</SPAN> cout &lt;&lt; <SPAN class=str>"Unable to open file"</SPAN>;
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>the complete file content is in memory
+</PRE></TD></TR></TBODY></TABLE>
+      <P>In this example the entire file is read and stored in a memory block. 
+      Let's examine how this is done:
+      <P>First, the file is open with the <TT>ios::ate</TT> flag, which means 
+      that the get pointer will be positioned at the end of the file. This way, 
+      when we call to member <TT>tellg()</TT>, we will directly obtain the size 
+      of the file. Notice the type we have used to declare variable 
+      <TT>size</TT>:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>ifstream::pos_type size;
+</PRE></TD></TR></TBODY></TABLE>
+      <P><TT>ifstream::pos_type</TT> is a specific type used for buffer and file 
+      positioning and is the type returned by <TT>file.tellg()</TT>. This type 
+      is defined as an integer type, therefore we can conduct on it the same 
+      operations we conduct on any other integer value, and can safely be 
+      converted to another integer type large enough to contain the size of the 
+      file. For a file with a size under 2GB we could use <TT>int</TT>:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>int</SPAN> size;
+size = (<SPAN class=kw>int</SPAN>) file.tellg();
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Once we have obtained the size of the file, we request the allocation 
+      of a memory block large enough to hold the entire file:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>memblock = <SPAN class=kw>new</SPAN> <SPAN class=kw>char</SPAN>[size];
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Right after that, we proceed to set the get pointer at the beginning of 
+      the file (remember that we opened the file with this pointer at the end), 
+      then read the entire file, and finally close it:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>file.seekg (0, ios::beg);
+file.read (memblock, size);
+file.close();
+</PRE></TD></TR></TBODY></TABLE>
+      <P>At this point we could operate with the data obtained from the file. 
+      Our program simply announces that the content of the file is in memory and 
+      then terminates.
+      <P><A name=""></A>
+      <H3>Buffers and Synchronization</H3>
+      <P>When we operate with file streams, these are associated to an internal 
+      buffer of type <TT>streambuf</TT>. This buffer is a memory block that acts 
+      as an intermediary between the stream and the physical file. For example, 
+      with an <TT>ofstream</TT>, each time the member function <TT>put</TT> 
+      (which writes a single character) is called, the character is not written 
+      directly to the physical file with which the stream is associated. Instead 
+      of that, the character is inserted in that stream's intermediate buffer.
+      <P>When the buffer is flushed, all the data contained in it is written to 
+      the physical medium (if it is an output stream) or simply freed (if it is 
+      an input stream). This process is called <I>synchronization</I> and takes 
+      place under any of the following circumstances: 
+      <P>
+      <UL>
+        <LI><B>When the file is closed:</B> before closing a file all buffers 
+        that have not yet been flushed are synchronized and all pending data is 
+        written or read to the physical medium. 
+        <LI><B>When the buffer is full:</B> Buffers have a certain size. When 
+        the buffer is full it is automatically synchronized. 
+        <LI><B>Explicitly, with manipulators:</B> When certain manipulators are 
+        used on streams, an explicit synchronization takes place. These 
+        manipulators are: <TT>flush</TT> and <TT>endl</TT>. 
+        <LI><B>Explicitly, with member function sync():</B> Calling stream's 
+        member function <TT>sync()</TT>, which takes no parameters, causes an 
+        immediate synchronization. This function returns an <TT>int</TT> value 
+        equal to <TT>-1</TT> if the stream has no associated buffer or in case 
+        of failure. Otherwise (if the stream buffer was successfully 
+        synchronized) it returns <TT>0</TT>. </LI></UL>
+      <P>
+      <CENTER>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD align=right width="49%"><A 
+            href="http://www.cplusplus.com/doc/tutorial/preprocessor.html"><IMG 
+            src="Input-Output with files_files/navigate_previous.gif" 
+            align=right border=0>Previous:<BR><B>Preprocessor directives</B></A> 
+          </TD>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/"><IMG 
+            src="Input-Output with files_files/navigate_index.gif" 
+            border=0><BR>index</A></TD>
+          <TD align=left width="49%"></TD></TR></TBODY></TABLE></CENTER>
+      <P></P>
+      <P>
+      <SCRIPT type=text/javascript>
+<!--
+SuOptions()
+-->
+</SCRIPT>
+      </P></DIV></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-TOP: black 1px solid; BACKGROUND: #d7d7d7; PADDING-BOTTOM: 5px" 
+    align=middle colSpan=2><SMALL>© The C++ Resources Network, 2000-2005 - All 
+      rights reserved</SMALL></TD></TR></TBODY></TABLE></BODY></HTML>

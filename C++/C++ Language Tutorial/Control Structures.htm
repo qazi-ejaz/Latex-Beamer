@@ -1,0 +1,1041 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0050)http://www.cplusplus.com/doc/tutorial/control.html -->
+<HTML><HEAD><TITLE>Control Structures</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<STYLE type=text/css>BODY {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+TABLE {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+INPUT {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+SELECT {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+TEXTAREA {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+FORM {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+PRE {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+DT {
+	FONT-WEIGHT: bold
+}
+DD {
+	MARGIN-BOTTOM: 12px
+}
+UL {
+	MARGIN-BOTTOM: 12px
+}
+UL {
+	MARGIN-TOP: 4px
+}
+LI {
+	MARGIN-BOTTOM: 4px
+}
+A:link {
+	COLOR: #000070; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #000070; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #000070; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #0000a0; TEXT-DECORATION: underline
+}
+.imgbox {
+	LINE-HEIGHT: 1px
+}
+.stdform {
+	BORDER-RIGHT: #00007f 1px solid; BORDER-TOP: #00007f 1px solid; BORDER-LEFT: #00007f 1px solid; BORDER-BOTTOM: #00007f 1px solid
+}
+.stdform TH {
+	BORDER-RIGHT: #00007f 1px solid; BORDER-TOP: #00007f 1px solid; BORDER-LEFT: #00007f 1px solid; BORDER-BOTTOM: #00007f 1px solid
+}
+.stdform TD {
+	BORDER-RIGHT: #707080 1px solid; BORDER-TOP: #707080 1px solid; BORDER-LEFT: #707080 1px solid; BORDER-BOTTOM: #707080 1px solid; TEXT-ALIGN: left
+}
+.stdform TR TD {
+	BACKGROUND: #f0f0ff
+}
+.stdform TR.odd TD {
+	BACKGROUND: #e0e0ff
+}
+.stdform TH {
+	BACKGROUND: url(/img/blue.gif) blue; COLOR: #ffffff
+}
+.stdform TH A:link {
+	COLOR: white
+}
+.stdform TH A:visited {
+	COLOR: white
+}
+.stdform TH A:active {
+	COLOR: white
+}
+.stdform TH A:hover {
+	COLOR: yellow
+}
+.stdform .txt {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid; BACKGROUND-COLOR: #fffff0
+}
+.stdform SELECT {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid; BACKGROUND-COLOR: #fffff0
+}
+.stdform TEXTAREA {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid; BACKGROUND-COLOR: #fffff0
+}
+.stdform TEXTAREA {
+	FONT-FAMILY: monospace
+}
+.stdform .field {
+	FONT-WEIGHT: bold; TEXT-ALIGN: right
+}
+.stdform .value {
+	FONT-FAMILY: courier,monospace
+}
+.stdform .description {
+	FONT-SIZE: 80%
+}
+.stdform .buttons {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; TEXT-ALIGN: center
+}
+.stdform TR.separator TD {
+	FONT-WEIGHT: bold; BACKGROUND: white
+}
+.stdform .number {
+	TEXT-ALIGN: center
+}
+.secform {
+	BORDER-RIGHT: #ff6020 1px solid; BORDER-TOP: #ff6020 1px solid; BORDER-LEFT: #ff6020 1px solid; BORDER-BOTTOM: #ff6020 1px solid; BORDER-COLLAPSE: collapse
+}
+.secform TD {
+	BORDER-RIGHT: #ff6020 1px solid; BORDER-TOP: #ff6020 1px solid; BORDER-LEFT: #ff6020 1px solid; BORDER-BOTTOM: #ff6020 1px solid; BORDER-COLLAPSE: collapse
+}
+.secform TR {
+	BACKGROUND: #fffff0
+}
+.secform TR.odd TD {
+	BACKGROUND: #ffffd0
+}
+.secform TH {
+	BACKGROUND: url(/img/orange.gif) #ff6020; COLOR: #ffffff
+}
+.errors {
+	BORDER-RIGHT: #7f0000 1px solid; BORDER-TOP: #7f0000 1px solid; BORDER-LEFT: #7f0000 1px solid; BORDER-BOTTOM: #7f0000 1px solid
+}
+.errors TH {
+	BORDER-RIGHT: #7f0000 1px solid; BORDER-TOP: #7f0000 1px solid; BORDER-LEFT: #7f0000 1px solid; BORDER-BOTTOM: #7f0000 1px solid
+}
+.errors TD {
+	BORDER-RIGHT: #807070 1px solid; BORDER-TOP: #807070 1px solid; BORDER-LEFT: #807070 1px solid; BORDER-BOTTOM: #807070 1px solid; TEXT-ALIGN: left
+}
+.errors TH {
+	BACKGROUND: red; COLOR: #ffffff
+}
+.errors TD {
+	BACKGROUND: #ffe0e0
+}
+.bar {
+	BACKGROUND: url(/img/headbg.gif); COLOR: white; LINE-HEIGHT: 20px
+}
+.bar TABLE {
+	FONT-SIZE: 9px; COLOR: white; LINE-HEIGHT: 16px
+}
+.bar A:link {
+	COLOR: white
+}
+.bar A:visited {
+	COLOR: white
+}
+.bar A:active {
+	COLOR: white
+}
+.bar A:hover {
+	COLOR: yellow; TEXT-DECORATION: none
+}
+.bar .txt {
+	BORDER-RIGHT: 1px inset; BORDER-TOP: 1px inset; BORDER-LEFT: 1px inset; BORDER-BOTTOM: 1px inset; HEIGHT: 14px; BACKGROUND-COLOR: #c0c0ff
+}
+.bar .btn {
+	BORDER-RIGHT: 1px outset; BORDER-TOP: 1px outset; FONT-SIZE: 9px; BORDER-LEFT: 1px outset; BORDER-BOTTOM: 1px outset; HEIGHT: 18px; BACKGROUND-COLOR: #c0c0ff
+}
+.left {
+	BORDER-RIGHT: black 1px solid
+}
+.left TABLE {
+	BORDER-RIGHT: #00007f 1px solid; BORDER-TOP: #00007f 1px solid; MARGIN-TOP: 5px; BACKGROUND: white; BORDER-LEFT: #00007f 1px solid; WIDTH: 160px; BORDER-BOTTOM: #00007f 1px solid; BORDER-COLLAPSE: collapse
+}
+.left TD {
+	FONT-SIZE: x-small; COLOR: #000070; FONT-FAMILY: verdana,arial,helvetica,sans-serif; TEXT-ALIGN: left
+}
+.left TH {
+	FONT-SIZE: xx-small; BACKGROUND: url(/img/blue.gif) blue; COLOR: #ffffff; FONT-FAMILY: verdana,arial,helvetica,sans-serif; HEIGHT: 14px
+}
+.left TH A:link {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.left TH A:visited {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.left TH A:active {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.left TH A:hover {
+	COLOR: yellow; TEXT-DECORATION: none
+}
+.warning {
+	BORDER-RIGHT: red 2px solid; BORDER-TOP: red 2px solid; BACKGROUND: #ffc000; BORDER-LEFT: red 2px solid; BORDER-BOTTOM: red 2px solid
+}
+.content {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px
+}
+.boxed {
+	BORDER-COLLAPSE: collapse
+}
+.boxed TH {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BACKGROUND: #e0e0e0; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid
+}
+.boxed TD {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid
+}
+.code A:link {
+	COLOR: black; TEXT-DECORATION: none
+}
+.code A:visited {
+	COLOR: black; TEXT-DECORATION: none
+}
+.code A:active {
+	COLOR: black; TEXT-DECORATION: none
+}
+.code A:hover {
+	BACKGROUND: yellow; COLOR: black; TEXT-DECORATION: none
+}
+.codebox {
+	WIDTH: 100%
+}
+.snippet {
+	MARGIN-LEFT: 20px
+}
+.code {
+	BORDER-RIGHT: #c0c0d0 1px solid; BORDER-TOP: #c0c0d0 1px solid; BACKGROUND: #efefff; BORDER-LEFT: #c0c0d0 1px solid; BORDER-BOTTOM: #c0c0d0 1px solid
+}
+.result {
+	BORDER-RIGHT: #c0c0c0 1px solid; BORDER-TOP: #c0c0c0 1px solid; BACKGROUND: #e7e7e7; VERTICAL-ALIGN: top; BORDER-LEFT: #c0c0c0 1px solid; WIDTH: 50%; BORDER-BOTTOM: #c0c0c0 1px solid
+}
+.codebox {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-TOP-STYLE: none; PADDING-TOP: 0px; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+.kw {
+	COLOR: #0000b0
+}
+A.kw:hover {
+	COLOR: #0000b0
+}
+A.kw:link {
+	COLOR: #0000b0
+}
+A.kw:visited {
+	COLOR: #0000b0
+}
+A.kw:active {
+	COLOR: #0000b0
+}
+.prep {
+	COLOR: #500070
+}
+.comm {
+	COLOR: #007000
+}
+.str {
+	COLOR: #600030
+}
+</STYLE>
+
+<SCRIPT type=text/javascript>
+<!--
+function GetCookie(name) {
+  var dc = document.cookie;
+  var prefix = name + '=';
+  var begin = dc.indexOf('; ' + prefix);
+  if (begin == -1) {
+    begin = dc.indexOf(prefix);
+    if (begin != 0) return null;
+  } else
+    begin += 2;
+  var end = document.cookie.indexOf(';', begin);
+  if (end == -1)
+    end = dc.length;
+  var sret=unescape(dc.substring(begin + prefix.length, end));
+  var aret=sret.split('+'); sret=aret.join(' ');
+  return sret;
+}
+
+var user=GetCookie ('codehq_user');
+
+var mo = new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
+
+function When(ts) {
+ var dt = new Date(ts*1000);
+ document.write(mo[dt.getMonth()]+" "+dt.getDate()+", "+(dt.getYear()+(dt.getYear()<1900?1900:0)));
+ document.write(" at "+((dt.getHours()%12)==0?12:dt.getHours()%12)+":"+(dt.getMinutes()<10?"0":"")+dt.getMinutes()+(dt.getHours()<12?"am":"pm"));
+}
+
+function LoginBox() {
+if (!user)
+{
+	document.write ('<table cellspacing=2 cellpadding="0" valign="top">');
+	document.write ('<tr><td align="center"><b>user<\/b><\/td><td align="center"><b>pass<\/b><\/td><td align="center">[<a href="/member/signup.form">register<\/a>]<\/td><\/tr>');
+	document.write ('<tr><td align="center"><input class="txt" name="l" size="4" type="text"><\/td>');
+	document.write (' <td align="center"><input class="txt" name="p" size="4" type="password"><\/td>');
+	document.write (' <td align="center"><input class="btn" value="sign in" type="submit"><\/td><\/tr>');
+	document.write ('<\/table>');
+}
+else
+{
+	document.write ('<table width="150" cellspacing="2" cellpadding="0" valign="top">');
+	document.write ('<tr><td colspan="2" align="center">Logged in as: <b>'+user+'<\/b></td></tr>');	
+	document.write ('<tr><td align="right"><input class="btn" value="log out" type="submit"><input type="hidden" name="redirectto" value="/doc/tutorial/control.html"><input type="hidden" name="logout" value="sign out"></td>');
+	document.write ('<td align="left">[<b><a href="/member/">profile<\/a><\/b>]<\/font>');
+	document.write ('<\/td><\/tr>');
+	document.write ('<\/table>');
+}
+}
+
+var lowuser=user.toLowerCase();
+var faaccess=new Boolean ( (( GetCookie('codehq_access') & 256 )==256 ));
+function SuOptions() {
+	if ((faaccess==true)||(lowuser=="juan soulie"))
+	{
+		document.write(' [<a href="/doc/publish.form?what=edit&itemid=6">Edit this document<\/a>] ');
+	}
+}
+//-->
+</SCRIPT>
+
+<META content="MSHTML 6.00.2900.2180" name=GENERATOR></HEAD>
+<BODY bgColor=#d7d7d7>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=imgbox vAlign=top bgColor=#b0c0d0 rowSpan=2><A 
+      href="http://www.cplusplus.com/"><IMG height=75 
+      src="Control Structures_files/headlogo1.gif" width=165 border=0></A></TD>
+    <TD class=imgbox vAlign=top bgColor=#ffffff><A 
+      href="http://www.cplusplus.com/"><IMG height=18 
+      src="Control Structures_files/headlogo2.gif" width=33 border=0></A></TD>
+    <TD width="95%" bgColor=#d7d7d7></TD>
+    <TD bgColor=#d7d7d7></TD></TR>
+  <TR>
+    <TD class=imgbox vAlign=top bgColor=#ffffff><A 
+      href="http://www.cplusplus.com/"><IMG height=57 
+      src="Control Structures_files/headlogo3.gif" width=33 border=0></A></TD>
+    <TD class=bar vAlign=top width="95%">&nbsp; <B><A 
+      href="http://www.cplusplus.com/">C++</A> : <A 
+      href="http://www.cplusplus.com/doc/">Documents</A> : <A 
+      href="http://www.cplusplus.com/doc/tutorial/">C++ Language Tutorial</A> : 
+      Control Structures </B><BR>
+      <FORM name=search action=/search/search.php method=get>&nbsp; Search: 
+      <INPUT class=txt size=13 name=q> <INPUT class=btn type=submit value=Search> </FORM></TD>
+    <TD class=bar vAlign=top>
+      <FORM name=login action=/member/login.form method=post><INPUT type=hidden 
+      value=1 name=login><INPUT type=hidden value=/doc/tutorial/control.html 
+      name=redirectto>
+      <SCRIPT type=text/javascript>
+<!--
+LoginBox();
+// -->
+</SCRIPT>
+       </FORM><NOSCRIPT>
+      <CENTER>javascript and cookies 
+required</CENTER></NOSCRIPT></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD style="BORDER-RIGHT: black 1px solid; LINE-HEIGHT: 1px" width=165 
+    bgColor=#b0c0d0><IMG height=1 src="Control Structures_files/165x1.gif" 
+      width=165></TD>
+    <TD class=imgbox width="99%" bgColor=white><IMG height=1 
+      src="Control Structures_files/165x1.gif" width=165></TD></TR>
+  <TR><!-- left -->
+    <TD class=left vAlign=top align=middle width=165 bgColor=#b0c0d0>
+      <TABLE class=box>
+        <TBODY>
+        <TR>
+          <TH><A href="http://www.cplusplus.com/doc/tutorial/">C++ Language 
+            Tutorial</A></TH></TR>
+        <TR>
+          <TD><B>Introduction</B></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/introduction.html">· 
+            Instructions for use</A></TD></TR>
+        <TR>
+          <TD><B>Basics of C++</B></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/program_structure.html">· 
+            Structure of a program</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/variables.html">· 
+            Variables. Data Types.</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/constants.html">· 
+            Constants</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/operators.html">· 
+            Operators</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/basic_io.html">· 
+            Basic Input/Output</A></TD></TR>
+        <TR>
+          <TD><B>Control Structures</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/control.html">· 
+            Control Structures</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/functions.html">· 
+            Functions (I)</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/functions2.html">· 
+            Functions (II)</A></TD></TR>
+        <TR>
+          <TD><B>Compound Data Types</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/arrays.html">· 
+            Arrays</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/ntcs.html">· 
+            Character Sequences</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/pointers.html">· 
+            Pointers</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/dynamic.html">· 
+            Dynamic Memory</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/structures.html">· Data 
+            Structures</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/other_data_types.html">· 
+            Other Data Types</A></TD></TR>
+        <TR>
+          <TD><B>Object Oriented Programming</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/classes.html">· 
+            Classes (I)</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/classes2.html">· 
+            Classes (II)</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/inheritance.html">· 
+            Friendship and inheritance</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/polymorphism.html">· 
+            Polymorphism</A></TD></TR>
+        <TR>
+          <TD><B>Advanced Concepts</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/templates.html">· 
+            Templates</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/namespaces.html">· 
+            Namespaces</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/exceptions.html">· 
+            Exceptions</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/typecasting.html">· Type 
+            Casting</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/preprocessor.html">· 
+            Preprocessor directives</A></TD></TR>
+        <TR>
+          <TD><B>C++ Standard Library</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/files.html">· 
+            Input/Output with files</A></TD></TR></TBODY></TABLE>
+      <TABLE class=box>
+        <TBODY>
+        <TR>
+          <TH><A href="http://www.cplusplus.com/doc/">Document 
+          categories</A></TH></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/information/">Information 
+            about C++</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/">C++ Language 
+            Tutorial</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/papers/">Additional 
+            Papers</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/general/">User-contributed</A></TD></TR></TBODY></TABLE>
+      <TABLE class=box>
+        <TBODY>
+        <TR>
+          <TH><A href="http://www.cplusplus.com/">cplusplus.com</A></TH></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/">documents</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/ref/">reference</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/src/">sourcecodes</A></TD></TR>
+        <TR>
+          <TD><A 
+      href="http://www.cplusplus.com/forum/">forum</A></TD></TR></TBODY></TABLE><BR><IMG 
+      height=1 src="Control Structures_files/165x1.gif" width=165>
+      <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-5777024789006368";
+google_ad_width = 125;
+google_ad_height = 125;
+google_ad_format = "125x125_as";
+google_ad_type = "text_image";
+google_ad_channel ="5923551140";
+google_color_border = "3333CC";
+google_color_bg = "FFFFFF";
+google_color_link = "3333CC";
+google_color_url = "000000";
+google_color_text = "000000";
+//--></SCRIPT>
+
+      <SCRIPT language=javascript 
+src="Control Structures_files/1x1.js"></SCRIPT>
+       <NOSCRIPT><A 
+      href="http://media.fastclick.net/w/click.here?sid=4636&amp;m=3&amp;c=1" 
+      target=_top><IMG height=600 src="Control Structures_files/1x1.gif" 
+      width=160 border=1></A></NOSCRIPT> <IMG height=1 
+      src="Control Structures_files/165x1.gif" width=165> </TD><!-- /left -->
+    <TD vAlign=top width="99%" bgColor=white>
+      <CENTER>
+      <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-5777024789006368";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text_image";
+google_ad_channel ="1922709837";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "000000";
+google_color_text = "000000";
+//--></SCRIPT>
+
+      <SCRIPT language=javascript 
+      src="Control Structures_files/show_ads.js"></SCRIPT>
+      <NOSCRIPT><A 
+      href="http://media.fastclick.net/w/click.here?sid=4636&amp;m=1&amp;c=1" 
+      target=_top><IMG height=90 
+      src="F:\New Folder\Control Structures_files\1x1(1).gif" width=728 
+      border=1></A></NOSCRIPT> </CENTER>
+      <DIV class=content>
+      <TABLE width="100%">
+        <TBODY>
+        <TR>
+          <TD>
+            <H1>Control Structures</H1></TD>
+          <TD align=right>
+            <TABLE>
+              <TBODY>
+              <TR>
+                <TD align=right>Published by <B><A 
+                  href="http://www.cplusplus.com/member/Juan_Soulie/">Juan 
+                  Soulie</A></B></TD></TR>
+              <TR>
+                <TD align=right><SMALL>Last update on
+                  <SCRIPT type=text/javascript>When(1147797720)</SCRIPT>
+                   </SMALL></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>A program is 
+      usually not limited to a linear sequence of instructions. During its 
+      process it may bifurcate, repeat code or take decisions. For that purpose, 
+      C++ provides control structures that serve to specify what has to be done 
+      by our program, when and under which circumstances.
+      <P>With the introduction of control structures we are going to have to 
+      introduce a new concept: the <I>compound-statement</I> or <I>block</I>. A 
+      block is a group of statements which are separated by semicolons (;) like 
+      all C++ statements, but grouped together in a block enclosed in braces: 
+      <TT>{ }</TT>:
+      <P><TT>{ statement1; statement2; statement3; }<BR></TT>
+      <P>Most of the control structures that we will see in this section require 
+      a generic statement as part of its syntax. A statement can be either a 
+      simple statement (a simple instruction ending with a semicolon) or a 
+      compund statement (several instructions grouped in a block), like the one 
+      just described. In the case that we want the statement to be a simple 
+      statement, we do not need to enclose it in braces (<TT>{}</TT>). But in 
+      the case that we want the statement to be a compund statement it must 
+      enclosed between braces (<TT>{}</TT>) forming a block.
+      <P><A name=if></A><A name=else></A>
+      <H3>Conditional structure: if and else</H3>The <TT>if</TT> keyword is used 
+      to execute a statement or block only if a condition is fulfilled. Its form 
+      is:
+      <P><TT>if (condition) statement<BR></TT>
+      <P>Where <TT>condition</TT> is the expression that is being evaluated. If 
+      this condition is true, <TT>statement</TT> is executed. If it is false, 
+      <TT>statement</TT> is ignored (not executed) and the program continues 
+      right after this conditional structure.<BR>For example, the following code 
+      fragment prints <TT>x is 100</TT> only if the value stored in the 
+      <TT>x</TT> variable is indeed <TT>100</TT>:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>if</SPAN> (x == 100)
+  cout &lt;&lt; <SPAN class=str>"x is 100"</SPAN>;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>If we want more than a single statement to be executed in case that the 
+      condition is true we can specify a block using braces <TT>{ }</TT>:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>if</SPAN> (x == 100)
+{
+   cout &lt;&lt; <SPAN class=str>"x is "</SPAN>;
+   cout &lt;&lt; x;
+}
+</PRE></TD></TR></TBODY></TABLE>
+      <P>We can additionally specify what we want to happen if the condition is 
+      not fulfilled by using the keyword <TT>else</TT>. Its form used in 
+      conjunction with <TT>if</TT> is:
+      <P><TT>if (condition) statement1 else statement2<BR></TT>
+      <P>For example:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>if</SPAN> (x == 100)
+  cout &lt;&lt; <SPAN class=str>"x is 100"</SPAN>;
+<SPAN class=kw>else</SPAN>
+  cout &lt;&lt; <SPAN class=str>"x is not 100"</SPAN>;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>prints on the screen <TT>x is 100</TT> if indeed <TT>x</TT> has a value 
+      of <TT>100</TT>, but if it has not -and only if not- it prints out <TT>x 
+      is not 100</TT>.
+      <P>The <TT>if + else</TT> structures can be concatenated with the 
+      intention of verifying a range of values. The following example shows its 
+      use telling if the value currently stored in <TT>x</TT> is positive, 
+      negative or none of them (i.e. zero):
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>if</SPAN> (x &gt; 0)
+  cout &lt;&lt; <SPAN class=str>"x is positive"</SPAN>;
+<SPAN class=kw>else</SPAN> <SPAN class=kw>if</SPAN> (x &lt; 0)
+  cout &lt;&lt; <SPAN class=str>"x is negative"</SPAN>;
+<SPAN class=kw>else</SPAN>
+  cout &lt;&lt; <SPAN class=str>"x is 0"</SPAN>;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Remember that in case that we want more than a single statement to be 
+      executed, we must group them in a block by enclosing them in braces <TT>{ 
+      }</TT>.
+      <P><A name=loops></A>
+      <H3>Iteration structures (loops)</H3>
+      <P>Loops have as purpose to repeat a statement a certain number of times 
+      or while a condition is fulfilled.
+      <P><A name=while></A>
+      <H4>The while loop</H4>Its format is:
+      <P><TT>while (expression) statement<BR></TT>
+      <P>and its functionality is simply to repeat statement while the condition 
+      set in expression is true.<BR>For example, we are going to make a program 
+      to count down using a while-loop:
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// custom countdown using while</SPAN>
+
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>int</SPAN> main ()
+{
+  <SPAN class=kw>int</SPAN> n;
+  cout &lt;&lt; <SPAN class=str>"Enter the starting number &gt; "</SPAN>;
+  cin &gt;&gt; n;
+
+  <SPAN class=kw>while</SPAN> (n&gt;0) {
+    cout &lt;&lt; n &lt;&lt; <SPAN class=str>", "</SPAN>;
+    --n;
+  }
+
+  cout &lt;&lt; <SPAN class=str>"FIRE!"</SPAN>;
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>Enter the starting number &gt; 8
+8, 7, 6, 5, 4, 3, 2, 1, FIRE!
+</PRE></TD></TR></TBODY></TABLE>
+      <P>When the program starts the user is prompted to insert a starting 
+      number for the countdown. Then the <TT>while</TT> loop begins, if the 
+      value entered by the user fulfills the condition <TT>n&gt;0</TT> (that 
+      <TT>n</TT> is greater than zero) the block that follows the condition will 
+      be executed and repeated while the condition (<TT>n&gt;0</TT>) remains 
+      being true.
+      <P>The whole process of the previous program can be interpreted according 
+      to the following script (beginning in main):
+      <P>
+      <OL>
+        <LI>User assigns a value to <TT>n</TT> 
+        <LI>The while condition is checked (<TT>n&gt;0</TT>). At this point 
+        there are two posibilities:<BR>* condition is true: statement is 
+        executed (to step 3)<BR>* condition is false: ignore statement and 
+        continue after it (to step 5) 
+        <LI>Execute statement:<BR><TT>cout &lt;&lt; n &lt;&lt; ", 
+        ";<BR>--n;<BR></TT>(prints the value of <TT>n</TT> on the screen and 
+        decreases <TT>n</TT> by <TT>1</TT>) 
+        <LI>End of block. Return automatically to step 2 
+        <LI>Continue the program right after the block: print FIRE! and end 
+        program. </LI></OL>
+      <P>When creating a while-loop, we must always consider that it has to end 
+      at some point, therefore we must provide within the block some method to 
+      force the condition to become false at some point, otherwise the loop will 
+      continue looping forever. In this case we have included <TT>--n;</TT> that 
+      decreases the value of the variable that is being evaluated in the 
+      condition (<TT>n</TT>) by one - this will eventually make the condition 
+      (<TT>n&gt;0</TT>) to become false after a certain number of loop 
+      iterations: to be more specific, when <TT>n</TT> becomes <TT>0</TT>, that 
+      is where our while-loop and our countdown end.
+      <P>Of course this is such a simple action for our computer that the whole 
+      countdown is performed instantly without any practical delay between 
+      numbers.
+      <P><A name=do></A>
+      <H4>The do-while loop</H4>
+      <P>Its format is:
+      <P><TT>do statement while (condition);<BR></TT>
+      <P>Its functionality is exactly the same as the while loop, except that 
+      <TT>condition</TT> in the do-while loop is evaluated after the execution 
+      of statement instead of before, granting at least one execution of 
+      <TT>statement</TT> even if <TT>condition</TT> is never fulfilled. For 
+      example, the following example program echoes any number you enter until 
+      you enter <TT>0</TT>.
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// number echoer</SPAN>
+
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>int</SPAN> main ()
+{
+  <SPAN class=kw>unsigned</SPAN> <SPAN class=kw>long</SPAN> n;
+  <SPAN class=kw>do</SPAN> {
+    cout &lt;&lt; <SPAN class=str>"Enter number (0 to end): "</SPAN>;
+    cin &gt;&gt; n;
+    cout &lt;&lt; <SPAN class=str>"You entered: "</SPAN> &lt;&lt; n &lt;&lt; <SPAN class=str>"\n"</SPAN>;
+  } <SPAN class=kw>while</SPAN> (n != 0);
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>Enter number (0 to end): 12345
+You entered: 12345
+Enter number (0 to end): 160277
+You entered: 160277
+Enter number (0 to end): 0
+You entered: 0
+</PRE></TD></TR></TBODY></TABLE>
+      <P>The do-while loop is usually used when the condition that has to 
+      determine the end of the loop is determined <U>within</U> the loop 
+      statement itself, like in the previous case, where the user input within 
+      the block is what is used to determine if the loop has to end. In fact if 
+      you never enter the a value <TT>0</TT> in the previous example you can be 
+      prompted for more numbers forever.
+      <P><A name=for></A>
+      <H4>The for loop</H4>
+      <P>Its format is:
+      <P><TT>for (initialization; condition; increase) statement;<BR></TT>
+      <P>and its main function is to repeat <TT>statement</TT> while 
+      <TT>condition</TT> remains true, like the while loop. But in addition, the 
+      <TT>for</TT> loop provides specific locations to contain an 
+      <TT>initialization</TT> statement and an <TT>increase</TT> statement. So 
+      this loop is specially designed to perform a repetitive action with a 
+      counter which is initialized and increased on each iteration.
+      <P>It works in the following way:
+      <P>
+      <OL>
+        <LI><TT>initialization</TT> is executed. Generally it is an initial 
+        value setting for a counter variable. This is executed only once. 
+        <LI><TT>condition</TT> is checked. If it is true the loop continues, 
+        otherwise the loop ends and <TT>statement</TT> is skipped (not 
+        executed). 
+        <LI><TT>statement</TT> is executed. As usual, it can be either a single 
+        statement or a block enclosed in braces <TT>{ }</TT>. 
+        <LI>finally, whatever is specified in the <TT>increase</TT> field is 
+        executed and the loop gets back to step 2. </LI></OL>
+      <P>Here is an example of countdown using a for loop:
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// countdown using a for loop</SPAN>
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+<SPAN class=kw>int</SPAN> main ()
+{
+  <SPAN class=kw>for</SPAN> (<SPAN class=kw>int</SPAN> n=10; n&gt;0; n--) {
+    cout &lt;&lt; n &lt;&lt; <SPAN class=str>", "</SPAN>;
+  }
+  cout &lt;&lt; <SPAN class=str>"FIRE!"</SPAN>;
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>10, 9, 8, 7, 6, 5, 4, 3, 2, 1, FIRE!
+</PRE></TD></TR></TBODY></TABLE>
+      <P>The <TT>initialization</TT> and <TT>increase</TT> fields are optional. 
+      They can remain empty, but in all cases the semicolon signs between them 
+      must be written. For example we could write: <TT>for (;n&lt;10;)</TT> if 
+      we wanted to specify no initialization and no increase; or <TT>for 
+      (;n&lt;10;n++)</TT> if we wanted to include an increase field but no 
+      initialization (maybe because the variable was already initialized 
+before).
+      <P>Optionally, using the comma operator (<TT>,</TT>) we can specify more 
+      than one expression in any of the fields included in a <TT>for</TT> loop, 
+      like in <TT>initialization</TT>, for example. The comma operator 
+      (<TT>,</TT>) is an expression separator, it serves to separate more than 
+      one expression where only one is generally expected. For example, suppose 
+      that we wanted to initialize more than one variable in our loop:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>for</SPAN> ( n=0, i=100 ; n!=i ; n++, i-- )
+{
+   <SPAN class=comm>// whatever here...</SPAN>
+}
+</PRE></TD></TR></TBODY></TABLE>
+      <P>This loop will execute for 50 times if neither <TT>n</TT> or <TT>i</TT> 
+      are modified within the loop:
+      <P><IMG src="Control Structures_files/6-imgloop1.gif">
+      <P><TT>n</TT> starts with a value of <TT>0</TT>, and <TT>i</TT> with 
+      <TT>100</TT>, the condition is <TT>n!=i</TT> (that <TT>n</TT> is not equal 
+      to <TT>i</TT>). Beacuse <TT>n</TT> is increased by one and <TT>i</TT> 
+      decreased by one, the loop's condition will become false after the 50th 
+      loop, when both <TT>n</TT> and <TT>i</TT> will be equal to <TT>50</TT>.
+      <P><A name=jump_statements></A>
+      <H3>Jump statements.</H3>
+      <P><A name=break></A>
+      <H4>The break statement</H4>
+      <P>Using <TT>break</TT> we can leave a loop even if the condition for its 
+      end is not fulfilled. It can be used to end an infinite loop, or to force 
+      it to end before its natural end. For example, we are going to stop the 
+      count down before its natural end (maybe because of an engine check 
+      failure?):
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// break loop example</SPAN>
+
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>int</SPAN> main ()
+{
+  <SPAN class=kw>int</SPAN> n;
+  <SPAN class=kw>for</SPAN> (n=10; n&gt;0; n--)
+  {
+    cout &lt;&lt; n &lt;&lt; <SPAN class=str>", "</SPAN>;
+    <SPAN class=kw>if</SPAN> (n==3)
+    {
+      cout &lt;&lt; <SPAN class=str>"countdown aborted!"</SPAN>;
+      <SPAN class=kw>break</SPAN>;
+    }
+  }
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>10, 9, 8, 7, 6, 5, 4, 3, countdown aborted!
+</PRE></TD></TR></TBODY></TABLE>
+      <P><A name=continue></A>
+      <H4>The continue statement</H4>
+      <P>The <TT>continue</TT> statement causes the program to skip the rest of 
+      the loop in the current iteration as if the end of the statement block had 
+      been reached, causing it to jump to the start of the following iteration. 
+      For example, we are going to skip the number 5 in our countdown:
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// continue loop example</SPAN>
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>int</SPAN> main ()
+{
+  <SPAN class=kw>for</SPAN> (<SPAN class=kw>int</SPAN> n=10; n&gt;0; n--) {
+    <SPAN class=kw>if</SPAN> (n==5) <SPAN class=kw>continue</SPAN>;
+    cout &lt;&lt; n &lt;&lt; <SPAN class=str>", "</SPAN>;
+  }
+  cout &lt;&lt; <SPAN class=str>"FIRE!"</SPAN>;
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>10, 9, 8, 7, 6, 4, 3, 2, 1, FIRE!
+</PRE></TD></TR></TBODY></TABLE>
+      <P><A name=goto></A>
+      <H4>The goto statement</H4><TT>goto</TT> allows to make an absolute jump 
+      to another point in the program. You should use this feature with caution 
+      since its execution causes an unconditional jump ignoring any type of 
+      nesting limitations.<BR>The destination point is identified by a label, 
+      which is then used as an argument for the goto statement. A label is made 
+      of a valid identifier followed by a colon (<TT>:</TT>).
+      <P>Generally speaking, this instruction has no concrete uses in structured 
+      or object oriented programming aside from those that low-level programming 
+      fans may find for it. For example, here is our countdown loop using 
+      <TT>goto</TT>:
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// goto loop example</SPAN>
+
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>int</SPAN> main ()
+{
+  <SPAN class=kw>int</SPAN> n=10;
+  loop:
+  cout &lt;&lt; n &lt;&lt; <SPAN class=str>", "</SPAN>;
+  n--;
+  <SPAN class=kw>if</SPAN> (n&gt;0) <SPAN class=kw>goto</SPAN> loop;
+  cout &lt;&lt; <SPAN class=str>"FIRE!"</SPAN>;
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>10, 9, 8, 7, 6, 5, 4, 3, 2, 1, FIRE!
+</PRE></TD></TR></TBODY></TABLE>
+      <P><A name=exit></A>
+      <H4>The exit function</H4>
+      <P><TT>exit</TT> is a function defined in the <TT>cstdlib</TT> library.
+      <P>The purpose of <TT>exit</TT> is to terminate the current program with a 
+      specific exit code. Its prototype is:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>void</SPAN> exit (<SPAN class=kw>int</SPAN> exitcode);
+</PRE></TD></TR></TBODY></TABLE>
+      <P>The <TT>exitcode</TT> is used by some operating systems and may be used 
+      by calling programs. By convention, an exit code of <TT>0</TT> means that 
+      the program finished normally and any other value means that some error or 
+      unexpected results happened.
+      <P><A name=switch></A>
+      <H3>The selective structure: switch.</H3>The syntax of the switch 
+      statement is a bit peculiar. Its objective is to check several possible 
+      constant values for an expression. Something similar to what we did at the 
+      beginning of this section with the concatenation of several <TT>if</TT> 
+      and <TT>else if</TT> instructions. Its form is the following:
+      <P><PRE>switch (expression)<BR>{<BR>  case constant1:<BR>     group of statements 1;<BR>     break;<BR>  case constant2:<BR>     group of statements 2;<BR>     break;<BR>  .<BR>  .<BR>  .<BR>  default:<BR>     default group of statements<BR>}<BR></PRE>
+      <P>It works in the following way: switch evaluates <TT>expression</TT> and 
+      checks if it is equivalent to <TT>constant1</TT>, if it is, it executes 
+      <TT>group of statements 1</TT> until it finds the <TT>break</TT> 
+      statement. When it finds this <TT>break</TT> statement the program jumps 
+      to the end of the <TT>switch</TT> selective structure.
+      <P>If expression was not equal to <TT>constant1</TT> it will be checked 
+      against <TT>constant2</TT>. If it is equal to this, it will execute 
+      <TT>group of statements 2</TT> until a break keyword is found, and then 
+      will jump to the end of the <TT>switch</TT> selective structure.
+      <P>Finally, if the value of <TT>expression</TT> did not match any of the 
+      previously specified constants (you can include as many <TT>case</TT> 
+      labels as values you want to check), the program will execute the 
+      statements included after the <TT>default:</TT> label, if it exists (since 
+      it is optional).
+      <P>Both of the following code fragments have the same behavior:
+      <P>
+      <TABLE class=boxed>
+        <TBODY>
+        <TR>
+          <TH>switch example</TH>
+          <TH>if-else equivalent</TH></TR>
+        <TR>
+          <TD><PRE>switch (x) {<BR>  case 1:<BR>    cout &lt;&lt; "x is 1";<BR>    break;<BR>  case 2:<BR>    cout &lt;&lt; "x is 2";<BR>    break;<BR>  default:<BR>    cout &lt;&lt; "value of x unknown";<BR>  }<BR></PRE></TD>
+          <TD><PRE>if (x == 1) {<BR>  cout &lt;&lt; "x is 1";<BR>  }<BR>else if (x == 2) {<BR>  cout &lt;&lt; "x is 2";<BR>  }<BR>else {<BR>  cout &lt;&lt; "value of x unknown";<BR>  }<BR></PRE></TD></TR></TBODY></TABLE>
+      <P>The <TT>switch</TT> statement is a bit peculiar within the C++ language 
+      because it uses labels instead of blocks. This forces us to put 
+      <TT>break</TT> statements after the group of statements that we want to be 
+      executed for a specific condition. Otherwise the remainder statements 
+      -including those corresponding to other labels- will also be executed 
+      until the end of the <TT>switch</TT> selective block or a <TT>break</TT> 
+      statement is reached.
+      <P>For example, if we did not include a <TT>break</TT> statement after the 
+      first group for case one, the program will not automatically jump to the 
+      end of the <TT>switch</TT> selective block and it would continue executing 
+      the rest of statements until it reaches either a <TT>break</TT> 
+      instruction or the end of the <TT>switch</TT> selective block. This makes 
+      unnecessary to include braces <TT>{ }</TT> surrounding the statements for 
+      each of the cases, and it can also be useful to execute the same block of 
+      instructions for different possible values for the expression being 
+      evaluated. For example: 
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>switch</SPAN> (x) {
+  <SPAN class=kw>case</SPAN> 1:
+  <SPAN class=kw>case</SPAN> 2:
+  <SPAN class=kw>case</SPAN> 3:
+    cout &lt;&lt; <SPAN class=str>"x is 1, 2 or 3"</SPAN>;
+    <SPAN class=kw>break</SPAN>;
+  <SPAN class=kw>default</SPAN>:
+    cout &lt;&lt; <SPAN class=str>"x is not 1, 2 nor 3"</SPAN>;
+  }
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Notice that switch can only be used to compare an expression against 
+      constants. Therefore we cannot put variables as labels (for example 
+      <TT>case n:</TT> where <TT>n</TT> is a variable) or ranges (<TT>case 
+      (1..3):</TT>) because they are not valid C++ constants.
+      <P>If you need to check ranges or values that are not constants, use a 
+      concatenation of <TT>if</TT> and <TT>else if</TT> statements.<BR>
+      <P>
+      <CENTER>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD align=right width="49%"><A 
+            href="http://www.cplusplus.com/doc/tutorial/basic_io.html"><IMG 
+            src="Control Structures_files/navigate_previous.gif" align=right 
+            border=0>Previous:<BR><B>Basic Input/Output</B></A> </TD>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/"><IMG 
+            src="Control Structures_files/navigate_index.gif" 
+            border=0><BR>index</A></TD>
+          <TD align=left width="49%"><A 
+            href="http://www.cplusplus.com/doc/tutorial/functions.html"><IMG 
+            src="Control Structures_files/navigate_next.gif" align=left 
+            border=0>Next:<BR><B>Functions (I)</B></A> 
+      </TD></TR></TBODY></TABLE></CENTER>
+      <P></P>
+      <P>
+      <SCRIPT type=text/javascript>
+<!--
+SuOptions()
+-->
+</SCRIPT>
+      </P></DIV></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-TOP: black 1px solid; BACKGROUND: #d7d7d7; PADDING-BOTTOM: 5px" 
+    align=middle colSpan=2><SMALL>© The C++ Resources Network, 2000-2005 - All 
+      rights reserved</SMALL></TD></TR></TBODY></TABLE></BODY></HTML>

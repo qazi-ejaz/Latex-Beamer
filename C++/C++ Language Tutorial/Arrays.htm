@@ -1,0 +1,925 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0049)http://www.cplusplus.com/doc/tutorial/arrays.html -->
+<HTML><HEAD><TITLE>Arrays</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<STYLE type=text/css>BODY {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+TABLE {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+INPUT {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+SELECT {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+TEXTAREA {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+FORM {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+PRE {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+DT {
+	FONT-WEIGHT: bold
+}
+DD {
+	MARGIN-BOTTOM: 12px
+}
+UL {
+	MARGIN-BOTTOM: 12px
+}
+UL {
+	MARGIN-TOP: 4px
+}
+LI {
+	MARGIN-BOTTOM: 4px
+}
+A:link {
+	COLOR: #000070; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #000070; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #000070; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #0000a0; TEXT-DECORATION: underline
+}
+.imgbox {
+	LINE-HEIGHT: 1px
+}
+.stdform {
+	BORDER-RIGHT: #00007f 1px solid; BORDER-TOP: #00007f 1px solid; BORDER-LEFT: #00007f 1px solid; BORDER-BOTTOM: #00007f 1px solid
+}
+.stdform TH {
+	BORDER-RIGHT: #00007f 1px solid; BORDER-TOP: #00007f 1px solid; BORDER-LEFT: #00007f 1px solid; BORDER-BOTTOM: #00007f 1px solid
+}
+.stdform TD {
+	BORDER-RIGHT: #707080 1px solid; BORDER-TOP: #707080 1px solid; BORDER-LEFT: #707080 1px solid; BORDER-BOTTOM: #707080 1px solid; TEXT-ALIGN: left
+}
+.stdform TR TD {
+	BACKGROUND: #f0f0ff
+}
+.stdform TR.odd TD {
+	BACKGROUND: #e0e0ff
+}
+.stdform TH {
+	BACKGROUND: url(/img/blue.gif) blue; COLOR: #ffffff
+}
+.stdform TH A:link {
+	COLOR: white
+}
+.stdform TH A:visited {
+	COLOR: white
+}
+.stdform TH A:active {
+	COLOR: white
+}
+.stdform TH A:hover {
+	COLOR: yellow
+}
+.stdform .txt {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid; BACKGROUND-COLOR: #fffff0
+}
+.stdform SELECT {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid; BACKGROUND-COLOR: #fffff0
+}
+.stdform TEXTAREA {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid; BACKGROUND-COLOR: #fffff0
+}
+.stdform TEXTAREA {
+	FONT-FAMILY: monospace
+}
+.stdform .field {
+	FONT-WEIGHT: bold; TEXT-ALIGN: right
+}
+.stdform .value {
+	FONT-FAMILY: courier,monospace
+}
+.stdform .description {
+	FONT-SIZE: 80%
+}
+.stdform .buttons {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; TEXT-ALIGN: center
+}
+.stdform TR.separator TD {
+	FONT-WEIGHT: bold; BACKGROUND: white
+}
+.stdform .number {
+	TEXT-ALIGN: center
+}
+.secform {
+	BORDER-RIGHT: #ff6020 1px solid; BORDER-TOP: #ff6020 1px solid; BORDER-LEFT: #ff6020 1px solid; BORDER-BOTTOM: #ff6020 1px solid; BORDER-COLLAPSE: collapse
+}
+.secform TD {
+	BORDER-RIGHT: #ff6020 1px solid; BORDER-TOP: #ff6020 1px solid; BORDER-LEFT: #ff6020 1px solid; BORDER-BOTTOM: #ff6020 1px solid; BORDER-COLLAPSE: collapse
+}
+.secform TR {
+	BACKGROUND: #fffff0
+}
+.secform TR.odd TD {
+	BACKGROUND: #ffffd0
+}
+.secform TH {
+	BACKGROUND: url(/img/orange.gif) #ff6020; COLOR: #ffffff
+}
+.errors {
+	BORDER-RIGHT: #7f0000 1px solid; BORDER-TOP: #7f0000 1px solid; BORDER-LEFT: #7f0000 1px solid; BORDER-BOTTOM: #7f0000 1px solid
+}
+.errors TH {
+	BORDER-RIGHT: #7f0000 1px solid; BORDER-TOP: #7f0000 1px solid; BORDER-LEFT: #7f0000 1px solid; BORDER-BOTTOM: #7f0000 1px solid
+}
+.errors TD {
+	BORDER-RIGHT: #807070 1px solid; BORDER-TOP: #807070 1px solid; BORDER-LEFT: #807070 1px solid; BORDER-BOTTOM: #807070 1px solid; TEXT-ALIGN: left
+}
+.errors TH {
+	BACKGROUND: red; COLOR: #ffffff
+}
+.errors TD {
+	BACKGROUND: #ffe0e0
+}
+.bar {
+	BACKGROUND: url(/img/headbg.gif); COLOR: white; LINE-HEIGHT: 20px
+}
+.bar TABLE {
+	FONT-SIZE: 9px; COLOR: white; LINE-HEIGHT: 16px
+}
+.bar A:link {
+	COLOR: white
+}
+.bar A:visited {
+	COLOR: white
+}
+.bar A:active {
+	COLOR: white
+}
+.bar A:hover {
+	COLOR: yellow; TEXT-DECORATION: none
+}
+.bar .txt {
+	BORDER-RIGHT: 1px inset; BORDER-TOP: 1px inset; BORDER-LEFT: 1px inset; BORDER-BOTTOM: 1px inset; HEIGHT: 14px; BACKGROUND-COLOR: #c0c0ff
+}
+.bar .btn {
+	BORDER-RIGHT: 1px outset; BORDER-TOP: 1px outset; FONT-SIZE: 9px; BORDER-LEFT: 1px outset; BORDER-BOTTOM: 1px outset; HEIGHT: 18px; BACKGROUND-COLOR: #c0c0ff
+}
+.left {
+	BORDER-RIGHT: black 1px solid
+}
+.left TABLE {
+	BORDER-RIGHT: #00007f 1px solid; BORDER-TOP: #00007f 1px solid; MARGIN-TOP: 5px; BACKGROUND: white; BORDER-LEFT: #00007f 1px solid; WIDTH: 160px; BORDER-BOTTOM: #00007f 1px solid; BORDER-COLLAPSE: collapse
+}
+.left TD {
+	FONT-SIZE: x-small; COLOR: #000070; FONT-FAMILY: verdana,arial,helvetica,sans-serif; TEXT-ALIGN: left
+}
+.left TH {
+	FONT-SIZE: xx-small; BACKGROUND: url(/img/blue.gif) blue; COLOR: #ffffff; FONT-FAMILY: verdana,arial,helvetica,sans-serif; HEIGHT: 14px
+}
+.left TH A:link {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.left TH A:visited {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.left TH A:active {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.left TH A:hover {
+	COLOR: yellow; TEXT-DECORATION: none
+}
+.warning {
+	BORDER-RIGHT: red 2px solid; BORDER-TOP: red 2px solid; BACKGROUND: #ffc000; BORDER-LEFT: red 2px solid; BORDER-BOTTOM: red 2px solid
+}
+.content {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px
+}
+.boxed {
+	BORDER-COLLAPSE: collapse
+}
+.boxed TH {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BACKGROUND: #e0e0e0; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid
+}
+.boxed TD {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid
+}
+.code A:link {
+	COLOR: black; TEXT-DECORATION: none
+}
+.code A:visited {
+	COLOR: black; TEXT-DECORATION: none
+}
+.code A:active {
+	COLOR: black; TEXT-DECORATION: none
+}
+.code A:hover {
+	BACKGROUND: yellow; COLOR: black; TEXT-DECORATION: none
+}
+.codebox {
+	WIDTH: 100%
+}
+.snippet {
+	MARGIN-LEFT: 20px
+}
+.code {
+	BORDER-RIGHT: #c0c0d0 1px solid; BORDER-TOP: #c0c0d0 1px solid; BACKGROUND: #efefff; BORDER-LEFT: #c0c0d0 1px solid; BORDER-BOTTOM: #c0c0d0 1px solid
+}
+.result {
+	BORDER-RIGHT: #c0c0c0 1px solid; BORDER-TOP: #c0c0c0 1px solid; BACKGROUND: #e7e7e7; VERTICAL-ALIGN: top; BORDER-LEFT: #c0c0c0 1px solid; WIDTH: 50%; BORDER-BOTTOM: #c0c0c0 1px solid
+}
+.codebox {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-TOP-STYLE: none; PADDING-TOP: 0px; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+.kw {
+	COLOR: #0000b0
+}
+A.kw:hover {
+	COLOR: #0000b0
+}
+A.kw:link {
+	COLOR: #0000b0
+}
+A.kw:visited {
+	COLOR: #0000b0
+}
+A.kw:active {
+	COLOR: #0000b0
+}
+.prep {
+	COLOR: #500070
+}
+.comm {
+	COLOR: #007000
+}
+.str {
+	COLOR: #600030
+}
+</STYLE>
+
+<SCRIPT type=text/javascript>
+<!--
+function GetCookie(name) {
+  var dc = document.cookie;
+  var prefix = name + '=';
+  var begin = dc.indexOf('; ' + prefix);
+  if (begin == -1) {
+    begin = dc.indexOf(prefix);
+    if (begin != 0) return null;
+  } else
+    begin += 2;
+  var end = document.cookie.indexOf(';', begin);
+  if (end == -1)
+    end = dc.length;
+  var sret=unescape(dc.substring(begin + prefix.length, end));
+  var aret=sret.split('+'); sret=aret.join(' ');
+  return sret;
+}
+
+var user=GetCookie ('codehq_user');
+
+var mo = new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
+
+function When(ts) {
+ var dt = new Date(ts*1000);
+ document.write(mo[dt.getMonth()]+" "+dt.getDate()+", "+(dt.getYear()+(dt.getYear()<1900?1900:0)));
+ document.write(" at "+((dt.getHours()%12)==0?12:dt.getHours()%12)+":"+(dt.getMinutes()<10?"0":"")+dt.getMinutes()+(dt.getHours()<12?"am":"pm"));
+}
+
+function LoginBox() {
+if (!user)
+{
+	document.write ('<table cellspacing=2 cellpadding="0" valign="top">');
+	document.write ('<tr><td align="center"><b>user<\/b><\/td><td align="center"><b>pass<\/b><\/td><td align="center">[<a href="/member/signup.form">register<\/a>]<\/td><\/tr>');
+	document.write ('<tr><td align="center"><input class="txt" name="l" size="4" type="text"><\/td>');
+	document.write (' <td align="center"><input class="txt" name="p" size="4" type="password"><\/td>');
+	document.write (' <td align="center"><input class="btn" value="sign in" type="submit"><\/td><\/tr>');
+	document.write ('<\/table>');
+}
+else
+{
+	document.write ('<table width="150" cellspacing="2" cellpadding="0" valign="top">');
+	document.write ('<tr><td colspan="2" align="center">Logged in as: <b>'+user+'<\/b></td></tr>');	
+	document.write ('<tr><td align="right"><input class="btn" value="log out" type="submit"><input type="hidden" name="redirectto" value="/doc/tutorial/arrays.html"><input type="hidden" name="logout" value="sign out"></td>');
+	document.write ('<td align="left">[<b><a href="/member/">profile<\/a><\/b>]<\/font>');
+	document.write ('<\/td><\/tr>');
+	document.write ('<\/table>');
+}
+}
+
+var lowuser=user.toLowerCase();
+var faaccess=new Boolean ( (( GetCookie('codehq_access') & 256 )==256 ));
+function SuOptions() {
+	if ((faaccess==true)||(lowuser=="juan soulie"))
+	{
+		document.write(' [<a href="/doc/publish.form?what=edit&itemid=9">Edit this document<\/a>] ');
+	}
+}
+//-->
+</SCRIPT>
+
+<META content="MSHTML 6.00.2900.2180" name=GENERATOR></HEAD>
+<BODY bgColor=#d7d7d7>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=imgbox vAlign=top bgColor=#b0c0d0 rowSpan=2><A 
+      href="http://www.cplusplus.com/"><IMG height=75 
+      src="Arrays_files/headlogo1.gif" width=165 border=0></A></TD>
+    <TD class=imgbox vAlign=top bgColor=#ffffff><A 
+      href="http://www.cplusplus.com/"><IMG height=18 
+      src="Arrays_files/headlogo2.gif" width=33 border=0></A></TD>
+    <TD width="95%" bgColor=#d7d7d7></TD>
+    <TD bgColor=#d7d7d7></TD></TR>
+  <TR>
+    <TD class=imgbox vAlign=top bgColor=#ffffff><A 
+      href="http://www.cplusplus.com/"><IMG height=57 
+      src="Arrays_files/headlogo3.gif" width=33 border=0></A></TD>
+    <TD class=bar vAlign=top width="95%">&nbsp; <B><A 
+      href="http://www.cplusplus.com/">C++</A> : <A 
+      href="http://www.cplusplus.com/doc/">Documents</A> : <A 
+      href="http://www.cplusplus.com/doc/tutorial/">C++ Language Tutorial</A> : 
+      Arrays </B><BR>
+      <FORM name=search action=/search/search.php method=get>&nbsp; Search: 
+      <INPUT class=txt size=13 name=q> <INPUT class=btn type=submit value=Search> </FORM></TD>
+    <TD class=bar vAlign=top>
+      <FORM name=login action=/member/login.form method=post><INPUT type=hidden 
+      value=1 name=login><INPUT type=hidden value=/doc/tutorial/arrays.html 
+      name=redirectto>
+      <SCRIPT type=text/javascript>
+<!--
+LoginBox();
+// -->
+</SCRIPT>
+       </FORM><NOSCRIPT>
+      <CENTER>javascript and cookies 
+required</CENTER></NOSCRIPT></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD style="BORDER-RIGHT: black 1px solid; LINE-HEIGHT: 1px" width=165 
+    bgColor=#b0c0d0><IMG height=1 src="Arrays_files/165x1.gif" width=165></TD>
+    <TD class=imgbox width="99%" bgColor=white><IMG height=1 
+      src="Arrays_files/165x1.gif" width=165></TD></TR>
+  <TR><!-- left -->
+    <TD class=left vAlign=top align=middle width=165 bgColor=#b0c0d0>
+      <TABLE class=box>
+        <TBODY>
+        <TR>
+          <TH><A href="http://www.cplusplus.com/doc/tutorial/">C++ Language 
+            Tutorial</A></TH></TR>
+        <TR>
+          <TD><B>Introduction</B></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/introduction.html">· 
+            Instructions for use</A></TD></TR>
+        <TR>
+          <TD><B>Basics of C++</B></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/program_structure.html">· 
+            Structure of a program</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/variables.html">· 
+            Variables. Data Types.</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/constants.html">· 
+            Constants</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/operators.html">· 
+            Operators</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/basic_io.html">· 
+            Basic Input/Output</A></TD></TR>
+        <TR>
+          <TD><B>Control Structures</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/control.html">· 
+            Control Structures</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/functions.html">· 
+            Functions (I)</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/functions2.html">· 
+            Functions (II)</A></TD></TR>
+        <TR>
+          <TD><B>Compound Data Types</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/arrays.html">· 
+            Arrays</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/ntcs.html">· 
+            Character Sequences</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/pointers.html">· 
+            Pointers</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/dynamic.html">· 
+            Dynamic Memory</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/structures.html">· Data 
+            Structures</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/other_data_types.html">· 
+            Other Data Types</A></TD></TR>
+        <TR>
+          <TD><B>Object Oriented Programming</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/classes.html">· 
+            Classes (I)</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/classes2.html">· 
+            Classes (II)</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/inheritance.html">· 
+            Friendship and inheritance</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/polymorphism.html">· 
+            Polymorphism</A></TD></TR>
+        <TR>
+          <TD><B>Advanced Concepts</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/templates.html">· 
+            Templates</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/namespaces.html">· 
+            Namespaces</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/exceptions.html">· 
+            Exceptions</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/typecasting.html">· Type 
+            Casting</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/preprocessor.html">· 
+            Preprocessor directives</A></TD></TR>
+        <TR>
+          <TD><B>C++ Standard Library</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/files.html">· 
+            Input/Output with files</A></TD></TR></TBODY></TABLE>
+      <TABLE class=box>
+        <TBODY>
+        <TR>
+          <TH><A href="http://www.cplusplus.com/doc/">Document 
+          categories</A></TH></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/information/">Information 
+            about C++</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/">C++ Language 
+            Tutorial</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/papers/">Additional 
+            Papers</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/general/">User-contributed</A></TD></TR></TBODY></TABLE>
+      <TABLE class=box>
+        <TBODY>
+        <TR>
+          <TH><A href="http://www.cplusplus.com/">cplusplus.com</A></TH></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/">documents</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/ref/">reference</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/src/">sourcecodes</A></TD></TR>
+        <TR>
+          <TD><A 
+      href="http://www.cplusplus.com/forum/">forum</A></TD></TR></TBODY></TABLE><BR><IMG 
+      height=1 src="Arrays_files/165x1.gif" width=165>
+      <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-5777024789006368";
+google_ad_width = 125;
+google_ad_height = 125;
+google_ad_format = "125x125_as";
+google_ad_type = "text_image";
+google_ad_channel ="5923551140";
+google_color_border = "3333CC";
+google_color_bg = "FFFFFF";
+google_color_link = "3333CC";
+google_color_url = "000000";
+google_color_text = "000000";
+//--></SCRIPT>
+
+      <SCRIPT language=javascript src="Arrays_files/1x1.js"></SCRIPT>
+       <NOSCRIPT><A 
+      href="http://media.fastclick.net/w/click.here?sid=4636&amp;m=3&amp;c=1" 
+      target=_top><IMG height=600 src="Arrays_files/1x1.gif" width=160 
+      border=1></A></NOSCRIPT> <IMG height=1 src="Arrays_files/165x1.gif" 
+      width=165> </TD><!-- /left -->
+    <TD vAlign=top width="99%" bgColor=white>
+      <CENTER>
+      <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-5777024789006368";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text_image";
+google_ad_channel ="1922709837";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "000000";
+google_color_text = "000000";
+//--></SCRIPT>
+
+      <SCRIPT language=javascript src="Arrays_files/show_ads.js"></SCRIPT>
+      <NOSCRIPT><A 
+      href="http://media.fastclick.net/w/click.here?sid=4636&amp;m=1&amp;c=1" 
+      target=_top><IMG height=90 src="F:\New Folder\Arrays_files\1x1(1).gif" 
+      width=728 border=1></A></NOSCRIPT> </CENTER>
+      <DIV class=content>
+      <TABLE width="100%">
+        <TBODY>
+        <TR>
+          <TD>
+            <H1>Arrays</H1></TD>
+          <TD align=right>
+            <TABLE>
+              <TBODY>
+              <TR>
+                <TD align=right>Published by <B><A 
+                  href="http://www.cplusplus.com/member/Juan_Soulie/">Juan 
+                  Soulie</A></B></TD></TR>
+              <TR>
+                <TD align=right><SMALL>Last update on
+                  <SCRIPT type=text/javascript>When(1147797850)</SCRIPT>
+                   </SMALL></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>An array is a 
+      series of elements of the same type placed in contiguous memory locations 
+      that can be individually referenced by adding an index to a unique 
+      identifier.
+      <P>That means that, for example, we can store 5 values of type 
+      <TT>int</TT> in an array without having to declare 5 different variables, 
+      each one with a different identifier. Instead of that, using an array we 
+      can store 5 different values of the same type, <TT>int</TT> for example, 
+      with a unique identifier.
+      <P>For example, an array to contain 5 integer values of type <TT>int</TT> 
+      called <TT>billy</TT> could be represented like this:
+      <P><IMG src="Arrays_files/9-imgarra1.gif">
+      <P>where each blank panel represents an element of the array, that in this 
+      case are integer values of type <TT>int</TT>. These elements are numbered 
+      from <TT>0</TT> to <TT>4</TT> since in arrays the first index is always 
+      <TT>0</TT>, independently of its length.
+      <P>Like a regular variable, an array must be declared before it is used. A 
+      typical declaration for an array in C++ is:
+      <P><TT>type name [elements];<BR></TT>
+      <P>where <TT>type</TT> is a valid type (like <TT>int</TT>, 
+      <TT>float</TT>...), <TT>name</TT> is a valid identifier and the 
+      <TT>elements</TT> field (which is always enclosed in square brackets 
+      <TT>[]</TT>), specifies how many of these elements the array has to 
+      contain.
+      <P>Therefore, in order to declare an array called <TT>billy</TT> as the 
+      one shown in the above diagram it is as simple as:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>int</SPAN> billy [5];
+</PRE></TD></TR></TBODY></TABLE>
+      <P><B>NOTE</B>: The <TT>elements</TT> field within brackets <TT>[]</TT> 
+      which represents the number of elements the array is going to hold, must 
+      be a <U>constant</U> value, since arrays are blocks of non-dynamic memory 
+      whose size must be determined before execution. In order to create arrays 
+      with a variable length dynamic memory is needed, which is explained later 
+      in these tutorials.
+      <P><A name=initilize_array></A>
+      <H3>Initializing arrays.</H3>When declaring a regular array of local scope 
+      (within a function, for example), if we do not specify otherwise, its 
+      elements will not be initialized to any value by default, so their content 
+      will be undetermined until we store some value in them. Global and static 
+      arrays, on the other hand, are automatically initialized filled with 
+zeros.
+      <P>In both cases, local and global, when we declare an Array, we have the 
+      possibility to assign initial values to each one of its elements by 
+      enclosing the values in braces <TT>{ }</TT>. For example:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>int</SPAN> billy [5] = { 16, 2, 77, 40, 12071 }; 
+</PRE></TD></TR></TBODY></TABLE>
+      <P>This declaration would have created an array like this:
+      <P><IMG src="Arrays_files/9-imgarra3.gif">
+      <P>The amount of values between braces <TT>{ }</TT> must not be larger 
+      than the number of elements that we declare for the array between square 
+      brackets <TT>[ ]</TT>. For example, in the example of array <TT>billy</TT> 
+      we have declared that it has 5 elements and in the list of initial values 
+      within braces <TT>{ }</TT> we have specified 5 values, one for each 
+      element.
+      <P>When an initialization of values is provided for an array, C++ allows 
+      the possibility of leaving the square brackets empty <TT>[ ]</TT>. In this 
+      case, the compiler will assume a size for the Array that matches the 
+      number of values included between braces <TT>{ }</TT>:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>int</SPAN> billy [] = { 16, 2, 77, 40, 12071 };
+</PRE></TD></TR></TBODY></TABLE>
+      <P>After this declaration, Array <TT>billy</TT> would be 5 ints long, 
+      since we have provided 5 initialization values.
+      <P><A name=accessing_values></A>
+      <H3>Accessing the values of an Array.</H3>
+      <P>In any point of a program in which an array is visible, we can access 
+      the value of any of its elements individually as if it was a normal 
+      variable, thus being able to both read and modify its value. The format is 
+      as simple as:
+      <P><TT>name[index] </TT>
+      <P>Following the previous examples in which <TT>billy</TT> had 5 elements 
+      and each of those elements was of type <TT>int</TT>, the name which we can 
+      use to refer to each element is the following:
+      <P><IMG src="Arrays_files/9-imgarra2.gif">
+      <P>For example, to store the value <TT>75</TT> in the third element of 
+      <TT>billy</TT>, we could write the following statement:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>billy[2] = 75;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>and, for example, to pass the value of the third element of 
+      <TT>billy</TT> to a variable called <TT>a</TT>, we could write:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>a = billy[2];
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Therefore, the expression <TT>billy[2]</TT> is for all purposes like a 
+      variable of type <TT>int</TT>.
+      <P>Notice that the third element of <TT>billy</TT> is specified 
+      <TT>billy[2]</TT>, since the first one is <TT>billy[0]</TT>, the second 
+      one is <TT>billy[1]</TT>, and therefore, the third one is 
+      <TT>billy[2]</TT>. By this same reason, its last element is 
+      <TT>billy[4]</TT>. Therefore, if we write billy[5], we would be accessing 
+      the sixth element of <TT>billy</TT> and therefore exceeding the size of 
+      the array.
+      <P>In C++ it is syntactically correct to exceed the valid range of indices 
+      for an Array. This can create problems, since accessing out-of-range 
+      elements do not cause compilation errors but can cause runtime errors. The 
+      reason why this is allowed will be seen farther ahead when we begin to use 
+      pointers.
+      <P>At this point it is important to be able to clearly distinguish between 
+      the two uses that brackets <TT>[ ]</TT> have related to arrays. They 
+      perform two different tasks: one is to specify the size of arrays when 
+      they are declared; and the second one is to specify indices for concrete 
+      array elements. Do not confuse these two possible uses of brackets <TT>[ 
+      ]</TT> with arrays.
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>int</SPAN> billy[5];         <SPAN class=comm>// declaration of a new Array</SPAN>
+billy[2] = 75;        <SPAN class=comm>// access to an element of the Array.</SPAN>
+</PRE></TD></TR></TBODY></TABLE>
+      <P>If you read carefully, you will see that a type specifier always 
+      precedes a variable or array declaration, while it never precedes an 
+      access.
+      <P>Some other valid operations with arrays:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>billy[0] = a;
+billy[a] = 75;
+b = billy [a+2];
+billy[billy[a]] = billy[2] + 5;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// arrays example</SPAN>
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>int</SPAN> billy [] = {16, 2, 77, 40, 12071};
+<SPAN class=kw>int</SPAN> n, result=0;
+
+<SPAN class=kw>int</SPAN> main ()
+{
+  <SPAN class=kw>for</SPAN> ( n=0 ; n&lt;5 ; n++ )
+  {
+    result += billy[n];
+  }
+  cout &lt;&lt; result;
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>12206
+</PRE></TD></TR></TBODY></TABLE>
+      <P><A name=multidimensional_arrays></A>
+      <H3>Multidimensional Arrays</H3>
+      <P>Multidimensional arrays can be described as "arrays of arrays". For 
+      example, a bidimensional array can be imagined as a bidimensional table 
+      made of elements, all of them of a same uniform data type.
+      <P><IMG src="Arrays_files/9-imgarra5.gif">
+      <P><TT>jimmy</TT> represents a bidimensional array of 3 per 5 elements of 
+      type <TT>int</TT>. The way to declare this array in C++ would be:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>int</SPAN> jimmy [3][5];
+</PRE></TD></TR></TBODY></TABLE>
+      <P>and, for example, the way to reference the second element vertically 
+      and fourth horizontally in an expression would be: 
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>jimmy[1][3]
+</PRE></TD></TR></TBODY></TABLE>
+      <P><IMG src="Arrays_files/9-imgarra6.gif">
+      <P>(remember that array indices always begin by zero).
+      <P>Multidimensional arrays are not limited to two indices (i.e., two 
+      dimensions). They can contain as many indices as needed. But be careful! 
+      The amount of memory needed for an array rapidly increases with each 
+      dimension. For example:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>char</SPAN> century [100][365][24][60][60];
+</PRE></TD></TR></TBODY></TABLE>
+      <P>declares an array with a <TT>char</TT> element for each second in a 
+      century, that is more than 3 billion chars. So this declaration would 
+      consume more than 3 gigabytes of memory!
+      <P>Multidimensional arrays are just an abstraction for programmers, since 
+      we can obtain the same results with a simple array just by putting a 
+      factor between its indices:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>int</SPAN> jimmy [3][5];   <SPAN class=comm>// is equivalent to</SPAN>
+<SPAN class=kw>int</SPAN> jimmy [15];     <SPAN class=comm>// (3 * 5 = 15)</SPAN>
+</PRE></TD></TR></TBODY></TABLE>
+      <P>With the only difference that with multidimensional arrays the compiler 
+      remembers the depth of each imaginary dimension for us. Take as example 
+      these two pieces of code, with both exactly the same result. One uses a 
+      bidimensional array and the other one uses a simple array: 
+      <P>
+      <TABLE class=boxed>
+        <TBODY>
+        <TR>
+          <TH>multidimensional array</TH>
+          <TH>pseudo-multidimensional array</TH></TR>
+        <TR>
+          <TD><PRE>#define WIDTH 5<BR>#define HEIGHT 3<P>int jimmy [HEIGHT][WIDTH];<BR>int n,m;<P>int main ()<BR>{<BR>  for (n=0;n&lt;HEIGHT;n++)<BR>    for (m=0;m&lt;WIDTH;m++)<BR>    {<BR>      jimmy[n][m]=(n+1)*(m+1);<BR>    }<BR>  return 0;<BR>}<BR></P></PRE></TD>
+          <TD><PRE>#define WIDTH 5<BR>#define HEIGHT 3<P>int jimmy [HEIGHT * WIDTH];<BR>int n,m;<P>int main ()<BR>{<BR>  for (n=0;n&lt;HEIGHT;n++)<BR>    for (m=0;m&lt;WIDTH;m++)<BR>    {<BR>      jimmy[n*WIDTH+m]=(n+1)*(m+1);<BR>    }<BR>  return 0;<BR>}<BR></P></PRE></TD></TR></TBODY></TABLE>
+      <P>None of the two source codes above produce any output on the screen, 
+      but both assign values to the memory block called jimmy in the following 
+      way: 
+      <P><IMG src="Arrays_files/9-imgarra7.gif">
+      <P>We have used "defined constants" (<TT>#define</TT>) to simplify 
+      possible future modifications of the program. For example, in case that we 
+      decided to enlarge the array to a height of 4 instead of 3 it could be 
+      done simply by changing the line:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=prep>#define HEIGHT 3</SPAN>
+</PRE></TD></TR></TBODY></TABLE>to:<BR>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=prep>#define HEIGHT 4</SPAN>
+</PRE></TD></TR></TBODY></TABLE>
+      <P>with no need to make any other modifications to the program. 
+      <P><A name=""></A>
+      <H3>Arrays as parameters</H3>At some moment we may need to pass an array 
+      to a function as a parameter. In C++ it is not possible to pass a complete 
+      block of memory by value as a parameter to a function, but we are allowed 
+      to pass its address. In practice this has almost the same effect and it is 
+      a much faster and more efficient operation.
+      <P>In order to accept arrays as parameters the only thing that we have to 
+      do when declaring the function is to specify in its parameters the element 
+      type of the array, an identifier and a pair of void brackets <TT>[]</TT>. 
+      For example, the following function: 
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>void</SPAN> procedure (<SPAN class=kw>int</SPAN> arg[])
+</PRE></TD></TR></TBODY></TABLE>
+      <P>accepts a parameter of type "Array of <TT>int</TT>" called 
+      <TT>arg</TT>. In order to pass to this function an array declared as:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>int</SPAN> myarray [40];
+</PRE></TD></TR></TBODY></TABLE>
+      <P>it would be enough to write a call like this:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>procedure (myarray);
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Here you have a complete example: 
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// arrays as parameters</SPAN>
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>void</SPAN> printarray (<SPAN class=kw>int</SPAN> arg[], <SPAN class=kw>int</SPAN> length) {
+  <SPAN class=kw>for</SPAN> (<SPAN class=kw>int</SPAN> n=0; n&lt;length; n++)
+    cout &lt;&lt; arg[n] &lt;&lt; <SPAN class=str>" "</SPAN>;
+  cout &lt;&lt; <SPAN class=str>"\n"</SPAN>;
+}
+
+<SPAN class=kw>int</SPAN> main ()
+{
+  <SPAN class=kw>int</SPAN> firstarray[] = {5, 10, 15};
+  <SPAN class=kw>int</SPAN> secondarray[] = {2, 4, 6, 8, 10};
+  printarray (firstarray,3);
+  printarray (secondarray,5);
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>5 10 15
+2 4 6 8 10
+</PRE></TD></TR></TBODY></TABLE>
+      <P>As you can see, the first parameter (<TT>int arg[]</TT>) accepts any 
+      array whose elements are of type <TT>int</TT>, wathever its length. For 
+      that reason we have included a second parameter that tells the function 
+      the length of each array that we pass to it as its first parameter. This 
+      allows the <TT>for</TT> loop that prints out the array to know the range 
+      to iterate in the passed array without going out of range.
+      <P>In a function declaration it is also possible to include 
+      multidimensional arrays. The format for a tridimensional array parameter 
+      is:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>base_type[][depth][depth]
+</PRE></TD></TR></TBODY></TABLE>
+      <P>for example, a function with a multidimensional array as argument could 
+      be: 
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>void</SPAN> procedure (<SPAN class=kw>int</SPAN> myarray[][3][4])
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Notice that the first brackets <TT>[]</TT> are left blank while the 
+      following ones are not. This is so because the compiler must be able to 
+      determine within the function which is the depth of each additional 
+      dimension.
+      <P>Arrays, both simple or multidimensional, passed as function parameters 
+      are a quite common source of errors for novice programmers. I recommend 
+      the reading of the chapter about Pointers for a better understanding on 
+      how arrays operate.<BR>
+      <P>
+      <CENTER>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD align=right width="49%"><A 
+            href="http://www.cplusplus.com/doc/tutorial/functions2.html"><IMG 
+            src="Arrays_files/navigate_previous.gif" align=right 
+            border=0>Previous:<BR><B>Functions (II)</B></A> </TD>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/"><IMG 
+            src="Arrays_files/navigate_index.gif" border=0><BR>index</A></TD>
+          <TD align=left width="49%"><A 
+            href="http://www.cplusplus.com/doc/tutorial/ntcs.html"><IMG 
+            src="Arrays_files/navigate_next.gif" align=left 
+            border=0>Next:<BR><B>Character Sequences</B></A> 
+      </TD></TR></TBODY></TABLE></CENTER>
+      <P></P>
+      <P>
+      <SCRIPT type=text/javascript>
+<!--
+SuOptions()
+-->
+</SCRIPT>
+      </P></DIV></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-TOP: black 1px solid; BACKGROUND: #d7d7d7; PADDING-BOTTOM: 5px" 
+    align=middle colSpan=2><SMALL>© The C++ Resources Network, 2000-2005 - All 
+      rights reserved</SMALL></TD></TR></TBODY></TABLE></BODY></HTML>

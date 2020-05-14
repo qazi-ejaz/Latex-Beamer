@@ -1,0 +1,1154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0050)http://www.cplusplus.com/doc/tutorial/classes.html -->
+<HTML><HEAD><TITLE>Classes (I)</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<STYLE type=text/css>BODY {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+TABLE {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+INPUT {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+SELECT {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+TEXTAREA {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+FORM {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+PRE {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+DT {
+	FONT-WEIGHT: bold
+}
+DD {
+	MARGIN-BOTTOM: 12px
+}
+UL {
+	MARGIN-BOTTOM: 12px
+}
+UL {
+	MARGIN-TOP: 4px
+}
+LI {
+	MARGIN-BOTTOM: 4px
+}
+A:link {
+	COLOR: #000070; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #000070; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #000070; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #0000a0; TEXT-DECORATION: underline
+}
+.imgbox {
+	LINE-HEIGHT: 1px
+}
+.stdform {
+	BORDER-RIGHT: #00007f 1px solid; BORDER-TOP: #00007f 1px solid; BORDER-LEFT: #00007f 1px solid; BORDER-BOTTOM: #00007f 1px solid
+}
+.stdform TH {
+	BORDER-RIGHT: #00007f 1px solid; BORDER-TOP: #00007f 1px solid; BORDER-LEFT: #00007f 1px solid; BORDER-BOTTOM: #00007f 1px solid
+}
+.stdform TD {
+	BORDER-RIGHT: #707080 1px solid; BORDER-TOP: #707080 1px solid; BORDER-LEFT: #707080 1px solid; BORDER-BOTTOM: #707080 1px solid; TEXT-ALIGN: left
+}
+.stdform TR TD {
+	BACKGROUND: #f0f0ff
+}
+.stdform TR.odd TD {
+	BACKGROUND: #e0e0ff
+}
+.stdform TH {
+	BACKGROUND: url(/img/blue.gif) blue; COLOR: #ffffff
+}
+.stdform TH A:link {
+	COLOR: white
+}
+.stdform TH A:visited {
+	COLOR: white
+}
+.stdform TH A:active {
+	COLOR: white
+}
+.stdform TH A:hover {
+	COLOR: yellow
+}
+.stdform .txt {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid; BACKGROUND-COLOR: #fffff0
+}
+.stdform SELECT {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid; BACKGROUND-COLOR: #fffff0
+}
+.stdform TEXTAREA {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid; BACKGROUND-COLOR: #fffff0
+}
+.stdform TEXTAREA {
+	FONT-FAMILY: monospace
+}
+.stdform .field {
+	FONT-WEIGHT: bold; TEXT-ALIGN: right
+}
+.stdform .value {
+	FONT-FAMILY: courier,monospace
+}
+.stdform .description {
+	FONT-SIZE: 80%
+}
+.stdform .buttons {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; TEXT-ALIGN: center
+}
+.stdform TR.separator TD {
+	FONT-WEIGHT: bold; BACKGROUND: white
+}
+.stdform .number {
+	TEXT-ALIGN: center
+}
+.secform {
+	BORDER-RIGHT: #ff6020 1px solid; BORDER-TOP: #ff6020 1px solid; BORDER-LEFT: #ff6020 1px solid; BORDER-BOTTOM: #ff6020 1px solid; BORDER-COLLAPSE: collapse
+}
+.secform TD {
+	BORDER-RIGHT: #ff6020 1px solid; BORDER-TOP: #ff6020 1px solid; BORDER-LEFT: #ff6020 1px solid; BORDER-BOTTOM: #ff6020 1px solid; BORDER-COLLAPSE: collapse
+}
+.secform TR {
+	BACKGROUND: #fffff0
+}
+.secform TR.odd TD {
+	BACKGROUND: #ffffd0
+}
+.secform TH {
+	BACKGROUND: url(/img/orange.gif) #ff6020; COLOR: #ffffff
+}
+.errors {
+	BORDER-RIGHT: #7f0000 1px solid; BORDER-TOP: #7f0000 1px solid; BORDER-LEFT: #7f0000 1px solid; BORDER-BOTTOM: #7f0000 1px solid
+}
+.errors TH {
+	BORDER-RIGHT: #7f0000 1px solid; BORDER-TOP: #7f0000 1px solid; BORDER-LEFT: #7f0000 1px solid; BORDER-BOTTOM: #7f0000 1px solid
+}
+.errors TD {
+	BORDER-RIGHT: #807070 1px solid; BORDER-TOP: #807070 1px solid; BORDER-LEFT: #807070 1px solid; BORDER-BOTTOM: #807070 1px solid; TEXT-ALIGN: left
+}
+.errors TH {
+	BACKGROUND: red; COLOR: #ffffff
+}
+.errors TD {
+	BACKGROUND: #ffe0e0
+}
+.bar {
+	BACKGROUND: url(/img/headbg.gif); COLOR: white; LINE-HEIGHT: 20px
+}
+.bar TABLE {
+	FONT-SIZE: 9px; COLOR: white; LINE-HEIGHT: 16px
+}
+.bar A:link {
+	COLOR: white
+}
+.bar A:visited {
+	COLOR: white
+}
+.bar A:active {
+	COLOR: white
+}
+.bar A:hover {
+	COLOR: yellow; TEXT-DECORATION: none
+}
+.bar .txt {
+	BORDER-RIGHT: 1px inset; BORDER-TOP: 1px inset; BORDER-LEFT: 1px inset; BORDER-BOTTOM: 1px inset; HEIGHT: 14px; BACKGROUND-COLOR: #c0c0ff
+}
+.bar .btn {
+	BORDER-RIGHT: 1px outset; BORDER-TOP: 1px outset; FONT-SIZE: 9px; BORDER-LEFT: 1px outset; BORDER-BOTTOM: 1px outset; HEIGHT: 18px; BACKGROUND-COLOR: #c0c0ff
+}
+.left {
+	BORDER-RIGHT: black 1px solid
+}
+.left TABLE {
+	BORDER-RIGHT: #00007f 1px solid; BORDER-TOP: #00007f 1px solid; MARGIN-TOP: 5px; BACKGROUND: white; BORDER-LEFT: #00007f 1px solid; WIDTH: 160px; BORDER-BOTTOM: #00007f 1px solid; BORDER-COLLAPSE: collapse
+}
+.left TD {
+	FONT-SIZE: x-small; COLOR: #000070; FONT-FAMILY: verdana,arial,helvetica,sans-serif; TEXT-ALIGN: left
+}
+.left TH {
+	FONT-SIZE: xx-small; BACKGROUND: url(/img/blue.gif) blue; COLOR: #ffffff; FONT-FAMILY: verdana,arial,helvetica,sans-serif; HEIGHT: 14px
+}
+.left TH A:link {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.left TH A:visited {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.left TH A:active {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.left TH A:hover {
+	COLOR: yellow; TEXT-DECORATION: none
+}
+.warning {
+	BORDER-RIGHT: red 2px solid; BORDER-TOP: red 2px solid; BACKGROUND: #ffc000; BORDER-LEFT: red 2px solid; BORDER-BOTTOM: red 2px solid
+}
+.content {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px
+}
+.boxed {
+	BORDER-COLLAPSE: collapse
+}
+.boxed TH {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BACKGROUND: #e0e0e0; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid
+}
+.boxed TD {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid
+}
+.code A:link {
+	COLOR: black; TEXT-DECORATION: none
+}
+.code A:visited {
+	COLOR: black; TEXT-DECORATION: none
+}
+.code A:active {
+	COLOR: black; TEXT-DECORATION: none
+}
+.code A:hover {
+	BACKGROUND: yellow; COLOR: black; TEXT-DECORATION: none
+}
+.codebox {
+	WIDTH: 100%
+}
+.snippet {
+	MARGIN-LEFT: 20px
+}
+.code {
+	BORDER-RIGHT: #c0c0d0 1px solid; BORDER-TOP: #c0c0d0 1px solid; BACKGROUND: #efefff; BORDER-LEFT: #c0c0d0 1px solid; BORDER-BOTTOM: #c0c0d0 1px solid
+}
+.result {
+	BORDER-RIGHT: #c0c0c0 1px solid; BORDER-TOP: #c0c0c0 1px solid; BACKGROUND: #e7e7e7; VERTICAL-ALIGN: top; BORDER-LEFT: #c0c0c0 1px solid; WIDTH: 50%; BORDER-BOTTOM: #c0c0c0 1px solid
+}
+.codebox {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-TOP-STYLE: none; PADDING-TOP: 0px; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+.kw {
+	COLOR: #0000b0
+}
+A.kw:hover {
+	COLOR: #0000b0
+}
+A.kw:link {
+	COLOR: #0000b0
+}
+A.kw:visited {
+	COLOR: #0000b0
+}
+A.kw:active {
+	COLOR: #0000b0
+}
+.prep {
+	COLOR: #500070
+}
+.comm {
+	COLOR: #007000
+}
+.str {
+	COLOR: #600030
+}
+</STYLE>
+
+<SCRIPT type=text/javascript>
+<!--
+function GetCookie(name) {
+  var dc = document.cookie;
+  var prefix = name + '=';
+  var begin = dc.indexOf('; ' + prefix);
+  if (begin == -1) {
+    begin = dc.indexOf(prefix);
+    if (begin != 0) return null;
+  } else
+    begin += 2;
+  var end = document.cookie.indexOf(';', begin);
+  if (end == -1)
+    end = dc.length;
+  var sret=unescape(dc.substring(begin + prefix.length, end));
+  var aret=sret.split('+'); sret=aret.join(' ');
+  return sret;
+}
+
+var user=GetCookie ('codehq_user');
+
+var mo = new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
+
+function When(ts) {
+ var dt = new Date(ts*1000);
+ document.write(mo[dt.getMonth()]+" "+dt.getDate()+", "+(dt.getYear()+(dt.getYear()<1900?1900:0)));
+ document.write(" at "+((dt.getHours()%12)==0?12:dt.getHours()%12)+":"+(dt.getMinutes()<10?"0":"")+dt.getMinutes()+(dt.getHours()<12?"am":"pm"));
+}
+
+function LoginBox() {
+if (!user)
+{
+	document.write ('<table cellspacing=2 cellpadding="0" valign="top">');
+	document.write ('<tr><td align="center"><b>user<\/b><\/td><td align="center"><b>pass<\/b><\/td><td align="center">[<a href="/member/signup.form">register<\/a>]<\/td><\/tr>');
+	document.write ('<tr><td align="center"><input class="txt" name="l" size="4" type="text"><\/td>');
+	document.write (' <td align="center"><input class="txt" name="p" size="4" type="password"><\/td>');
+	document.write (' <td align="center"><input class="btn" value="sign in" type="submit"><\/td><\/tr>');
+	document.write ('<\/table>');
+}
+else
+{
+	document.write ('<table width="150" cellspacing="2" cellpadding="0" valign="top">');
+	document.write ('<tr><td colspan="2" align="center">Logged in as: <b>'+user+'<\/b></td></tr>');	
+	document.write ('<tr><td align="right"><input class="btn" value="log out" type="submit"><input type="hidden" name="redirectto" value="/doc/tutorial/classes.html"><input type="hidden" name="logout" value="sign out"></td>');
+	document.write ('<td align="left">[<b><a href="/member/">profile<\/a><\/b>]<\/font>');
+	document.write ('<\/td><\/tr>');
+	document.write ('<\/table>');
+}
+}
+
+var lowuser=user.toLowerCase();
+var faaccess=new Boolean ( (( GetCookie('codehq_access') & 256 )==256 ));
+function SuOptions() {
+	if ((faaccess==true)||(lowuser=="juan soulie"))
+	{
+		document.write(' [<a href="/doc/publish.form?what=edit&itemid=15">Edit this document<\/a>] ');
+	}
+}
+//-->
+</SCRIPT>
+
+<META content="MSHTML 6.00.2900.2180" name=GENERATOR></HEAD>
+<BODY bgColor=#d7d7d7>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=imgbox vAlign=top bgColor=#b0c0d0 rowSpan=2><A 
+      href="http://www.cplusplus.com/"><IMG height=75 
+      src="Classes (I)_files/headlogo1.gif" width=165 border=0></A></TD>
+    <TD class=imgbox vAlign=top bgColor=#ffffff><A 
+      href="http://www.cplusplus.com/"><IMG height=18 
+      src="Classes (I)_files/headlogo2.gif" width=33 border=0></A></TD>
+    <TD width="95%" bgColor=#d7d7d7></TD>
+    <TD bgColor=#d7d7d7></TD></TR>
+  <TR>
+    <TD class=imgbox vAlign=top bgColor=#ffffff><A 
+      href="http://www.cplusplus.com/"><IMG height=57 
+      src="Classes (I)_files/headlogo3.gif" width=33 border=0></A></TD>
+    <TD class=bar vAlign=top width="95%">&nbsp; <B><A 
+      href="http://www.cplusplus.com/">C++</A> : <A 
+      href="http://www.cplusplus.com/doc/">Documents</A> : <A 
+      href="http://www.cplusplus.com/doc/tutorial/">C++ Language Tutorial</A> : 
+      Classes (I) </B><BR>
+      <FORM name=search action=/search/search.php method=get>&nbsp; Search: 
+      <INPUT class=txt size=13 name=q> <INPUT class=btn type=submit value=Search> </FORM></TD>
+    <TD class=bar vAlign=top>
+      <FORM name=login action=/member/login.form method=post><INPUT type=hidden 
+      value=1 name=login><INPUT type=hidden value=/doc/tutorial/classes.html 
+      name=redirectto>
+      <SCRIPT type=text/javascript>
+<!--
+LoginBox();
+// -->
+</SCRIPT>
+       </FORM><NOSCRIPT>
+      <CENTER>javascript and cookies 
+required</CENTER></NOSCRIPT></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD style="BORDER-RIGHT: black 1px solid; LINE-HEIGHT: 1px" width=165 
+    bgColor=#b0c0d0><IMG height=1 src="Classes (I)_files/165x1.gif" 
+    width=165></TD>
+    <TD class=imgbox width="99%" bgColor=white><IMG height=1 
+      src="Classes (I)_files/165x1.gif" width=165></TD></TR>
+  <TR><!-- left -->
+    <TD class=left vAlign=top align=middle width=165 bgColor=#b0c0d0>
+      <TABLE class=box>
+        <TBODY>
+        <TR>
+          <TH><A href="http://www.cplusplus.com/doc/tutorial/">C++ Language 
+            Tutorial</A></TH></TR>
+        <TR>
+          <TD><B>Introduction</B></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/introduction.html">· 
+            Instructions for use</A></TD></TR>
+        <TR>
+          <TD><B>Basics of C++</B></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/program_structure.html">· 
+            Structure of a program</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/variables.html">· 
+            Variables. Data Types.</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/constants.html">· 
+            Constants</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/operators.html">· 
+            Operators</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/basic_io.html">· 
+            Basic Input/Output</A></TD></TR>
+        <TR>
+          <TD><B>Control Structures</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/control.html">· 
+            Control Structures</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/functions.html">· 
+            Functions (I)</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/functions2.html">· 
+            Functions (II)</A></TD></TR>
+        <TR>
+          <TD><B>Compound Data Types</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/arrays.html">· 
+            Arrays</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/ntcs.html">· 
+            Character Sequences</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/pointers.html">· 
+            Pointers</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/dynamic.html">· 
+            Dynamic Memory</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/structures.html">· Data 
+            Structures</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/other_data_types.html">· 
+            Other Data Types</A></TD></TR>
+        <TR>
+          <TD><B>Object Oriented Programming</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/classes.html">· 
+            Classes (I)</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/classes2.html">· 
+            Classes (II)</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/inheritance.html">· 
+            Friendship and inheritance</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/polymorphism.html">· 
+            Polymorphism</A></TD></TR>
+        <TR>
+          <TD><B>Advanced Concepts</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/templates.html">· 
+            Templates</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/namespaces.html">· 
+            Namespaces</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/exceptions.html">· 
+            Exceptions</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/typecasting.html">· Type 
+            Casting</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/preprocessor.html">· 
+            Preprocessor directives</A></TD></TR>
+        <TR>
+          <TD><B>C++ Standard Library</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/files.html">· 
+            Input/Output with files</A></TD></TR></TBODY></TABLE>
+      <TABLE class=box>
+        <TBODY>
+        <TR>
+          <TH><A href="http://www.cplusplus.com/doc/">Document 
+          categories</A></TH></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/information/">Information 
+            about C++</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/">C++ Language 
+            Tutorial</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/papers/">Additional 
+            Papers</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/general/">User-contributed</A></TD></TR></TBODY></TABLE>
+      <TABLE class=box>
+        <TBODY>
+        <TR>
+          <TH><A href="http://www.cplusplus.com/">cplusplus.com</A></TH></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/">documents</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/ref/">reference</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/src/">sourcecodes</A></TD></TR>
+        <TR>
+          <TD><A 
+      href="http://www.cplusplus.com/forum/">forum</A></TD></TR></TBODY></TABLE><BR><IMG 
+      height=1 src="Classes (I)_files/165x1.gif" width=165>
+      <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-5777024789006368";
+google_ad_width = 125;
+google_ad_height = 125;
+google_ad_format = "125x125_as";
+google_ad_type = "text_image";
+google_ad_channel ="5923551140";
+google_color_border = "3333CC";
+google_color_bg = "FFFFFF";
+google_color_link = "3333CC";
+google_color_url = "000000";
+google_color_text = "000000";
+//--></SCRIPT>
+
+      <SCRIPT language=javascript src="Classes (I)_files/1x1.js"></SCRIPT>
+       <NOSCRIPT><A 
+      href="http://media.fastclick.net/w/click.here?sid=4636&amp;m=3&amp;c=1" 
+      target=_top><IMG height=600 src="Classes (I)_files/1x1.gif" width=160 
+      border=1></A></NOSCRIPT> <IMG height=1 src="Classes (I)_files/165x1.gif" 
+      width=165> </TD><!-- /left -->
+    <TD vAlign=top width="99%" bgColor=white>
+      <CENTER>
+      <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-5777024789006368";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text_image";
+google_ad_channel ="1922709837";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "000000";
+google_color_text = "000000";
+//--></SCRIPT>
+
+      <SCRIPT language=javascript src="Classes (I)_files/show_ads.js"></SCRIPT>
+      <NOSCRIPT><A 
+      href="http://media.fastclick.net/w/click.here?sid=4636&amp;m=1&amp;c=1" 
+      target=_top><IMG height=90 
+      src="F:\New Folder\Classes (I)_files\1x1(1).gif" width=728 
+      border=1></A></NOSCRIPT> </CENTER>
+      <DIV class=content>
+      <TABLE width="100%">
+        <TBODY>
+        <TR>
+          <TD>
+            <H1>Classes (I)</H1></TD>
+          <TD align=right>
+            <TABLE>
+              <TBODY>
+              <TR>
+                <TD align=right>Published by <B><A 
+                  href="http://www.cplusplus.com/member/Juan_Soulie/">Juan 
+                  Soulie</A></B></TD></TR>
+              <TR>
+                <TD align=right><SMALL>Last update on
+                  <SCRIPT type=text/javascript>When(1130866486)</SCRIPT>
+                   </SMALL></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>A 
+      <I>class</I> is an expanded concept of a data structure: instead of 
+      holding only data, it can hold both data and functions.
+      <P>An <I>object</I> is an instantiation of a class. In terms of variables, 
+      a class would be the type, and an object would be the variable.
+      <P>Classes are generally declared using the keyword <TT>class</TT>, with 
+      the following format:
+      <P><PRE>class class_name {<BR>  access_specifier_1:<BR>    member1;<BR>  access_specifier_2:<BR>    member2;<BR>  ...<BR>  } object_names;<BR></PRE>
+      <P>Where <TT>class_name</TT> is a valid identifier for the class, 
+      <TT>object_names</TT> is an optional list of names for objects of this 
+      class. The body of the declaration can contain members, that can be either 
+      data or function declarations, and optionally access specifiers.
+      <P>All is very similar to the declaration on data structures, except that 
+      we can now include also functions and members, but also this new thing 
+      called <I>access specifier</I>. An access specifier is one of the 
+      following three keywords: <TT>private</TT>, <TT>public</TT> or 
+      <TT>protected</TT>. These specifiers modify the access rights that the 
+      members following them acquire:
+      <P>
+      <UL>
+        <LI><TT>private</TT> members of a class are accessible only from within 
+        other members of the same class or from their <I>friends</I>. 
+        <LI><TT>protected</TT> members are accessible from members of their same 
+        class and from their friends, but also from members of their derived 
+        classes. 
+        <LI>Finally, <TT>public</TT> members are accessible from anywhere where 
+        the object is visible. </LI></UL>
+      <P>By default, all members of a class declared with the <TT>class</TT> 
+      keyword have private access for all its members. Therefore, any member 
+      that is declared before one other class specifier automatically has 
+      private access. For example: 
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>class</SPAN> CRectangle {
+    <SPAN class=kw>int</SPAN> x, y;
+  <SPAN class=kw>public</SPAN>:
+    <SPAN class=kw>void</SPAN> set_values (<SPAN class=kw>int</SPAN>,<SPAN class=kw>int</SPAN>);
+    <SPAN class=kw>int</SPAN> area (<SPAN class=kw>void</SPAN>);
+  } rect;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Declares a class (i.e., a type) called <TT>CRectangle</TT> and an 
+      object (i.e., a variable) of this class called <TT>rect</TT>. This class 
+      contains four members: two data members of type <TT>int</TT> (member 
+      <TT>x</TT> and member <TT>y</TT>) with private access (because private is 
+      the default access level) and two member functions with public access: 
+      <TT>set_values()</TT> and <TT>area()</TT>, of which for now we have only 
+      included their declaration, not their definition.
+      <P>Notice the difference between the class name and the object name: In 
+      the previous example, <TT>CRectangle</TT> was the class name (i.e., the 
+      type), whereas rect was an object of type <TT>CRectangle</TT>. It is the 
+      same relationship <TT>int</TT> and <TT>a</TT> have in the following 
+      declaration:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>int</SPAN> a;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>where <TT>int</TT> is the type name (the class) and <TT>a</TT> is the 
+      variable name (the object). 
+      <P>After the previous declarations of <TT>CRectangle</TT> and 
+      <TT>rect</TT>, we can refer within the body of the program to any of the 
+      public members of the object <TT>rect</TT> as if they were normal 
+      functions or normal variables, just by putting the object's name followed 
+      by a dot (<TT>.</TT>) and then the name of the member. All very similar to 
+      what we did with plain data structures before. For example: 
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>rect.set_values (3,4);
+myarea = rect.area(); 
+</PRE></TD></TR></TBODY></TABLE>
+      <P>The only members of rect that we cannot access from the body of our 
+      program outside the class are <TT>x</TT> and <TT>y</TT>, since they have 
+      private access and they can only be referred from within other members of 
+      that same class.
+      <P>Here is the complete example of class CRectangle:
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// classes example</SPAN>
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>class</SPAN> CRectangle {
+    <SPAN class=kw>int</SPAN> x, y;
+  <SPAN class=kw>public</SPAN>:
+    <SPAN class=kw>void</SPAN> set_values (<SPAN class=kw>int</SPAN>,<SPAN class=kw>int</SPAN>);
+    <SPAN class=kw>int</SPAN> area () {<SPAN class=kw>return</SPAN> (x*y);}
+};
+
+<SPAN class=kw>void</SPAN> CRectangle::set_values (<SPAN class=kw>int</SPAN> a, <SPAN class=kw>int</SPAN> b) {
+  x = a;
+  y = b;
+}
+
+<SPAN class=kw>int</SPAN> main () {
+  CRectangle rect;
+  rect.set_values (3,4);
+  cout &lt;&lt; <SPAN class=str>"area: "</SPAN> &lt;&lt; rect.area();
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>area: 12
+</PRE></TD></TR></TBODY></TABLE>
+      <P>The most important new thing in this code is the operator of scope 
+      (<TT>::</TT>, two colons) included in the definition of 
+      <TT>set_values()</TT>. It is used to define a member of a class from 
+      outside the class declaration itself.
+      <P>You may notice that the definition of the member function 
+      <TT>area()</TT> has been included directly within the definition of the 
+      <TT>CRectangle</TT> class given its extreme simplicity, whereas 
+      <TT>set_values()</TT> has only its prototype declared within the class, 
+      but its definition is outside it. In this outside declaration, we must use 
+      the operator of scope (<TT>::</TT>) to specify that we are defining a 
+      function that is a member of the class <TT>CRectangle</TT> and not a 
+      regular global function.
+      <P>The scope operator (<TT>::</TT>) specifies the class to which the 
+      member being declared belongs, granting exactly the same scope properties 
+      as if this function definition was directly included within the class 
+      definition. For example, in the function <TT>set_values()</TT> of the 
+      previous code, we have been able to use the variables <TT>x</TT> and 
+      <TT>y</TT>, which are private members of class <TT>CRectangle</TT>, which 
+      means they are only accessible from other members of their 
+      class.<BR><BR>The only difference between defining a class member function 
+      completely within its class and to include only the prototype and later 
+      its definition, is that in the first case the function will automatically 
+      be considered an inline member function by the compiler, while in the 
+      second it will be a normal (not-inline) class member function, which in 
+      fact supposes no difference in behavior.
+      <P>Members <TT>x</TT> and <TT>y</TT> have private access (remember that if 
+      nothing else is said, all members of a class defined with keyword class 
+      have private access). By declaring them private we deny access to them 
+      from anywhere outside the class. This makes sense, since we have already 
+      defined a member function to set values for those members within the 
+      object: the member function <TT>set_values()</TT>. Therefore, the rest of 
+      the program does not need to have direct access to them. Perhaps in a so 
+      simple example as this, it is difficult to see an utility in protecting 
+      those two variables, but in greater projects it may be very important that 
+      values cannot be modified in an unexpected way (unexpected from the point 
+      of view of the object).
+      <P>One of the greater advantages of a class is that, as any other type, we 
+      can declare several objects of it. For example, following with the 
+      previous example of class <TT>CRectangle</TT>, we could have declared the 
+      object <TT>rectb</TT> in addition to the object <TT>rect</TT>: 
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// example: one class, two objects</SPAN>
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>class</SPAN> CRectangle {
+    <SPAN class=kw>int</SPAN> x, y;
+  <SPAN class=kw>public</SPAN>:
+    <SPAN class=kw>void</SPAN> set_values (<SPAN class=kw>int</SPAN>,<SPAN class=kw>int</SPAN>);
+    <SPAN class=kw>int</SPAN> area () {<SPAN class=kw>return</SPAN> (x*y);}
+};
+
+<SPAN class=kw>void</SPAN> CRectangle::set_values (<SPAN class=kw>int</SPAN> a, <SPAN class=kw>int</SPAN> b) {
+  x = a;
+  y = b;
+}
+
+<SPAN class=kw>int</SPAN> main () {
+  CRectangle rect, rectb;
+  rect.set_values (3,4);
+  rectb.set_values (5,6);
+  cout &lt;&lt; <SPAN class=str>"rect area: "</SPAN> &lt;&lt; rect.area() &lt;&lt; endl;
+  cout &lt;&lt; <SPAN class=str>"rectb area: "</SPAN> &lt;&lt; rectb.area() &lt;&lt; endl;
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>rect area: 12
+rectb area: 30  
+</PRE></TD></TR></TBODY></TABLE>
+      <P>In this concrete case, the class (type of the objects) to which we are 
+      talking about is <TT>CRectangle</TT>, of which there are two instances or 
+      objects: <TT>rect</TT> and <TT>rectb</TT>. Each one of them has its own 
+      member variables and member functions.
+      <P>Notice that the call to <TT>rect.area()</TT> does not give the same 
+      result as the call to <TT>rectb.area()</TT>. This is because each object 
+      of class CRectangle has its own variables <TT>x</TT> and <TT>y</TT>, as 
+      they, in some way, have also their own function members 
+      <TT>set_value()</TT> and <TT>area()</TT> that each uses its object's own 
+      variables to operate.
+      <P>That is the basic concept of <I>object-oriented programming</I>: Data 
+      and functions are both members of the object. We no longer use sets of 
+      global variables that we pass from one function to another as parameters, 
+      but instead we handle objects that have their own data and functions 
+      embedded as members. Notice that we have not had to give any parameters in 
+      any of the calls to <TT>rect.area</TT> or <TT>rectb.area</TT>. Those 
+      member functions directly used the data members of their respective 
+      objects <TT>rect</TT> and <TT>rectb</TT>.
+      <P><A name=""></A>
+      <H3>Constructors and destructors</H3>Objects generally need to initialize 
+      variables or assign dynamic memory during their process of creation to 
+      become operative and to avoid returning unexpected values during their 
+      execution. For example, what would happen if in the previous example we 
+      called the member function <TT>area()</TT> before having called function 
+      <TT>set_values()</TT>? Probably we would have gotten an undetermined 
+      result since the members <TT>x</TT> and <TT>y</TT> would have never been 
+      assigned a value.
+      <P>In order to avoid that, a class can include a special function called 
+      <TT>constructor</TT>, which is automatically called whenever a new object 
+      of this class is created. This constructor function must have the same 
+      name as the class, and cannot have any return type; not even 
+<TT>void</TT>.
+      <P>We are going to implement <TT>CRectangle</TT> including a constructor: 
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// example: class constructor</SPAN>
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>class</SPAN> CRectangle {
+    <SPAN class=kw>int</SPAN> width, height;
+  <SPAN class=kw>public</SPAN>:
+    CRectangle (<SPAN class=kw>int</SPAN>,<SPAN class=kw>int</SPAN>);
+    <SPAN class=kw>int</SPAN> area () {<SPAN class=kw>return</SPAN> (width*height);}
+};
+
+CRectangle::CRectangle (<SPAN class=kw>int</SPAN> a, <SPAN class=kw>int</SPAN> b) {
+  width = a;
+  height = b;
+}
+
+<SPAN class=kw>int</SPAN> main () {
+  CRectangle rect (3,4);
+  CRectangle rectb (5,6);
+  cout &lt;&lt; <SPAN class=str>"rect area: "</SPAN> &lt;&lt; rect.area() &lt;&lt; endl;
+  cout &lt;&lt; <SPAN class=str>"rectb area: "</SPAN> &lt;&lt; rectb.area() &lt;&lt; endl;
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>rect area: 12
+rectb area: 30  
+</PRE></TD></TR></TBODY></TABLE>
+      <P>As you can see, the result of this example is identical to the previous 
+      one. But now we have removed the member function <TT>set_values()</TT>, 
+      and have included instead a constructor that performs a similar action: it 
+      initializes the values of <TT>x</TT> and <TT>y</TT> with the parameters 
+      that are passed to it.
+      <P>Notice how these arguments are passed to the constructor at the moment 
+      at which the objects of this class are created:
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>CRectangle rect (3,4);
+CRectangle rectb (5,6);
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Constructors cannot be called explicitly as if they were regular member 
+      functions. They are only executed when a new object of that class is 
+      created.
+      <P>You can also see how neither the prototype nor the later constructor 
+      declaration includes a return value; not even <TT>void</TT>.
+      <P>The <I>destructor</I> fulfills the opposite functionality. It is 
+      automatically called when an object is destroyed, either because its scope 
+      of existence has finished (for example, if it was defined as a local 
+      object within a function and the function ends) or because it is an object 
+      dynamically assigned and it is released using the operator delete.
+      <P>The destructor must have the same name as the class, but preceded with 
+      a tilde sign (<TT>~</TT>) and it must also return no value.
+      <P>The use of destructors is especially suitable when an object assigns 
+      dynamic memory during its lifetime and at the moment of being destroyed we 
+      want to release the memory that the object was allocated.
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// example on constructors and destructors</SPAN>
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>class</SPAN> CRectangle {
+    <SPAN class=kw>int</SPAN> *width, *height;
+  <SPAN class=kw>public</SPAN>:
+    CRectangle (<SPAN class=kw>int</SPAN>,<SPAN class=kw>int</SPAN>);
+    ~CRectangle ();
+    <SPAN class=kw>int</SPAN> area () {<SPAN class=kw>return</SPAN> (*width * *height);}
+};
+
+CRectangle::CRectangle (<SPAN class=kw>int</SPAN> a, <SPAN class=kw>int</SPAN> b) {
+  width = <SPAN class=kw>new</SPAN> <SPAN class=kw>int</SPAN>;
+  height = <SPAN class=kw>new</SPAN> <SPAN class=kw>int</SPAN>;
+  *width = a;
+  *height = b;
+}
+
+CRectangle::~CRectangle () {
+  <SPAN class=kw>delete</SPAN> width;
+  <SPAN class=kw>delete</SPAN> height;
+}
+
+<SPAN class=kw>int</SPAN> main () {
+  CRectangle rect (3,4), rectb (5,6);
+  cout &lt;&lt; <SPAN class=str>"rect area: "</SPAN> &lt;&lt; rect.area() &lt;&lt; endl;
+  cout &lt;&lt; <SPAN class=str>"rectb area: "</SPAN> &lt;&lt; rectb.area() &lt;&lt; endl;
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>rect area: 12
+rectb area: 30  
+</PRE></TD></TR></TBODY></TABLE>
+      <P><A name=""></A>
+      <H3>Overloading Constructors</H3>Like any other function, a constructor 
+      can also be overloaded with more than one function that have the same name 
+      but different types or number of parameters. Remember that for overloaded 
+      functions the compiler will call the one whose parameters match the 
+      arguments used in the function call. In the case of constructors, which 
+      are automatically called when an object is created, the one executed is 
+      the one that matches the arguments passed on the object declaration:
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// overloading class constructors</SPAN>
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>class</SPAN> CRectangle {
+    <SPAN class=kw>int</SPAN> width, height;
+  <SPAN class=kw>public</SPAN>:
+    CRectangle ();
+    CRectangle (<SPAN class=kw>int</SPAN>,<SPAN class=kw>int</SPAN>);
+    <SPAN class=kw>int</SPAN> area (<SPAN class=kw>void</SPAN>) {<SPAN class=kw>return</SPAN> (width*height);}
+};
+
+CRectangle::CRectangle () {
+  width = 5;
+  height = 5;
+}
+
+CRectangle::CRectangle (<SPAN class=kw>int</SPAN> a, <SPAN class=kw>int</SPAN> b) {
+  width = a;
+  height = b;
+}
+
+<SPAN class=kw>int</SPAN> main () {
+  CRectangle rect (3,4);
+  CRectangle rectb;
+  cout &lt;&lt; <SPAN class=str>"rect area: "</SPAN> &lt;&lt; rect.area() &lt;&lt; endl;
+  cout &lt;&lt; <SPAN class=str>"rectb area: "</SPAN> &lt;&lt; rectb.area() &lt;&lt; endl;
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>rect area: 12
+rectb area: 25  
+</PRE></TD></TR></TBODY></TABLE>
+      <P>In this case, <TT>rectb</TT> was declared without any arguments, so it 
+      has been initialized with the constructor that has no parameters, which 
+      initializes both <TT>width</TT> and <TT>height</TT> with a value of 5. 
+      <P><B>Important:</B> Notice how if we declare a new object and we want to 
+      use its default constructor (the one without parameters), we do not 
+      include parentheses <TT>()</TT>:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>CRectangle rectb;   <SPAN class=comm>// right</SPAN>
+CRectangle rectb(); <SPAN class=comm>// wrong!</SPAN>
+</PRE></TD></TR></TBODY></TABLE>
+      <P><A name=""></A>
+      <H3>Default constructor</H3>If you do not declare any constructors in a 
+      class definition, the compiler assumes the class to have a default 
+      constructor with no arguments. Therefore, after declaring a class like 
+      this one:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>class</SPAN> CExample {
+  <SPAN class=kw>public</SPAN>:
+    <SPAN class=kw>int</SPAN> a,b,c;
+    <SPAN class=kw>void</SPAN> multiply (<SPAN class=kw>int</SPAN> n, <SPAN class=kw>int</SPAN> m) { a=n; b=m; c=a*b; };
+  };
+</PRE></TD></TR></TBODY></TABLE>
+      <P>The compiler assumes that <TT>CExample</TT> has a default constructor, 
+      so you can declare objects of this class by simply declaring them without 
+      any arguments:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>CExample ex;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>But as soon as you declare your own constructor for a class, the 
+      compiler no longer provides an implicit default constructor. So you have 
+      to declare all objects of that class according to the constructor 
+      prototypes you defined for the class:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>class</SPAN> CExample {
+  <SPAN class=kw>public</SPAN>:
+    <SPAN class=kw>int</SPAN> a,b,c;
+    CExample (<SPAN class=kw>int</SPAN> n, <SPAN class=kw>int</SPAN> m) { a=n; b=m; };
+    <SPAN class=kw>void</SPAN> multiply () { c=a*b; };
+  };
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Here we have declared a constructor that takes two parameters of type 
+      int. Therefore the following object declaration would be correct:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>CExample ex (2,3);
+</PRE></TD></TR></TBODY></TABLE>But,<BR>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>CExample ex;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Would <U>not</U> be correct, since we have declared the class to have 
+      an explicit constructor, thus replacing the default constructor.
+      <P>But the compiler not only creates a default constructor for you if you 
+      do not specify your own. It provides three special member functions in 
+      total that are implicitly declared if you do not declare your own. These 
+      are the <I>copy constructor</I>, the <I>copy assignment operator</I>, and 
+      the default destructor.
+      <P>The copy constructor and the copy assignment operator copy all the data 
+      contained in another object to the data members of the current object. For 
+      <TT>CExample</TT>, the copy constructor implicitly declared by the 
+      compiler would be something similar to:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>CExample::CExample (<SPAN class=kw>const</SPAN> CExample&amp; rv) {
+  a=rv.a;  b=rv.b;  c=rv.c;
+  }
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Therefore, the two following object declarations would be correct:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>CExample ex (2,3);
+CExample ex2 (ex);   <SPAN class=comm>// copy constructor (data copied from ex)</SPAN>
+</PRE></TD></TR></TBODY></TABLE>
+      <P><A name=""></A>
+      <H3>Pointers to classes</H3>It is perfectly valid to create pointers that 
+      point to classes. We simply have to consider that once declared, a class 
+      becomes a valid type, so we can use the class name as the type for the 
+      pointer. For example: 
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>CRectangle * prect;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>is a pointer to an object of class <TT>CRectangle</TT>.
+      <P>As it happened with data structures, in order to refer directly to a 
+      member of an object pointed by a pointer we can use the arrow operator 
+      (<TT>-&gt;</TT>) of indirection. Here is an example with some possible 
+      combinations:
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// pointer to classes example</SPAN>
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>class</SPAN> CRectangle {
+    <SPAN class=kw>int</SPAN> width, height;
+  <SPAN class=kw>public</SPAN>:
+    <SPAN class=kw>void</SPAN> set_values (<SPAN class=kw>int</SPAN>, <SPAN class=kw>int</SPAN>);
+    <SPAN class=kw>int</SPAN> area (<SPAN class=kw>void</SPAN>) {<SPAN class=kw>return</SPAN> (width * height);}
+};
+
+<SPAN class=kw>void</SPAN> CRectangle::set_values (<SPAN class=kw>int</SPAN> a, <SPAN class=kw>int</SPAN> b) {
+  width = a;
+  height = b;
+}
+
+<SPAN class=kw>int</SPAN> main () {
+  CRectangle a, *b, *c;
+  CRectangle * d = <SPAN class=kw>new</SPAN> CRectangle[2];
+  b= <SPAN class=kw>new</SPAN> CRectangle;
+  c= &amp;a;
+  a.set_values (1,2);
+  b-&gt;set_values (3,4);
+  d-&gt;set_values (5,6);
+  d[1].set_values (7,8);
+  cout &lt;&lt; <SPAN class=str>"a area: "</SPAN> &lt;&lt; a.area() &lt;&lt; endl;
+  cout &lt;&lt; <SPAN class=str>"*b area: "</SPAN> &lt;&lt; b-&gt;area() &lt;&lt; endl;
+  cout &lt;&lt; <SPAN class=str>"*c area: "</SPAN> &lt;&lt; c-&gt;area() &lt;&lt; endl;
+  cout &lt;&lt; <SPAN class=str>"d[0] area: "</SPAN> &lt;&lt; d[0].area() &lt;&lt; endl;
+  cout &lt;&lt; <SPAN class=str>"d[1] area: "</SPAN> &lt;&lt; d[1].area() &lt;&lt; endl;
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>a area: 2
+*b area: 12
+*c area: 2
+d[0] area: 30
+d[1] area: 56
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Next you have a summary on how can you read some pointer and class 
+      operators (<TT>*</TT>, <TT>&amp;</TT>, <TT>.</TT>, <TT>-&gt;</TT>, <TT>[ 
+      ]</TT>) that appear in the previous example:
+      <P>
+      <TABLE class=boxed>
+        <TBODY>
+        <TR>
+          <TH>expression</TH>
+          <TH>can be read as</TH></TR>
+        <TR>
+          <TD>*x</TD>
+          <TD>pointed by x</TD></TR>
+        <TR>
+          <TD>&amp;x</TD>
+          <TD>address of x</TD></TR>
+        <TR>
+          <TD>x.y</TD>
+          <TD>member y of object x</TD></TR>
+        <TR>
+          <TD>x-&gt;y</TD>
+          <TD>member y of object pointed by x</TD></TR>
+        <TR>
+          <TD>(*x).y</TD>
+          <TD>member y of object pointed by x (equivalent to the previous 
+          one)</TD></TR>
+        <TR>
+          <TD>x[0]</TD>
+          <TD>first object pointed by x</TD></TR>
+        <TR>
+          <TD>x[1]</TD>
+          <TD>second object pointed by x</TD></TR>
+        <TR>
+          <TD>x[n]</TD>
+          <TD>(n+1)th object pointed by x</TD></TR></TBODY></TABLE>
+      <P>Be sure that you understand the logic under all of these expressions 
+      before proceeding with the next sections. If you have doubts, read again 
+      this section and/or consult the previous sections about pointers and data 
+      structures.
+      <P><A name=""></A>
+      <H3>Classes defined with struct and union</H3>Classes can be defined not 
+      only with keyword <TT>class</TT>, but also with keywords <TT>struct</TT> 
+      and <TT>union</TT>.
+      <P>The concepts of class and data structure are so similar that both 
+      keywords have in C++ the exact same functionality except that the members 
+      of classes declared with keyword <TT>struct</TT> have public access by 
+      default, instead of private access, as classes declared with keyword 
+      <TT>class</TT> have. That is the only difference. For all other purposes 
+      both keywords are equivalent.
+      <P>The concept under unions is different from than of <TT>struct</TT> and 
+      <TT>class</TT>, since unions only store one data member at a time, but 
+      they are also classes and thus can also hold function members. The default 
+      access in union classes is public.<BR>
+      <P>
+      <CENTER>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD align=right width="49%"><A 
+            href="http://www.cplusplus.com/doc/tutorial/other_data_types.html"><IMG 
+            src="Classes (I)_files/navigate_previous.gif" align=right 
+            border=0>Previous:<BR><B>Other Data Types</B></A> </TD>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/"><IMG 
+            src="Classes (I)_files/navigate_index.gif" border=0><BR>index</A></TD>
+          <TD align=left width="49%"><A 
+            href="http://www.cplusplus.com/doc/tutorial/classes2.html"><IMG 
+            src="Classes (I)_files/navigate_next.gif" align=left 
+            border=0>Next:<BR><B>Classes (II)</B></A> 
+      </TD></TR></TBODY></TABLE></CENTER>
+      <P></P>
+      <P>
+      <SCRIPT type=text/javascript>
+<!--
+SuOptions()
+-->
+</SCRIPT>
+      </P></DIV></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-TOP: black 1px solid; BACKGROUND: #d7d7d7; PADDING-BOTTOM: 5px" 
+    align=middle colSpan=2><SMALL>© The C++ Resources Network, 2000-2005 - All 
+      rights reserved</SMALL></TD></TR></TBODY></TABLE></BODY></HTML>

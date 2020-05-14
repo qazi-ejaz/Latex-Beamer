@@ -1,0 +1,1009 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0053)http://www.cplusplus.com/doc/tutorial/functions2.html -->
+<HTML><HEAD><TITLE>Functions (II)</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<STYLE type=text/css>BODY {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+TABLE {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+INPUT {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+SELECT {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+TEXTAREA {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+FORM {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+PRE {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+DT {
+	FONT-WEIGHT: bold
+}
+DD {
+	MARGIN-BOTTOM: 12px
+}
+UL {
+	MARGIN-BOTTOM: 12px
+}
+UL {
+	MARGIN-TOP: 4px
+}
+LI {
+	MARGIN-BOTTOM: 4px
+}
+A:link {
+	COLOR: #000070; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #000070; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #000070; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #0000a0; TEXT-DECORATION: underline
+}
+.imgbox {
+	LINE-HEIGHT: 1px
+}
+.stdform {
+	BORDER-RIGHT: #00007f 1px solid; BORDER-TOP: #00007f 1px solid; BORDER-LEFT: #00007f 1px solid; BORDER-BOTTOM: #00007f 1px solid
+}
+.stdform TH {
+	BORDER-RIGHT: #00007f 1px solid; BORDER-TOP: #00007f 1px solid; BORDER-LEFT: #00007f 1px solid; BORDER-BOTTOM: #00007f 1px solid
+}
+.stdform TD {
+	BORDER-RIGHT: #707080 1px solid; BORDER-TOP: #707080 1px solid; BORDER-LEFT: #707080 1px solid; BORDER-BOTTOM: #707080 1px solid; TEXT-ALIGN: left
+}
+.stdform TR TD {
+	BACKGROUND: #f0f0ff
+}
+.stdform TR.odd TD {
+	BACKGROUND: #e0e0ff
+}
+.stdform TH {
+	BACKGROUND: url(/img/blue.gif) blue; COLOR: #ffffff
+}
+.stdform TH A:link {
+	COLOR: white
+}
+.stdform TH A:visited {
+	COLOR: white
+}
+.stdform TH A:active {
+	COLOR: white
+}
+.stdform TH A:hover {
+	COLOR: yellow
+}
+.stdform .txt {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid; BACKGROUND-COLOR: #fffff0
+}
+.stdform SELECT {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid; BACKGROUND-COLOR: #fffff0
+}
+.stdform TEXTAREA {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid; BACKGROUND-COLOR: #fffff0
+}
+.stdform TEXTAREA {
+	FONT-FAMILY: monospace
+}
+.stdform .field {
+	FONT-WEIGHT: bold; TEXT-ALIGN: right
+}
+.stdform .value {
+	FONT-FAMILY: courier,monospace
+}
+.stdform .description {
+	FONT-SIZE: 80%
+}
+.stdform .buttons {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; TEXT-ALIGN: center
+}
+.stdform TR.separator TD {
+	FONT-WEIGHT: bold; BACKGROUND: white
+}
+.stdform .number {
+	TEXT-ALIGN: center
+}
+.secform {
+	BORDER-RIGHT: #ff6020 1px solid; BORDER-TOP: #ff6020 1px solid; BORDER-LEFT: #ff6020 1px solid; BORDER-BOTTOM: #ff6020 1px solid; BORDER-COLLAPSE: collapse
+}
+.secform TD {
+	BORDER-RIGHT: #ff6020 1px solid; BORDER-TOP: #ff6020 1px solid; BORDER-LEFT: #ff6020 1px solid; BORDER-BOTTOM: #ff6020 1px solid; BORDER-COLLAPSE: collapse
+}
+.secform TR {
+	BACKGROUND: #fffff0
+}
+.secform TR.odd TD {
+	BACKGROUND: #ffffd0
+}
+.secform TH {
+	BACKGROUND: url(/img/orange.gif) #ff6020; COLOR: #ffffff
+}
+.errors {
+	BORDER-RIGHT: #7f0000 1px solid; BORDER-TOP: #7f0000 1px solid; BORDER-LEFT: #7f0000 1px solid; BORDER-BOTTOM: #7f0000 1px solid
+}
+.errors TH {
+	BORDER-RIGHT: #7f0000 1px solid; BORDER-TOP: #7f0000 1px solid; BORDER-LEFT: #7f0000 1px solid; BORDER-BOTTOM: #7f0000 1px solid
+}
+.errors TD {
+	BORDER-RIGHT: #807070 1px solid; BORDER-TOP: #807070 1px solid; BORDER-LEFT: #807070 1px solid; BORDER-BOTTOM: #807070 1px solid; TEXT-ALIGN: left
+}
+.errors TH {
+	BACKGROUND: red; COLOR: #ffffff
+}
+.errors TD {
+	BACKGROUND: #ffe0e0
+}
+.bar {
+	BACKGROUND: url(/img/headbg.gif); COLOR: white; LINE-HEIGHT: 20px
+}
+.bar TABLE {
+	FONT-SIZE: 9px; COLOR: white; LINE-HEIGHT: 16px
+}
+.bar A:link {
+	COLOR: white
+}
+.bar A:visited {
+	COLOR: white
+}
+.bar A:active {
+	COLOR: white
+}
+.bar A:hover {
+	COLOR: yellow; TEXT-DECORATION: none
+}
+.bar .txt {
+	BORDER-RIGHT: 1px inset; BORDER-TOP: 1px inset; BORDER-LEFT: 1px inset; BORDER-BOTTOM: 1px inset; HEIGHT: 14px; BACKGROUND-COLOR: #c0c0ff
+}
+.bar .btn {
+	BORDER-RIGHT: 1px outset; BORDER-TOP: 1px outset; FONT-SIZE: 9px; BORDER-LEFT: 1px outset; BORDER-BOTTOM: 1px outset; HEIGHT: 18px; BACKGROUND-COLOR: #c0c0ff
+}
+.left {
+	BORDER-RIGHT: black 1px solid
+}
+.left TABLE {
+	BORDER-RIGHT: #00007f 1px solid; BORDER-TOP: #00007f 1px solid; MARGIN-TOP: 5px; BACKGROUND: white; BORDER-LEFT: #00007f 1px solid; WIDTH: 160px; BORDER-BOTTOM: #00007f 1px solid; BORDER-COLLAPSE: collapse
+}
+.left TD {
+	FONT-SIZE: x-small; COLOR: #000070; FONT-FAMILY: verdana,arial,helvetica,sans-serif; TEXT-ALIGN: left
+}
+.left TH {
+	FONT-SIZE: xx-small; BACKGROUND: url(/img/blue.gif) blue; COLOR: #ffffff; FONT-FAMILY: verdana,arial,helvetica,sans-serif; HEIGHT: 14px
+}
+.left TH A:link {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.left TH A:visited {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.left TH A:active {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.left TH A:hover {
+	COLOR: yellow; TEXT-DECORATION: none
+}
+.warning {
+	BORDER-RIGHT: red 2px solid; BORDER-TOP: red 2px solid; BACKGROUND: #ffc000; BORDER-LEFT: red 2px solid; BORDER-BOTTOM: red 2px solid
+}
+.content {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px
+}
+.boxed {
+	BORDER-COLLAPSE: collapse
+}
+.boxed TH {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BACKGROUND: #e0e0e0; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid
+}
+.boxed TD {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid
+}
+.code A:link {
+	COLOR: black; TEXT-DECORATION: none
+}
+.code A:visited {
+	COLOR: black; TEXT-DECORATION: none
+}
+.code A:active {
+	COLOR: black; TEXT-DECORATION: none
+}
+.code A:hover {
+	BACKGROUND: yellow; COLOR: black; TEXT-DECORATION: none
+}
+.codebox {
+	WIDTH: 100%
+}
+.snippet {
+	MARGIN-LEFT: 20px
+}
+.code {
+	BORDER-RIGHT: #c0c0d0 1px solid; BORDER-TOP: #c0c0d0 1px solid; BACKGROUND: #efefff; BORDER-LEFT: #c0c0d0 1px solid; BORDER-BOTTOM: #c0c0d0 1px solid
+}
+.result {
+	BORDER-RIGHT: #c0c0c0 1px solid; BORDER-TOP: #c0c0c0 1px solid; BACKGROUND: #e7e7e7; VERTICAL-ALIGN: top; BORDER-LEFT: #c0c0c0 1px solid; WIDTH: 50%; BORDER-BOTTOM: #c0c0c0 1px solid
+}
+.codebox {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-TOP-STYLE: none; PADDING-TOP: 0px; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+.kw {
+	COLOR: #0000b0
+}
+A.kw:hover {
+	COLOR: #0000b0
+}
+A.kw:link {
+	COLOR: #0000b0
+}
+A.kw:visited {
+	COLOR: #0000b0
+}
+A.kw:active {
+	COLOR: #0000b0
+}
+.prep {
+	COLOR: #500070
+}
+.comm {
+	COLOR: #007000
+}
+.str {
+	COLOR: #600030
+}
+</STYLE>
+
+<SCRIPT type=text/javascript>
+<!--
+function GetCookie(name) {
+  var dc = document.cookie;
+  var prefix = name + '=';
+  var begin = dc.indexOf('; ' + prefix);
+  if (begin == -1) {
+    begin = dc.indexOf(prefix);
+    if (begin != 0) return null;
+  } else
+    begin += 2;
+  var end = document.cookie.indexOf(';', begin);
+  if (end == -1)
+    end = dc.length;
+  var sret=unescape(dc.substring(begin + prefix.length, end));
+  var aret=sret.split('+'); sret=aret.join(' ');
+  return sret;
+}
+
+var user=GetCookie ('codehq_user');
+
+var mo = new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
+
+function When(ts) {
+ var dt = new Date(ts*1000);
+ document.write(mo[dt.getMonth()]+" "+dt.getDate()+", "+(dt.getYear()+(dt.getYear()<1900?1900:0)));
+ document.write(" at "+((dt.getHours()%12)==0?12:dt.getHours()%12)+":"+(dt.getMinutes()<10?"0":"")+dt.getMinutes()+(dt.getHours()<12?"am":"pm"));
+}
+
+function LoginBox() {
+if (!user)
+{
+	document.write ('<table cellspacing=2 cellpadding="0" valign="top">');
+	document.write ('<tr><td align="center"><b>user<\/b><\/td><td align="center"><b>pass<\/b><\/td><td align="center">[<a href="/member/signup.form">register<\/a>]<\/td><\/tr>');
+	document.write ('<tr><td align="center"><input class="txt" name="l" size="4" type="text"><\/td>');
+	document.write (' <td align="center"><input class="txt" name="p" size="4" type="password"><\/td>');
+	document.write (' <td align="center"><input class="btn" value="sign in" type="submit"><\/td><\/tr>');
+	document.write ('<\/table>');
+}
+else
+{
+	document.write ('<table width="150" cellspacing="2" cellpadding="0" valign="top">');
+	document.write ('<tr><td colspan="2" align="center">Logged in as: <b>'+user+'<\/b></td></tr>');	
+	document.write ('<tr><td align="right"><input class="btn" value="log out" type="submit"><input type="hidden" name="redirectto" value="/doc/tutorial/functions2.html"><input type="hidden" name="logout" value="sign out"></td>');
+	document.write ('<td align="left">[<b><a href="/member/">profile<\/a><\/b>]<\/font>');
+	document.write ('<\/td><\/tr>');
+	document.write ('<\/table>');
+}
+}
+
+var lowuser=user.toLowerCase();
+var faaccess=new Boolean ( (( GetCookie('codehq_access') & 256 )==256 ));
+function SuOptions() {
+	if ((faaccess==true)||(lowuser=="juan soulie"))
+	{
+		document.write(' [<a href="/doc/publish.form?what=edit&itemid=8">Edit this document<\/a>] ');
+	}
+}
+//-->
+</SCRIPT>
+
+<META content="MSHTML 6.00.2900.2180" name=GENERATOR></HEAD>
+<BODY bgColor=#d7d7d7>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=imgbox vAlign=top bgColor=#b0c0d0 rowSpan=2><A 
+      href="http://www.cplusplus.com/"><IMG height=75 
+      src="Functions (II)_files/headlogo1.gif" width=165 border=0></A></TD>
+    <TD class=imgbox vAlign=top bgColor=#ffffff><A 
+      href="http://www.cplusplus.com/"><IMG height=18 
+      src="Functions (II)_files/headlogo2.gif" width=33 border=0></A></TD>
+    <TD width="95%" bgColor=#d7d7d7></TD>
+    <TD bgColor=#d7d7d7></TD></TR>
+  <TR>
+    <TD class=imgbox vAlign=top bgColor=#ffffff><A 
+      href="http://www.cplusplus.com/"><IMG height=57 
+      src="Functions (II)_files/headlogo3.gif" width=33 border=0></A></TD>
+    <TD class=bar vAlign=top width="95%">&nbsp; <B><A 
+      href="http://www.cplusplus.com/">C++</A> : <A 
+      href="http://www.cplusplus.com/doc/">Documents</A> : <A 
+      href="http://www.cplusplus.com/doc/tutorial/">C++ Language Tutorial</A> : 
+      Functions (II) </B><BR>
+      <FORM name=search action=/search/search.php method=get>&nbsp; Search: 
+      <INPUT class=txt size=13 name=q> <INPUT class=btn type=submit value=Search> </FORM></TD>
+    <TD class=bar vAlign=top>
+      <FORM name=login action=/member/login.form method=post><INPUT type=hidden 
+      value=1 name=login><INPUT type=hidden value=/doc/tutorial/functions2.html 
+      name=redirectto>
+      <SCRIPT type=text/javascript>
+<!--
+LoginBox();
+// -->
+</SCRIPT>
+       </FORM><NOSCRIPT>
+      <CENTER>javascript and cookies 
+required</CENTER></NOSCRIPT></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD style="BORDER-RIGHT: black 1px solid; LINE-HEIGHT: 1px" width=165 
+    bgColor=#b0c0d0><IMG height=1 src="Functions (II)_files/165x1.gif" 
+      width=165></TD>
+    <TD class=imgbox width="99%" bgColor=white><IMG height=1 
+      src="Functions (II)_files/165x1.gif" width=165></TD></TR>
+  <TR><!-- left -->
+    <TD class=left vAlign=top align=middle width=165 bgColor=#b0c0d0>
+      <TABLE class=box>
+        <TBODY>
+        <TR>
+          <TH><A href="http://www.cplusplus.com/doc/tutorial/">C++ Language 
+            Tutorial</A></TH></TR>
+        <TR>
+          <TD><B>Introduction</B></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/introduction.html">· 
+            Instructions for use</A></TD></TR>
+        <TR>
+          <TD><B>Basics of C++</B></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/program_structure.html">· 
+            Structure of a program</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/variables.html">· 
+            Variables. Data Types.</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/constants.html">· 
+            Constants</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/operators.html">· 
+            Operators</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/basic_io.html">· 
+            Basic Input/Output</A></TD></TR>
+        <TR>
+          <TD><B>Control Structures</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/control.html">· 
+            Control Structures</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/functions.html">· 
+            Functions (I)</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/functions2.html">· 
+            Functions (II)</A></TD></TR>
+        <TR>
+          <TD><B>Compound Data Types</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/arrays.html">· 
+            Arrays</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/ntcs.html">· 
+            Character Sequences</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/pointers.html">· 
+            Pointers</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/dynamic.html">· 
+            Dynamic Memory</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/structures.html">· Data 
+            Structures</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/other_data_types.html">· 
+            Other Data Types</A></TD></TR>
+        <TR>
+          <TD><B>Object Oriented Programming</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/classes.html">· 
+            Classes (I)</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/classes2.html">· 
+            Classes (II)</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/inheritance.html">· 
+            Friendship and inheritance</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/polymorphism.html">· 
+            Polymorphism</A></TD></TR>
+        <TR>
+          <TD><B>Advanced Concepts</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/templates.html">· 
+            Templates</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/namespaces.html">· 
+            Namespaces</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/exceptions.html">· 
+            Exceptions</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/typecasting.html">· Type 
+            Casting</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/preprocessor.html">· 
+            Preprocessor directives</A></TD></TR>
+        <TR>
+          <TD><B>C++ Standard Library</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/files.html">· 
+            Input/Output with files</A></TD></TR></TBODY></TABLE>
+      <TABLE class=box>
+        <TBODY>
+        <TR>
+          <TH><A href="http://www.cplusplus.com/doc/">Document 
+          categories</A></TH></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/information/">Information 
+            about C++</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/">C++ Language 
+            Tutorial</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/papers/">Additional 
+            Papers</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/general/">User-contributed</A></TD></TR></TBODY></TABLE>
+      <TABLE class=box>
+        <TBODY>
+        <TR>
+          <TH><A href="http://www.cplusplus.com/">cplusplus.com</A></TH></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/">documents</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/ref/">reference</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/src/">sourcecodes</A></TD></TR>
+        <TR>
+          <TD><A 
+      href="http://www.cplusplus.com/forum/">forum</A></TD></TR></TBODY></TABLE><BR><IMG 
+      height=1 src="Functions (II)_files/165x1.gif" width=165>
+      <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-5777024789006368";
+google_ad_width = 125;
+google_ad_height = 125;
+google_ad_format = "125x125_as";
+google_ad_type = "text_image";
+google_ad_channel ="5923551140";
+google_color_border = "3333CC";
+google_color_bg = "FFFFFF";
+google_color_link = "3333CC";
+google_color_url = "000000";
+google_color_text = "000000";
+//--></SCRIPT>
+
+      <SCRIPT language=javascript src="Functions (II)_files/1x1.js"></SCRIPT>
+       <NOSCRIPT><A 
+      href="http://media.fastclick.net/w/click.here?sid=4636&amp;m=3&amp;c=1" 
+      target=_top><IMG height=600 src="Functions (II)_files/1x1.gif" width=160 
+      border=1></A></NOSCRIPT> <IMG height=1 
+      src="Functions (II)_files/165x1.gif" width=165> </TD><!-- /left -->
+    <TD vAlign=top width="99%" bgColor=white>
+      <CENTER>
+      <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-5777024789006368";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text_image";
+google_ad_channel ="1922709837";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "000000";
+google_color_text = "000000";
+//--></SCRIPT>
+
+      <SCRIPT language=javascript 
+      src="Functions (II)_files/show_ads.js"></SCRIPT>
+      <NOSCRIPT><A 
+      href="http://media.fastclick.net/w/click.here?sid=4636&amp;m=1&amp;c=1" 
+      target=_top><IMG height=90 
+      src="F:\New Folder\Functions (II)_files\1x1(1).gif" width=728 
+      border=1></A></NOSCRIPT> </CENTER>
+      <DIV class=content>
+      <TABLE width="100%">
+        <TBODY>
+        <TR>
+          <TD>
+            <H1>Functions (II)</H1></TD>
+          <TD align=right>
+            <TABLE>
+              <TBODY>
+              <TR>
+                <TD align=right>Published by <B><A 
+                  href="http://www.cplusplus.com/member/Juan_Soulie/">Juan 
+                  Soulie</A></B></TD></TR>
+              <TR>
+                <TD align=right><SMALL>Last update on
+                  <SCRIPT type=text/javascript>When(1147797797)</SCRIPT>
+                   </SMALL></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE><A 
+      name=by_reference></A>
+      <H3>Arguments passed by value and by reference.</H3>
+      <P>Until now, in all the functions we have seen, the arguments passed to 
+      the functions have been passed <I>by value</I>. This means that when 
+      calling a function with parameters, what we have passed to the function 
+      were copies of their values but never the variables themselves. For 
+      example, suppose that we called our first function <TT>addition</TT> using 
+      the following code:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>int</SPAN> x=5, y=3, z;
+z = addition ( x , y ); 
+</PRE></TD></TR></TBODY></TABLE>
+      <P>What we did in this case was to call to function addition passing the 
+      values of <TT>x</TT> and <TT>y</TT>, i.e. <TT>5</TT> and <TT>3</TT> 
+      respectively, but not the variables <TT>x</TT> and <TT>y</TT> themselves.
+      <P><IMG src="Functions (II)_files/8-imgfunc1.gif"> 
+      <P>This way, when the function addition is called, the value of its local 
+      variables <TT>a</TT> and <TT>b</TT> become <TT>5</TT> and <TT>3</TT> 
+      respectively, but any modification to either <TT>a</TT> or <TT>b</TT> 
+      within the function addition will not have any effect in the values of 
+      <TT>x</TT> and <TT>y</TT> outside it, because variables <TT>x</TT> and 
+      <TT>y</TT> were not themselves passed to the the function, but only copies 
+      of their values at the moment the function was called.
+      <P>But there might be some cases where you need to manipulate from inside 
+      a function the value of an external variable. For that purpose we can use 
+      arguments passed by reference, as in the function duplicate of the 
+      following example: 
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// passing parameters by reference</SPAN>
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>void</SPAN> duplicate (<SPAN class=kw>int</SPAN>&amp; a, <SPAN class=kw>int</SPAN>&amp; b, <SPAN class=kw>int</SPAN>&amp; c)
+{
+  a*=2;
+  b*=2;
+  c*=2;
+}
+
+<SPAN class=kw>int</SPAN> main ()
+{
+  <SPAN class=kw>int</SPAN> x=1, y=3, z=7;
+  duplicate (x, y, z);
+  cout &lt;&lt; <SPAN class=str>"x="</SPAN> &lt;&lt; x &lt;&lt; <SPAN class=str>", y="</SPAN> &lt;&lt; y &lt;&lt; <SPAN class=str>", z="</SPAN> &lt;&lt; z;
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>x=2, y=6, z=14
+</PRE></TD></TR></TBODY></TABLE>
+      <P>The first thing that should call your attention is that in the 
+      declaration of <TT>duplicate</TT> the type of each parameter was followed 
+      by an ampersand sign (<TT>&amp;</TT>). This ampersand is what specifies 
+      that their corresponding arguments are to be passed <I>by reference</I> 
+      instead of <I>by value</I>.
+      <P>When a variable is passed by reference we are not passing a copy of its 
+      value, but we are somehow passing the variable itself to the function and 
+      any modification that we do to the local variables will have an effect in 
+      their counterpart variables passed as arguments in the call to the 
+      function.
+      <P><IMG src="Functions (II)_files/8-imgfunc3.gif">
+      <P>To explain it in another way, we associate <TT>a</TT>, <TT>b</TT> and 
+      <TT>c</TT> with the arguments passed on the function call (<TT>x</TT>, 
+      <TT>y</TT> and <TT>z</TT>) and any change that we do on <TT>a</TT> within 
+      the function will affect the value of <TT>x</TT> outside it. Any change 
+      that we do on <TT>b</TT> will affect <TT>y</TT>, and the same with 
+      <TT>c</TT> and <TT>z</TT>. 
+      <P>That is why our program's output, that shows the values stored in 
+      <TT>x</TT>, <TT>y</TT> and <TT>z</TT> after the call to 
+      <TT>duplicate</TT>, shows the values of all the three variables of 
+      <TT>main</TT> doubled.
+      <P>If when declaring the following function:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>void</SPAN> duplicate (<SPAN class=kw>int</SPAN>&amp; a, <SPAN class=kw>int</SPAN>&amp; b, <SPAN class=kw>int</SPAN>&amp; c)
+</PRE></TD></TR></TBODY></TABLE>
+      <P>we had declared it this way:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>void</SPAN> duplicate (<SPAN class=kw>int</SPAN> a, <SPAN class=kw>int</SPAN> b, <SPAN class=kw>int</SPAN> c)
+</PRE></TD></TR></TBODY></TABLE>
+      <P>i.e., without the ampersand signs (<TT>&amp;</TT>), we would have not 
+      passed the variables by reference, but a copy of their values instead, and 
+      therefore, the output on screen of our program would have been the values 
+      of <TT>x</TT>, <TT>y</TT> and <TT>z</TT> without having been modified.
+      <P>Passing by reference is also an effective way to allow a function to 
+      return more than one value. For example, here is a function that returns 
+      the previous and next numbers of the first parameter passed.
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// more than one returning value</SPAN>
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>void</SPAN> prevnext (<SPAN class=kw>int</SPAN> x, <SPAN class=kw>int</SPAN>&amp; prev, <SPAN class=kw>int</SPAN>&amp; next)
+{
+  prev = x-1;
+  next = x+1;
+}
+
+<SPAN class=kw>int</SPAN> main ()
+{
+  <SPAN class=kw>int</SPAN> x=100, y, z;
+  prevnext (x, y, z);
+  cout &lt;&lt; <SPAN class=str>"Previous="</SPAN> &lt;&lt; y &lt;&lt; <SPAN class=str>", Next="</SPAN> &lt;&lt; z;
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>Previous=99, Next=101  
+</PRE></TD></TR></TBODY></TABLE>
+      <P><A name=default_values></A>
+      <H3>Default values in parameters.</H3>When declaring a function we can 
+      specify a default value for each parameter. This value will be used if the 
+      corresponding argument is left blank when calling to the function. To do 
+      that, we simply have to use the assignation operator and a value for the 
+      arguments in the function declaration. If a value for that parameter is 
+      not passed when the function is called, the default value is used, but if 
+      a value is specified this default value is ignored and the passed value is 
+      used instead. For example: 
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// default values in functions</SPAN>
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>int</SPAN> divide (<SPAN class=kw>int</SPAN> a, <SPAN class=kw>int</SPAN> b=2)
+{
+  <SPAN class=kw>int</SPAN> r;
+  r=a/b;
+  <SPAN class=kw>return</SPAN> (r);
+}
+
+<SPAN class=kw>int</SPAN> main ()
+{
+  cout &lt;&lt; divide (12);
+  cout &lt;&lt; endl;
+  cout &lt;&lt; divide (20,4);
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>6
+5
+</PRE></TD></TR></TBODY></TABLE>
+      <P>As we can see in the body of the program there are two calls to 
+      function <TT>divide</TT>. In the first one:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>divide (12)
+</PRE></TD></TR></TBODY></TABLE>
+      <P>we have only specified one argument, but the function <TT>divide</TT> 
+      allows up to two. So the function <TT>divide</TT> has assumed that the 
+      second parameter is <TT>2</TT> since that is what we have specified to 
+      happen if this parameter was not passed (notice the function declaration, 
+      which finishes with <TT>int b=2</TT>, not just <TT>int b</TT>). Therefore 
+      the result of this function call is <TT>6</TT> (<TT>12/2</TT>).
+      <P>In the second call:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>divide (20,4)
+</PRE></TD></TR></TBODY></TABLE>
+      <P>there are two parameters, so the default value for <TT>b</TT> (<TT>int 
+      b=2</TT>) is ignored and <TT>b</TT> takes the value passed as argument, 
+      that is <TT>4</TT>, making the result returned equal to <TT>5</TT> 
+      (<TT>20/4</TT>).
+      <P><A name=function_overload></A>
+      <H3>Overloaded functions.</H3>In C++ two different functions can have the 
+      same name if their parameter types or number are different. That means 
+      that you can give the same name to more than one function if they have 
+      either a different number of parameters or different types in their 
+      parameters. For example: 
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// overloaded function</SPAN>
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>int</SPAN> operate (<SPAN class=kw>int</SPAN> a, <SPAN class=kw>int</SPAN> b)
+{
+  <SPAN class=kw>return</SPAN> (a*b);
+}
+
+<SPAN class=kw>float</SPAN> operate (<SPAN class=kw>float</SPAN> a, <SPAN class=kw>float</SPAN> b)
+{
+  <SPAN class=kw>return</SPAN> (a/b);
+}
+
+<SPAN class=kw>int</SPAN> main ()
+{
+  <SPAN class=kw>int</SPAN> x=5,y=2;
+  <SPAN class=kw>float</SPAN> n=5.0,m=2.0;
+  cout &lt;&lt; operate (x,y);
+  cout &lt;&lt; <SPAN class=str>"\n"</SPAN>;
+  cout &lt;&lt; operate (n,m);
+  cout &lt;&lt; <SPAN class=str>"\n"</SPAN>;
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>10
+2.5
+</PRE></TD></TR></TBODY></TABLE>
+      <P>In this case we have defined two functions with the same name, 
+      <TT>operate</TT>, but one of them accepts two parameters of type 
+      <TT>int</TT> and the other one accepts them of type <TT>float</TT>. The 
+      compiler knows which one to call in each case by examining the types 
+      passed as arguments when the function is called. If it is called with two 
+      ints as its arguments it calls to the function that has two <TT>int</TT> 
+      parameters in its prototype and if it is called with two floats it will 
+      call to the one which has two <TT>float</TT> parameters in its prototype. 
+      <P>In the first call to <TT>operate</TT> the two arguments passed are of 
+      type <TT>int</TT>, therefore, the function with the first prototype is 
+      called; This function returns the result of multiplying both parameters. 
+      While the second call passes two arguments of type <TT>float</TT>, so the 
+      function with the second prototype is called. This one has a different 
+      bahavior: it divides one parameter by the other. So the behavior of a call 
+      to <TT>operate</TT> depends on the type of the arguments passed because 
+      the function has been <I>overloaded</I>.
+      <P>Please notice that a function cannot be overloaded only by its return 
+      type. At least one of its parameters must have a different type.
+      <P><A name=inline></A>
+      <H3>inline functions.</H3>
+      <P>The <TT>inline</TT> specifier is an optimization specifier. It does not 
+      change the behavior of a function, but serves to indicate the compiler 
+      that the code the function body generates shall be inserted at the point 
+      of each call to the function, instead of doing a regular call that 
+      generally involves stacking variables and jumping to other memory 
+      locations. This is equivalent to declaring a macro. It only represents an 
+      overhead advantage for very short functions, in which the resulting code 
+      from compiling the program may be faster when the overhead required to 
+      call a function is avoided.
+      <P>The format for its declaration is:
+      <P><TT>inline type name ( arguments ... ) { instructions ... }<BR></TT>
+      <P>and the call is just like the call to any other function. You do not 
+      have to include the inline keyword when calling the function, only in its 
+      declaration.
+      <P>Most compilers already optimize code to generate inline functions when 
+      it is more convenient. This specifier only indicates the compiler that 
+      inline is preferred for this function.
+      <P><A name=recursive></A>
+      <H3>Recursivity.</H3>Recursivity is the property that functions have to be 
+      called by themselves. It is useful for many tasks, like sorting or 
+      calculate the factorial of numbers. For example, to obtain the factorial 
+      of a number (n!) the mathematical formula would be:
+      <P><PRE>n! = n * (n-1) * (n-2) * (n-3) ... * 1<BR></PRE>
+      <P>more concretely, 5! (factorial of 5) would be:
+      <P><PRE>5! = 5 * 4 * 3 * 2 * 1 = 120<BR></PRE>
+      <P>and a recursive function to calculate this in C++ could be:
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// factorial calculator</SPAN>
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>long</SPAN> factorial (<SPAN class=kw>long</SPAN> a)
+{
+  <SPAN class=kw>if</SPAN> (a &gt; 1)
+   <SPAN class=kw>return</SPAN> (a * factorial (a-1));
+  <SPAN class=kw>else</SPAN>
+   <SPAN class=kw>return</SPAN> (1);
+}
+
+<SPAN class=kw>int</SPAN> main ()
+{
+  <SPAN class=kw>long</SPAN> number;
+  cout &lt;&lt; <SPAN class=str>"Please type a number: "</SPAN>;
+  cin &gt;&gt; number;
+  cout &lt;&lt; number &lt;&lt; <SPAN class=str>"! = "</SPAN> &lt;&lt; factorial (number);
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>Please type a number: 9
+9! = 362880  
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Notice how in function <TT>factorial</TT> we included a call to itself, 
+      but only if the argument passed was greater than 1, since otherwise the 
+      function would perform an infinite recursive loop in which once it arrived 
+      to <TT>0</TT> it would continue multiplying by all the negative numbers 
+      (probably provoking a stack overflow error on runtime).
+      <P>This function has a limitation because of the data type we used in its 
+      design (<TT>long</TT>) for more simplicity. The results given will not be 
+      valid for values much greater than 10! or 15!, depending on the system you 
+      compile it.
+      <P><A name=declaring></A>
+      <H3>Declaring functions.</H3>Until now, we have defined all of the 
+      functions before the first appearance of calls to them in the source code. 
+      These calls were generally in function <TT>main</TT> which we have always 
+      left at the end of the source code. But if you try to repeat some of the 
+      examples of functions described so far, but placing the function 
+      <TT>main</TT> before any of the other functions that were called from 
+      within it, you will most likely obtain compiling errors. The reason is 
+      that to be able to call a function this must have been declared in some 
+      earlier point of the code, like we have done in all our examples.
+      <P>But there is an alternative way to avoid writing the whole code of a 
+      function before it can be used in main or in some other function. This can 
+      be achieved by declaring just a prototype of the function before it is 
+      used, instead of the entire definition. This declaration is shorter than 
+      the entire definition, but enough significant for the compiler to 
+      determine its return type and the types of its parameters.
+      <P>Its form is: 
+      <P><TT>type name ( argument_type1, argument_type2, ...);<BR></TT>
+      <P>It is identical to a function definition, except that it does not 
+      include the body of the function itself (i.e., the function statements 
+      that in normal definitions are enclosed in braces <TT>{ }</TT>) and 
+      instead of that we end the prototype declaration with a mandatory 
+      semicolon (<TT>;</TT>).
+      <P>The parameter enumeration does not need to include the identifiers, but 
+      only the type specifiers. The inclusion of a name for each parameter as in 
+      the function definition is optional in the prototype declaration. For 
+      example, we can declare a function called <TT>protofunction</TT> with two 
+      <TT>int</TT> parameters with any of the following declarations:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>int</SPAN> protofunction (<SPAN class=kw>int</SPAN> first, <SPAN class=kw>int</SPAN> second);
+<SPAN class=kw>int</SPAN> protofunction (<SPAN class=kw>int</SPAN>, <SPAN class=kw>int</SPAN>);
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Anyway, including a name for each variable makes the prototype more 
+      legible.
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// declaring functions prototypes</SPAN>
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>void</SPAN> odd (<SPAN class=kw>int</SPAN> a);
+<SPAN class=kw>void</SPAN> even (<SPAN class=kw>int</SPAN> a);
+
+<SPAN class=kw>int</SPAN> main ()
+{
+  <SPAN class=kw>int</SPAN> i;
+  <SPAN class=kw>do</SPAN> {
+    cout &lt;&lt; <SPAN class=str>"Type a number: (0 to exit) "</SPAN>;
+    cin &gt;&gt; i;
+    odd (i);
+  } <SPAN class=kw>while</SPAN> (i!=0);
+  <SPAN class=kw>return</SPAN> 0;
+}
+
+<SPAN class=kw>void</SPAN> odd (<SPAN class=kw>int</SPAN> a)
+{
+  <SPAN class=kw>if</SPAN> ((a%2)!=0) cout &lt;&lt; <SPAN class=str>"Number is odd.\n"</SPAN>;
+  <SPAN class=kw>else</SPAN> even (a);
+}
+
+<SPAN class=kw>void</SPAN> even (<SPAN class=kw>int</SPAN> a)
+{
+  <SPAN class=kw>if</SPAN> ((a%2)==0) cout &lt;&lt; <SPAN class=str>"Number is even.\n"</SPAN>;
+  <SPAN class=kw>else</SPAN> odd (a);
+}
+</PRE></TD>
+          <TD class=result><PRE>Type a number (0 to exit): 9
+Number is odd.
+Type a number (0 to exit): 6
+Number is even.
+Type a number (0 to exit): 1030
+Number is even.
+Type a number (0 to exit): 0
+Number is even.
+</PRE></TD></TR></TBODY></TABLE>
+      <P>This example is indeed not an example of efficiency. I am sure that at 
+      this point you can already make a program with the same result, but using 
+      only half of the code lines that have been used in this example. Anyway 
+      this example illustrates how prototyping works. Moreover, in this concrete 
+      example the prototyping of at least one of the two functions is necessary 
+      in order to compile the code without errors.
+      <P>The first things that we see are the declaration of functions 
+      <TT>odd</TT> and <TT>even</TT>: 
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>void</SPAN> odd (<SPAN class=kw>int</SPAN> a);
+<SPAN class=kw>void</SPAN> even (<SPAN class=kw>int</SPAN> a); 
+</PRE></TD></TR></TBODY></TABLE>
+      <P>This allows these functions to be used before they are defined, for 
+      example, in <TT>main</TT>, which now is located where some people find it 
+      to be a more logical place for the start of a program: the beginning of 
+      the source code. 
+      <P>Anyway, the reason why this program needs at least one of the functions 
+      to be declared before it is defined is because in <TT>odd</TT> there is a 
+      call to <TT>even</TT> and in <TT>even</TT> there is a call to 
+      <TT>odd</TT>. If none of the two functions had been previously declared, a 
+      compilarion error would happen, since either <TT>odd</TT> would not not be 
+      visible from <TT>even</TT> (because it has still not been declared), or 
+      <TT>even</TT> would not be visible from <TT>odd</TT> (for the same 
+reason).
+      <P>Having the prototype of all functions together in the same place within 
+      the source code is found practical by some programmers, and this can be 
+      easily achieved by declaring all functions prototypes at the beginning of 
+      a program.<BR>
+      <P>
+      <CENTER>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD align=right width="49%"><A 
+            href="http://www.cplusplus.com/doc/tutorial/functions.html"><IMG 
+            src="Functions (II)_files/navigate_previous.gif" align=right 
+            border=0>Previous:<BR><B>Functions (I)</B></A> </TD>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/"><IMG 
+            src="Functions (II)_files/navigate_index.gif" 
+          border=0><BR>index</A></TD>
+          <TD align=left width="49%"><A 
+            href="http://www.cplusplus.com/doc/tutorial/arrays.html"><IMG 
+            src="Functions (II)_files/navigate_next.gif" align=left 
+            border=0>Next:<BR><B>Arrays</B></A> </TD></TR></TBODY></TABLE></CENTER>
+      <P></P>
+      <P>
+      <SCRIPT type=text/javascript>
+<!--
+SuOptions()
+-->
+</SCRIPT>
+      </P></DIV></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-TOP: black 1px solid; BACKGROUND: #d7d7d7; PADDING-BOTTOM: 5px" 
+    align=middle colSpan=2><SMALL>© The C++ Resources Network, 2000-2005 - All 
+      rights reserved</SMALL></TD></TR></TBODY></TABLE></BODY></HTML>

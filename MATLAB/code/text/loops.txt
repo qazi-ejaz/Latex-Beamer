@@ -1,0 +1,23 @@
+n = 0; 
+while(n<10) 
+n = n+1; 
+  a = input('Enter a value greater than 0:'); 
+Enter a value greater than 0:6
+if(a<=0) 
+end 
+  disp('The natural log of that number is') 
+The natural log of that number is
+disp(log(a)) 
+    1.7918
+
+n = n+1; 
+  a = input('Enter a value greater than 0:'); 
+Enter a value greater than 0:-78
+if(a<=0) 
+    disp('You must enter a positive number') 
+You must enter a positive number
+disp('This program will terminate') 
+This program will terminate
+break 
+end 
+echo off

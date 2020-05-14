@@ -1,0 +1,34 @@
+\beamer@sectionintoc {1}{History}{4}{0}{1}
+\beamer@subsectionintoc {1}{1}{Introduction}{4}{0}{1}
+\beamer@sectionintoc {2}{Labs}{21}{0}{2}
+\beamer@subsectionintoc {2}{1}{flowchart}{21}{0}{2}
+\beamer@subsectionintoc {2}{2}{Lab Architecture}{24}{0}{2}
+\beamer@sectionintoc {3}{Functions}{26}{0}{3}
+\beamer@subsubsectionintoc {3}{0}{1}{Inline Function}{35}{0}{3}
+\beamer@subsubsectionintoc {3}{0}{2}{Overloads}{40}{0}{3}
+\beamer@subsubsectionintoc {3}{0}{3}{Templates}{45}{0}{3}
+\beamer@subsubsectionintoc {3}{0}{4}{Name visibility}{53}{0}{3}
+\beamer@subsubsectionintoc {3}{0}{5}{Namespaces}{58}{0}{3}
+\beamer@subsectionintoc {3}{1}{Array}{68}{0}{3}
+\beamer@sectionintoc {4}{Dynamic Memory}{92}{0}{4}
+\beamer@subsectionintoc {4}{1}{Dynamic Memory}{99}{0}{4}
+\beamer@sectionintoc {5}{Structure}{110}{0}{5}
+\beamer@sectionintoc {6}{Classes}{118}{0}{6}
+\beamer@subsectionintoc {6}{1}{Introduction}{118}{0}{6}
+\beamer@subsectionintoc {6}{2}{Constructors}{131}{0}{6}
+\beamer@sectionintoc {7}{File I/O}{145}{0}{7}
+\beamer@subsectionintoc {7}{1}{File I/O}{145}{0}{7}
+\beamer@subsectionintoc {7}{2}{fileopen}{159}{0}{7}
+\beamer@subsectionintoc {7}{3}{State flags}{161}{0}{7}
+\beamer@subsectionintoc {7}{4}{Binary}{170}{0}{7}
+\beamer@sectionintoc {8}{Codes}{174}{0}{8}
+\beamer@subsectionintoc {8}{1}{For loop}{174}{0}{8}
+\beamer@subsectionintoc {8}{2}{while loop}{177}{0}{8}
+\beamer@subsectionintoc {8}{3}{break statement}{179}{0}{8}
+\beamer@subsectionintoc {8}{4}{continue statement}{180}{0}{8}
+\beamer@subsectionintoc {8}{5}{go-to statement}{181}{0}{8}
+\beamer@subsectionintoc {8}{6}{Switch statement}{182}{0}{8}
+\beamer@subsectionintoc {8}{7}{function}{183}{0}{8}
+\beamer@subsectionintoc {8}{8}{namespace}{188}{0}{8}
+\beamer@subsectionintoc {8}{9}{Array}{190}{0}{8}
+\beamer@subsectionintoc {8}{10}{Structure}{192}{0}{8}

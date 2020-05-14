@@ -1,0 +1,12 @@
+\frametitle{Matlab Graphics}
+\framesubtitle{Visualization of vector data is available $_{\tiny \insertframenumber/\inserttotalframenumber}$}
+\begin{lstlisting}[language=C++]
+>>x= -pi:0.1:pi;
+>>y=sin(x);
+>>plot(x,y)
+>>xlabel('x');
+>>ylabel('y=sin(x)');
+\end{lstlisting}
+\begin{tcolorbox}[title= Code ,width=9.85 cm]
+\lstinputlisting{code/qazih.m}
+\end{tcolorbox}

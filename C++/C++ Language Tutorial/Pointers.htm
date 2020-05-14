@@ -1,0 +1,1263 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0051)http://www.cplusplus.com/doc/tutorial/pointers.html -->
+<HTML><HEAD><TITLE>Pointers</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<STYLE type=text/css>BODY {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+TABLE {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+INPUT {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+SELECT {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+TEXTAREA {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+FORM {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+PRE {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+DT {
+	FONT-WEIGHT: bold
+}
+DD {
+	MARGIN-BOTTOM: 12px
+}
+UL {
+	MARGIN-BOTTOM: 12px
+}
+UL {
+	MARGIN-TOP: 4px
+}
+LI {
+	MARGIN-BOTTOM: 4px
+}
+A:link {
+	COLOR: #000070; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #000070; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #000070; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #0000a0; TEXT-DECORATION: underline
+}
+.imgbox {
+	LINE-HEIGHT: 1px
+}
+.stdform {
+	BORDER-RIGHT: #00007f 1px solid; BORDER-TOP: #00007f 1px solid; BORDER-LEFT: #00007f 1px solid; BORDER-BOTTOM: #00007f 1px solid
+}
+.stdform TH {
+	BORDER-RIGHT: #00007f 1px solid; BORDER-TOP: #00007f 1px solid; BORDER-LEFT: #00007f 1px solid; BORDER-BOTTOM: #00007f 1px solid
+}
+.stdform TD {
+	BORDER-RIGHT: #707080 1px solid; BORDER-TOP: #707080 1px solid; BORDER-LEFT: #707080 1px solid; BORDER-BOTTOM: #707080 1px solid; TEXT-ALIGN: left
+}
+.stdform TR TD {
+	BACKGROUND: #f0f0ff
+}
+.stdform TR.odd TD {
+	BACKGROUND: #e0e0ff
+}
+.stdform TH {
+	BACKGROUND: url(/img/blue.gif) blue; COLOR: #ffffff
+}
+.stdform TH A:link {
+	COLOR: white
+}
+.stdform TH A:visited {
+	COLOR: white
+}
+.stdform TH A:active {
+	COLOR: white
+}
+.stdform TH A:hover {
+	COLOR: yellow
+}
+.stdform .txt {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid; BACKGROUND-COLOR: #fffff0
+}
+.stdform SELECT {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid; BACKGROUND-COLOR: #fffff0
+}
+.stdform TEXTAREA {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid; BACKGROUND-COLOR: #fffff0
+}
+.stdform TEXTAREA {
+	FONT-FAMILY: monospace
+}
+.stdform .field {
+	FONT-WEIGHT: bold; TEXT-ALIGN: right
+}
+.stdform .value {
+	FONT-FAMILY: courier,monospace
+}
+.stdform .description {
+	FONT-SIZE: 80%
+}
+.stdform .buttons {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; TEXT-ALIGN: center
+}
+.stdform TR.separator TD {
+	FONT-WEIGHT: bold; BACKGROUND: white
+}
+.stdform .number {
+	TEXT-ALIGN: center
+}
+.secform {
+	BORDER-RIGHT: #ff6020 1px solid; BORDER-TOP: #ff6020 1px solid; BORDER-LEFT: #ff6020 1px solid; BORDER-BOTTOM: #ff6020 1px solid; BORDER-COLLAPSE: collapse
+}
+.secform TD {
+	BORDER-RIGHT: #ff6020 1px solid; BORDER-TOP: #ff6020 1px solid; BORDER-LEFT: #ff6020 1px solid; BORDER-BOTTOM: #ff6020 1px solid; BORDER-COLLAPSE: collapse
+}
+.secform TR {
+	BACKGROUND: #fffff0
+}
+.secform TR.odd TD {
+	BACKGROUND: #ffffd0
+}
+.secform TH {
+	BACKGROUND: url(/img/orange.gif) #ff6020; COLOR: #ffffff
+}
+.errors {
+	BORDER-RIGHT: #7f0000 1px solid; BORDER-TOP: #7f0000 1px solid; BORDER-LEFT: #7f0000 1px solid; BORDER-BOTTOM: #7f0000 1px solid
+}
+.errors TH {
+	BORDER-RIGHT: #7f0000 1px solid; BORDER-TOP: #7f0000 1px solid; BORDER-LEFT: #7f0000 1px solid; BORDER-BOTTOM: #7f0000 1px solid
+}
+.errors TD {
+	BORDER-RIGHT: #807070 1px solid; BORDER-TOP: #807070 1px solid; BORDER-LEFT: #807070 1px solid; BORDER-BOTTOM: #807070 1px solid; TEXT-ALIGN: left
+}
+.errors TH {
+	BACKGROUND: red; COLOR: #ffffff
+}
+.errors TD {
+	BACKGROUND: #ffe0e0
+}
+.bar {
+	BACKGROUND: url(/img/headbg.gif); COLOR: white; LINE-HEIGHT: 20px
+}
+.bar TABLE {
+	FONT-SIZE: 9px; COLOR: white; LINE-HEIGHT: 16px
+}
+.bar A:link {
+	COLOR: white
+}
+.bar A:visited {
+	COLOR: white
+}
+.bar A:active {
+	COLOR: white
+}
+.bar A:hover {
+	COLOR: yellow; TEXT-DECORATION: none
+}
+.bar .txt {
+	BORDER-RIGHT: 1px inset; BORDER-TOP: 1px inset; BORDER-LEFT: 1px inset; BORDER-BOTTOM: 1px inset; HEIGHT: 14px; BACKGROUND-COLOR: #c0c0ff
+}
+.bar .btn {
+	BORDER-RIGHT: 1px outset; BORDER-TOP: 1px outset; FONT-SIZE: 9px; BORDER-LEFT: 1px outset; BORDER-BOTTOM: 1px outset; HEIGHT: 18px; BACKGROUND-COLOR: #c0c0ff
+}
+.left {
+	BORDER-RIGHT: black 1px solid
+}
+.left TABLE {
+	BORDER-RIGHT: #00007f 1px solid; BORDER-TOP: #00007f 1px solid; MARGIN-TOP: 5px; BACKGROUND: white; BORDER-LEFT: #00007f 1px solid; WIDTH: 160px; BORDER-BOTTOM: #00007f 1px solid; BORDER-COLLAPSE: collapse
+}
+.left TD {
+	FONT-SIZE: x-small; COLOR: #000070; FONT-FAMILY: verdana,arial,helvetica,sans-serif; TEXT-ALIGN: left
+}
+.left TH {
+	FONT-SIZE: xx-small; BACKGROUND: url(/img/blue.gif) blue; COLOR: #ffffff; FONT-FAMILY: verdana,arial,helvetica,sans-serif; HEIGHT: 14px
+}
+.left TH A:link {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.left TH A:visited {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.left TH A:active {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.left TH A:hover {
+	COLOR: yellow; TEXT-DECORATION: none
+}
+.warning {
+	BORDER-RIGHT: red 2px solid; BORDER-TOP: red 2px solid; BACKGROUND: #ffc000; BORDER-LEFT: red 2px solid; BORDER-BOTTOM: red 2px solid
+}
+.content {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px
+}
+.boxed {
+	BORDER-COLLAPSE: collapse
+}
+.boxed TH {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BACKGROUND: #e0e0e0; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid
+}
+.boxed TD {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid
+}
+.code A:link {
+	COLOR: black; TEXT-DECORATION: none
+}
+.code A:visited {
+	COLOR: black; TEXT-DECORATION: none
+}
+.code A:active {
+	COLOR: black; TEXT-DECORATION: none
+}
+.code A:hover {
+	BACKGROUND: yellow; COLOR: black; TEXT-DECORATION: none
+}
+.codebox {
+	WIDTH: 100%
+}
+.snippet {
+	MARGIN-LEFT: 20px
+}
+.code {
+	BORDER-RIGHT: #c0c0d0 1px solid; BORDER-TOP: #c0c0d0 1px solid; BACKGROUND: #efefff; BORDER-LEFT: #c0c0d0 1px solid; BORDER-BOTTOM: #c0c0d0 1px solid
+}
+.result {
+	BORDER-RIGHT: #c0c0c0 1px solid; BORDER-TOP: #c0c0c0 1px solid; BACKGROUND: #e7e7e7; VERTICAL-ALIGN: top; BORDER-LEFT: #c0c0c0 1px solid; WIDTH: 50%; BORDER-BOTTOM: #c0c0c0 1px solid
+}
+.codebox {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-TOP-STYLE: none; PADDING-TOP: 0px; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+.kw {
+	COLOR: #0000b0
+}
+A.kw:hover {
+	COLOR: #0000b0
+}
+A.kw:link {
+	COLOR: #0000b0
+}
+A.kw:visited {
+	COLOR: #0000b0
+}
+A.kw:active {
+	COLOR: #0000b0
+}
+.prep {
+	COLOR: #500070
+}
+.comm {
+	COLOR: #007000
+}
+.str {
+	COLOR: #600030
+}
+</STYLE>
+
+<SCRIPT type=text/javascript>
+<!--
+function GetCookie(name) {
+  var dc = document.cookie;
+  var prefix = name + '=';
+  var begin = dc.indexOf('; ' + prefix);
+  if (begin == -1) {
+    begin = dc.indexOf(prefix);
+    if (begin != 0) return null;
+  } else
+    begin += 2;
+  var end = document.cookie.indexOf(';', begin);
+  if (end == -1)
+    end = dc.length;
+  var sret=unescape(dc.substring(begin + prefix.length, end));
+  var aret=sret.split('+'); sret=aret.join(' ');
+  return sret;
+}
+
+var user=GetCookie ('codehq_user');
+
+var mo = new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
+
+function When(ts) {
+ var dt = new Date(ts*1000);
+ document.write(mo[dt.getMonth()]+" "+dt.getDate()+", "+(dt.getYear()+(dt.getYear()<1900?1900:0)));
+ document.write(" at "+((dt.getHours()%12)==0?12:dt.getHours()%12)+":"+(dt.getMinutes()<10?"0":"")+dt.getMinutes()+(dt.getHours()<12?"am":"pm"));
+}
+
+function LoginBox() {
+if (!user)
+{
+	document.write ('<table cellspacing=2 cellpadding="0" valign="top">');
+	document.write ('<tr><td align="center"><b>user<\/b><\/td><td align="center"><b>pass<\/b><\/td><td align="center">[<a href="/member/signup.form">register<\/a>]<\/td><\/tr>');
+	document.write ('<tr><td align="center"><input class="txt" name="l" size="4" type="text"><\/td>');
+	document.write (' <td align="center"><input class="txt" name="p" size="4" type="password"><\/td>');
+	document.write (' <td align="center"><input class="btn" value="sign in" type="submit"><\/td><\/tr>');
+	document.write ('<\/table>');
+}
+else
+{
+	document.write ('<table width="150" cellspacing="2" cellpadding="0" valign="top">');
+	document.write ('<tr><td colspan="2" align="center">Logged in as: <b>'+user+'<\/b></td></tr>');	
+	document.write ('<tr><td align="right"><input class="btn" value="log out" type="submit"><input type="hidden" name="redirectto" value="/doc/tutorial/pointers.html"><input type="hidden" name="logout" value="sign out"></td>');
+	document.write ('<td align="left">[<b><a href="/member/">profile<\/a><\/b>]<\/font>');
+	document.write ('<\/td><\/tr>');
+	document.write ('<\/table>');
+}
+}
+
+var lowuser=user.toLowerCase();
+var faaccess=new Boolean ( (( GetCookie('codehq_access') & 256 )==256 ));
+function SuOptions() {
+	if ((faaccess==true)||(lowuser=="juan soulie"))
+	{
+		document.write(' [<a href="/doc/publish.form?what=edit&itemid=11">Edit this document<\/a>] ');
+	}
+}
+//-->
+</SCRIPT>
+
+<META content="MSHTML 6.00.2900.2180" name=GENERATOR></HEAD>
+<BODY bgColor=#d7d7d7>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=imgbox vAlign=top bgColor=#b0c0d0 rowSpan=2><A 
+      href="http://www.cplusplus.com/"><IMG height=75 
+      src="Pointers_files/headlogo1.gif" width=165 border=0></A></TD>
+    <TD class=imgbox vAlign=top bgColor=#ffffff><A 
+      href="http://www.cplusplus.com/"><IMG height=18 
+      src="Pointers_files/headlogo2.gif" width=33 border=0></A></TD>
+    <TD width="95%" bgColor=#d7d7d7></TD>
+    <TD bgColor=#d7d7d7></TD></TR>
+  <TR>
+    <TD class=imgbox vAlign=top bgColor=#ffffff><A 
+      href="http://www.cplusplus.com/"><IMG height=57 
+      src="Pointers_files/headlogo3.gif" width=33 border=0></A></TD>
+    <TD class=bar vAlign=top width="95%">&nbsp; <B><A 
+      href="http://www.cplusplus.com/">C++</A> : <A 
+      href="http://www.cplusplus.com/doc/">Documents</A> : <A 
+      href="http://www.cplusplus.com/doc/tutorial/">C++ Language Tutorial</A> : 
+      Pointers </B><BR>
+      <FORM name=search action=/search/search.php method=get>&nbsp; Search: 
+      <INPUT class=txt size=13 name=q> <INPUT class=btn type=submit value=Search> </FORM></TD>
+    <TD class=bar vAlign=top>
+      <FORM name=login action=/member/login.form method=post><INPUT type=hidden 
+      value=1 name=login><INPUT type=hidden value=/doc/tutorial/pointers.html 
+      name=redirectto>
+      <SCRIPT type=text/javascript>
+<!--
+LoginBox();
+// -->
+</SCRIPT>
+       </FORM><NOSCRIPT>
+      <CENTER>javascript and cookies 
+required</CENTER></NOSCRIPT></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD style="BORDER-RIGHT: black 1px solid; LINE-HEIGHT: 1px" width=165 
+    bgColor=#b0c0d0><IMG height=1 src="Pointers_files/165x1.gif" width=165></TD>
+    <TD class=imgbox width="99%" bgColor=white><IMG height=1 
+      src="Pointers_files/165x1.gif" width=165></TD></TR>
+  <TR><!-- left -->
+    <TD class=left vAlign=top align=middle width=165 bgColor=#b0c0d0>
+      <TABLE class=box>
+        <TBODY>
+        <TR>
+          <TH><A href="http://www.cplusplus.com/doc/tutorial/">C++ Language 
+            Tutorial</A></TH></TR>
+        <TR>
+          <TD><B>Introduction</B></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/introduction.html">· 
+            Instructions for use</A></TD></TR>
+        <TR>
+          <TD><B>Basics of C++</B></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/program_structure.html">· 
+            Structure of a program</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/variables.html">· 
+            Variables. Data Types.</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/constants.html">· 
+            Constants</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/operators.html">· 
+            Operators</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/basic_io.html">· 
+            Basic Input/Output</A></TD></TR>
+        <TR>
+          <TD><B>Control Structures</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/control.html">· 
+            Control Structures</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/functions.html">· 
+            Functions (I)</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/functions2.html">· 
+            Functions (II)</A></TD></TR>
+        <TR>
+          <TD><B>Compound Data Types</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/arrays.html">· 
+            Arrays</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/ntcs.html">· 
+            Character Sequences</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/pointers.html">· 
+            Pointers</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/dynamic.html">· 
+            Dynamic Memory</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/structures.html">· Data 
+            Structures</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/other_data_types.html">· 
+            Other Data Types</A></TD></TR>
+        <TR>
+          <TD><B>Object Oriented Programming</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/classes.html">· 
+            Classes (I)</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/classes2.html">· 
+            Classes (II)</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/inheritance.html">· 
+            Friendship and inheritance</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/polymorphism.html">· 
+            Polymorphism</A></TD></TR>
+        <TR>
+          <TD><B>Advanced Concepts</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/templates.html">· 
+            Templates</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/namespaces.html">· 
+            Namespaces</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/exceptions.html">· 
+            Exceptions</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/typecasting.html">· Type 
+            Casting</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/preprocessor.html">· 
+            Preprocessor directives</A></TD></TR>
+        <TR>
+          <TD><B>C++ Standard Library</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/files.html">· 
+            Input/Output with files</A></TD></TR></TBODY></TABLE>
+      <TABLE class=box>
+        <TBODY>
+        <TR>
+          <TH><A href="http://www.cplusplus.com/doc/">Document 
+          categories</A></TH></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/information/">Information 
+            about C++</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/">C++ Language 
+            Tutorial</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/papers/">Additional 
+            Papers</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/general/">User-contributed</A></TD></TR></TBODY></TABLE>
+      <TABLE class=box>
+        <TBODY>
+        <TR>
+          <TH><A href="http://www.cplusplus.com/">cplusplus.com</A></TH></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/">documents</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/ref/">reference</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/src/">sourcecodes</A></TD></TR>
+        <TR>
+          <TD><A 
+      href="http://www.cplusplus.com/forum/">forum</A></TD></TR></TBODY></TABLE><BR><IMG 
+      height=1 src="Pointers_files/165x1.gif" width=165>
+      <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-5777024789006368";
+google_ad_width = 125;
+google_ad_height = 125;
+google_ad_format = "125x125_as";
+google_ad_type = "text_image";
+google_ad_channel ="5923551140";
+google_color_border = "3333CC";
+google_color_bg = "FFFFFF";
+google_color_link = "3333CC";
+google_color_url = "000000";
+google_color_text = "000000";
+//--></SCRIPT>
+
+      <SCRIPT language=javascript src="Pointers_files/1x1.js"></SCRIPT>
+       <NOSCRIPT><A 
+      href="http://media.fastclick.net/w/click.here?sid=4636&amp;m=3&amp;c=1" 
+      target=_top><IMG height=600 src="Pointers_files/1x1.gif" width=160 
+      border=1></A></NOSCRIPT> <IMG height=1 src="Pointers_files/165x1.gif" 
+      width=165> </TD><!-- /left -->
+    <TD vAlign=top width="99%" bgColor=white>
+      <CENTER>
+      <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-5777024789006368";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text_image";
+google_ad_channel ="1922709837";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "000000";
+google_color_text = "000000";
+//--></SCRIPT>
+
+      <SCRIPT language=javascript src="Pointers_files/show_ads.js"></SCRIPT>
+      <NOSCRIPT><A 
+      href="http://media.fastclick.net/w/click.here?sid=4636&amp;m=1&amp;c=1" 
+      target=_top><IMG height=90 src="F:\New Folder\Pointers_files\1x1(1).gif" 
+      width=728 border=1></A></NOSCRIPT> </CENTER>
+      <DIV class=content>
+      <TABLE width="100%">
+        <TBODY>
+        <TR>
+          <TD>
+            <H1>Pointers</H1></TD>
+          <TD align=right>
+            <TABLE>
+              <TBODY>
+              <TR>
+                <TD align=right>Published by <B><A 
+                  href="http://www.cplusplus.com/member/Juan_Soulie/">Juan 
+                  Soulie</A></B></TD></TR>
+              <TR>
+                <TD align=right><SMALL>Last update on
+                  <SCRIPT type=text/javascript>When(1133612688)</SCRIPT>
+                   </SMALL></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>We have 
+      already seen how variables are seen as memory cells that can be accessed 
+      using their identifiers. This way we did not have to care about the 
+      physical location of our data within memory, we simply used its identifier 
+      whenever we wanted to refer to our variable.
+      <P>The memory of your computer can be imagined as a succession of memory 
+      cells, each one of the minimal size that computers manage (one byte). 
+      These single-byte memory cells are numbered in a consecutive way, so as, 
+      within any block of memory, every cell has the same number as the previous 
+      one plus one.
+      <P>This way, each cell can be easily located in the memory because it has 
+      a unique address and all the memory cells follow a successive pattern. For 
+      example, if we are looking for cell 1776 we know that it is going to be 
+      right between cells 1775 and 1777, exactly one thousand cells after 776 
+      and exactly one thousand cells before cell 2776.
+      <P><A name=reference></A>
+      <H3>Reference operator (&amp;)</H3>As soon as we declare a variable, the 
+      amount of memory needed is assigned for it at a specific location in 
+      memory (its memory address). We generally do not actively decide the exact 
+      location of the variable within the panel of cells that we have imagined 
+      the memory to be - Fortunately, that is a task automatically performed by 
+      the operating system during runtime. However, in some cases we may be 
+      interested in knowing the address where our variable is being stored 
+      during runtime in order to operate with relative positions to 
+      it.<BR><BR>The address that locates a variable within memory is what we 
+      call a <I>reference</I> to that variable. This reference to a variable can 
+      be obtained by preceding the identifier of a variable with an ampersand 
+      sign (<TT>&amp;</TT>), known as reference operator, and which can be 
+      literally translated as "address of". For example: 
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>ted = &amp;andy;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>This would assign to <TT>ted</TT> the address of variable 
+      <TT>andy</TT>, since when preceding the name of the variable <TT>andy</TT> 
+      with the reference operator (<TT>&amp;</TT>) we are no longer talking 
+      about the content of the variable itself, but about its reference (i.e., 
+      its address in memory).
+      <P>For now on we are going to assume that <TT>andy</TT> is placed during 
+      runtime in the memory address <TT>1776</TT>. This number (<TT>1776</TT>) 
+      is just and arbitrary assumption we are inventing right now in order to 
+      help clarify some concepts in this tutorial, but in reality, we cannot 
+      know before runtime the real value the address of a variable will have in 
+      memory.
+      <P>Consider the following code fragment:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>andy = 25;
+fred = andy;
+ted = &amp;andy; 
+</PRE></TD></TR></TBODY></TABLE>
+      <P>The values contained in each variable after the execution of this, are 
+      shown in the following diagram: 
+      <P><IMG src="Pointers_files/11-imgpoin1.gif">
+      <P>First, we have assigned the value 25 to <TT>andy</TT> (a variable whose 
+      address in memory we have assumed to be 1776).
+      <P>The second statement copied to <TT>fred</TT> the content of variable 
+      <TT>andy</TT> (which is 25). This is a standard assignation, as we have 
+      done so many times before.
+      <P>Finally, the third statement copies to <TT>ted</TT> not the value 
+      contained in <TT>andy</TT> but a reference to it (i.e., its address, which 
+      we have assumed to be <TT>1776</TT>). The reason is that in this third 
+      assignation operation we have preceded the identifier <TT>andy</TT> with 
+      the reference operator (<TT>&amp;</TT>), so we were no longer referring to 
+      the value of andy but to its reference (its address in memory).
+      <P>The variable that stores the reference to another variable (like 
+      <TT>ted</TT> in the previous example) is what we call a <I>pointer</I>. 
+      Pointers are a very powerful feature of the C++ language that has many 
+      uses in advanced programming. Farther ahead, we will see how this type of 
+      variable is used and declared.
+      <P><A name=dereference></A>
+      <H3>Dereference operator (*)</H3>
+      <P>We have just seen that a variable which stores a reference to another 
+      variable is called a pointer. Pointers are said to "point to" the variable 
+      whose reference they store.
+      <P>Using a pointer we can directly access the value stored in the variable 
+      which it points to. To do this, we simply have to precede the pointer's 
+      identifier with an asterisk (*), which acts as dereference operator and 
+      that can be literally translated to "value pointed by".
+      <P>Therefore, following with the values of the previous example, if we 
+      write: 
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>beth = *ted;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>(that we could read as: "<TT>beth</TT> equal to value pointed by 
+      <TT>ted</TT>") <TT>beth</TT> would take the value <TT>25</TT>, since 
+      <TT>ted</TT> is <TT>1776</TT>, and the value pointed by 1776 is 25.
+      <P><IMG src="Pointers_files/11-imgpoin2.gif">
+      <P>You must clearly differentiate that the expression <TT>ted</TT> refers 
+      to the value <TT>1776</TT>, while <TT>*ted</TT> (with an asterisk 
+      <TT>*</TT> preceding the identifier) refers to the value stored at address 
+      <TT>1776</TT>, which in this case is <TT>25</TT>. Notice the difference of 
+      including or not including the dereference operator (I have included an 
+      explanatory commentary of how each of these two expressions could be 
+      read): 
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>beth = ted;   <SPAN class=comm>// beth equal to ted ( 1776 )</SPAN>
+beth = *ted;  <SPAN class=comm>// beth equal to value pointed by ted ( 25 )</SPAN>
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Notice the difference between the reference and dereference 
+      operators:<BR>
+      <UL>
+        <LI>&amp; is the reference operator and can be read as "address of" 
+        <LI>* is the dereference operator and can be read as "value pointed by" 
+        </LI></UL>Thus, they have complementary (or opposite) meanings. A variable 
+      referenced with <TT>&amp;</TT> can be dereferenced with <TT>*</TT>.
+      <P>Earlier we performed the following two assignations:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>andy = 25;
+ted = &amp;andy;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Right after these two statements, all of the following expressions 
+      would give true as result:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>andy == 25
+&amp;andy == 1776
+ted == 1776
+*ted == 25
+</PRE></TD></TR></TBODY></TABLE>
+      <P>The first expression is quite clear considering that the assignation of 
+      <TT>andy</TT> was <TT>andy=25</TT>. The second one uses the reference 
+      operator (<TT>&amp;</TT>), which returns the address of variable 
+      <TT>andy</TT>, which we assumed it to have a value of <TT>1776</TT>. The 
+      third one is somewhat obvious since the second expression was true and the 
+      assignation operation performed on <TT>ted</TT> was 
+      <TT>ted=&amp;andy</TT>. The fourth expression uses the reference operator 
+      (<TT>*</TT>) that, as we have just seen, can be read as "value pointed 
+      by", and the value pointed by <TT>ted</TT> is indeed <TT>25</TT>.
+      <P>So, after all that, you may also infer that for as long as the address 
+      pointed by <TT>ted</TT> remains unchanged the following expression will 
+      also be true: 
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>*ted == andy
+</PRE></TD></TR></TBODY></TABLE>
+      <P><A name=declaring_pointers></A>
+      <H3>Declaring variables of pointer types</H3>Due to the ability of a 
+      pointer to directly refer to the value that it points to, it becomes 
+      necessary to specify in its declaration which data type a pointer is going 
+      point to. It is not the same thing to point to a <TT>char</TT> than to 
+      point to an <TT>int</TT> or a <TT>float</TT>.
+      <P>The declaration of pointers follows this format:
+      <P><TT>type * name; <BR></TT>
+      <P>where <TT>type</TT> is the data type of the value that the pointer is 
+      intended to point to. This type is not the type of the pointer itself! but 
+      the type of the data the pointer points to. For example:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>int</SPAN> * number;
+<SPAN class=kw>char</SPAN> * character;
+<SPAN class=kw>float</SPAN> * greatnumber;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>These are three declarations of pointers. Each one is intended to point 
+      to a different data type, but in fact all of them are pointers and all of 
+      them will occupy the same amount of space in memory (the size in memory of 
+      a pointer depends on the platform where the code is going to run). 
+      Nevertheless, the data to which they point to do not occupy the same 
+      amount of space nor are of the same type: the first one points to an 
+      <TT>int</TT>, the second one to a <TT>char</TT> and the last one to a 
+      <TT>float</TT>. Therefore, although these three example variables are all 
+      of them pointers which occupy the same size in memory, they are said have 
+      different types: <TT>int*</TT>, <TT>char*</TT> and <TT>float*</TT> 
+      respectively, depending on the type they point to.
+      <P>I want to emphasize that the asterisk sign (<TT>*</TT>) that we use 
+      when declaring a pointer only means that it is a pointer (it is part of 
+      its type compound specifier), and should not be confused with the 
+      dereference operator that we have seen a bit earlier, but which is also 
+      written with an asterisk (<TT>*</TT>). They are simply two different 
+      things represented with the same sign.
+      <P>Now have a look at this code:
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// my first pointer</SPAN>
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>int</SPAN> main ()
+{
+  <SPAN class=kw>int</SPAN> firstvalue, secondvalue;
+  <SPAN class=kw>int</SPAN> * mypointer;
+
+  mypointer = &amp;firstvalue;
+  *mypointer = 10;
+  mypointer = &amp;secondvalue;
+  *mypointer = 20;
+  cout &lt;&lt; <SPAN class=str>"firstvalue is "</SPAN> &lt;&lt; firstvalue &lt;&lt; endl;
+  cout &lt;&lt; <SPAN class=str>"secondvalue is "</SPAN> &lt;&lt; secondvalue &lt;&lt; endl;
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>firstvalue is 10
+secondvalue is 20
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Notice that even though we have never directly set a value to either 
+      <TT>firstvalue</TT> or <TT>secondvalue</TT>, both end up with a value set 
+      indirectly through the use of <TT>mypointer</TT>. This is the procedure:
+      <P>First, we have assigned as value of <TT>mypointer</TT> a reference to 
+      <TT>firstvalue</TT> using the reference operator (<TT>&amp;</TT>). And 
+      then we have assigned the value 10 to the memory location pointed by 
+      <TT>mypointer</TT>, that because at this moment is pointing to the memory 
+      location of <TT>firstvalue</TT>, this in fact modifies the value of 
+      <TT>firstvalue</TT>.
+      <P>In order to demonstrate that a pointer may take several different 
+      values during the same program I have repeated the process with 
+      <TT>secondvalue</TT> and that same pointer, <TT>mypointer</TT>.
+      <P>Here is an example a little bit more elaborated:
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// more pointers</SPAN>
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>int</SPAN> main ()
+{
+  <SPAN class=kw>int</SPAN> firstvalue = 5, secondvalue = 15;
+  <SPAN class=kw>int</SPAN> * p1, * p2;
+
+  p1 = &amp;firstvalue;  <SPAN class=comm>// p1 = address of firstvalue</SPAN>
+  p2 = &amp;secondvalue; <SPAN class=comm>// p2 = address of secondvalue</SPAN>
+  *p1 = 10;          <SPAN class=comm>// value pointed by p1 = 10</SPAN>
+  *p2 = *p1;         <SPAN class=comm>// value pointed by p2 = value pointed by p1</SPAN>
+  p1 = p2;           <SPAN class=comm>// p1 = p2 (value of pointer is copied)</SPAN>
+  *p1 = 20;          <SPAN class=comm>// value pointed by p1 = 20</SPAN>
+  
+  cout &lt;&lt; <SPAN class=str>"firstvalue is "</SPAN> &lt;&lt; firstvalue &lt;&lt; endl;
+  cout &lt;&lt; <SPAN class=str>"secondvalue is "</SPAN> &lt;&lt; secondvalue &lt;&lt; endl;
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>firstvalue is 10
+secondvalue is 20
+</PRE></TD></TR></TBODY></TABLE>
+      <P>I have included as a comment on each line how the code can be read: 
+      ampersand (<TT>&amp;</TT>) as "address of" and asterisk (<TT>*</TT>) as 
+      "value pointed by".
+      <P>Notice that there are expressions with pointers <TT>p1</TT> and 
+      <TT>p2</TT>, both with and without dereference operator (<TT>*</TT>). The 
+      meaning of an expression using the dereference operator (<TT>*</TT>) is 
+      very different from one that does not: When this operator precedes the 
+      pointer name, the expression refers to the memory location pointed by it, 
+      while when a pointer name appears without this operator, it refers to the 
+      value of the pointer itself, that is, a reference.
+      <P>Another thing that may call your attention is the line: 
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>int</SPAN> * p1, * p2;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>This declares the two pointers used in the previous example. But notice 
+      that there is an asterisk (*) for each pointer, in order for both to have 
+      type <TT>int*</TT> (pointer to <TT>int</TT>).
+      <P>Otherwise, the type for the second variable declared in that line would 
+      have been <TT>int</TT> (and not <TT>int*</TT>) because of precedence 
+      relationships. If we had written:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>int</SPAN> * p1, p2;
+</PRE></TD></TR></TBODY></TABLE>
+      <P><TT>p1</TT> would indeed have <TT>int*</TT> type, but <TT>p2</TT> would 
+      have type <TT>int</TT>. Spaces do not matter at all for this purpose. 
+      Anyway, simply remember to put one asterisk per pointer.<BR><BR><A 
+      name=""></A>
+      <H3>Pointers and arrays</H3>The concept of array is very much bound to the 
+      one of pointer. In fact, the identifier of an array is equivalent to the 
+      address of its first element, as a pointer is equivalent to the address of 
+      the first element that it points to, so in fact they are the same concept. 
+      For example, supposing these two declarations:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>int</SPAN> numbers [20];
+<SPAN class=kw>int</SPAN> * p;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>The following assignation would be valid: 
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>p = numbers; 
+</PRE></TD></TR></TBODY></TABLE>
+      <P>After that, <TT>p</TT> and <TT>numbers</TT> would be equivalent and 
+      would have the same properties. The only difference is that we could 
+      change the value of pointer <TT>p</TT> by another one, whereas 
+      <TT>numbers</TT> will always point to the first of the 20 elements of type 
+      <TT>int</TT> with which it was defined. Therefore, unlike <TT>p</TT>, 
+      which is an ordinary pointer, <TT>numbers</TT> is an array, and an array 
+      can be considered a <I>constant pointer</I>. Therefore, the following 
+      allocation would not be valid:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>numbers = p;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Because <TT>numbers</TT> is an array, so it operates as a constant 
+      pointer, and we cannot assign values to constants.
+      <P>Due to the characteristics of variables, all expressions that include 
+      pointers in the following example are perfectly valid:
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// more pointers</SPAN>
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>int</SPAN> main ()
+{
+  <SPAN class=kw>int</SPAN> numbers[5];
+  <SPAN class=kw>int</SPAN> * p;
+  p = numbers;  *p = 10;
+  p++;  *p = 20;
+  p = &amp;numbers[2];  *p = 30;
+  p = numbers + 3;  *p = 40;
+  p = numbers;  *(p+4) = 50;
+  <SPAN class=kw>for</SPAN> (<SPAN class=kw>int</SPAN> n=0; n&lt;5; n++)
+    cout &lt;&lt; numbers[n] &lt;&lt; <SPAN class=str>", "</SPAN>;
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>10, 20, 30, 40, 50, 
+</PRE></TD></TR></TBODY></TABLE>
+      <P>In the chapter about Arrays we used brackets (<TT>[]</TT>) several 
+      times in order to specify the index of an element of the Array to which we 
+      wanted to refer. Well, these bracket sign operators <TT>[]</TT> are also a 
+      <U>dereference</U> operator known as <I>offset operator</I>. They 
+      dereference the variable they follow just as <TT>*</TT> does, but they 
+      also add the number between brackets to the address being dereferenced. 
+      For example:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>a[5] = 0;       <SPAN class=comm>// a [offset of 5] = 0</SPAN>
+*(a+5) = 0;     <SPAN class=comm>// pointed by (a+5) = 0</SPAN>
+</PRE></TD></TR></TBODY></TABLE>
+      <P>These two expressions are equivalent and valid both if <TT>a</TT> is a 
+      pointer or if <TT>a</TT> is an array.
+      <P><A name=""></A>
+      <H3>Pointer initialization</H3>When declaring pointers we may want to 
+      explicitly specify which variable we want them to point to:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>int</SPAN> number;
+<SPAN class=kw>int</SPAN> *tommy = &amp;number;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>The behavior of this code is equivalent to:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>int</SPAN> number;
+<SPAN class=kw>int</SPAN> *tommy;
+tommy = &amp;number;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>When a pointer initialization takes place we are always assigning the 
+      reference value to where the pointer points (<TT>tommy</TT>), never the 
+      value being pointed (<TT>*tommy</TT>). You must consider that at the 
+      moment of declaring a pointer, the asterisk (<TT>*</TT>) indicates only 
+      that it is a pointer, it is not the reference operator (although both use 
+      the same sign: *). Remember, they are two different functions of one sign. 
+      Thus, we must take care not to confuse the previous code with: 
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>int</SPAN> number;
+<SPAN class=kw>int</SPAN> *tommy;
+*tommy = &amp;number;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>that is incorrect, and anyway would not have much sense in this case if 
+      you think about it.
+      <P>As in the case of arrays, the compiler allows the special case that we 
+      want to initialize the content at which the pointer points with constants 
+      at the same moment the pointer is declared:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>char</SPAN> * terry = <SPAN class=str>"hello"</SPAN>; 
+</PRE></TD></TR></TBODY></TABLE>
+      <P>In this case, memory space is reserved to contain <TT>"hello"</TT> and 
+      then a pointer to the first character of this memory block is assigned to 
+      <TT>terry</TT>. If we imagine that <TT>"hello"</TT> is stored at the 
+      memory locations that start at addresses 1702, we can represent the 
+      previous declaration as:<BR><BR><IMG src="Pointers_files/11-imgpoin3.gif">
+      <P>It is important to indicate that <TT>terry</TT> contains the value 
+      1702, and not <TT>'h'</TT> nor <TT>"hello"</TT>, although 1702 indeed is 
+      the address of both of these.
+      <P>The pointer <TT>terry</TT> points to a sequence of characters and can 
+      be read as if it was an Array(remember that an array is just like a 
+      constant pointer). For example, we can access the fifth element of the 
+      array with any of these two expression:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>*(terry+4)
+terry[4]
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Both expressions have a value of <TT>'o'</TT> (the fifth element of the 
+      array).
+      <P><A name=""></A>
+      <H3>Pointer arithmetics</H3>
+      <P>To conduct arithmetical operations on pointers is a little different 
+      than to conduct them on regular integer data types. To begin with, only 
+      addition and subtraction operations are allowed to be conducted with them, 
+      the others make no sense in the world of pointers. But both addition and 
+      subtraction have a different behavior with pointers according to the size 
+      of the data type to which they point.
+      <P>When we saw the different fundamental data types, we saw that some 
+      occupy more or less space than others in the memory. For example, in the 
+      case of integer numbers, <TT>char</TT> takes 1 byte, <TT>short</TT> takes 
+      2 bytes and <TT>long</TT> takes 4. 
+      <P>Suppose that we have three pointers: 
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>char</SPAN> *mychar;
+<SPAN class=kw>short</SPAN> *myshort;
+<SPAN class=kw>long</SPAN> *mylong;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>and that we know that they point to memory locations <TT>1000</TT>, 
+      <TT>2000</TT> and <TT>3000</TT> respectively. 
+      <P>So if we write: 
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>mychar++;
+myshort++;
+mylong++;
+</PRE></TD></TR></TBODY></TABLE>
+      <P><TT>mychar</TT>, as you may expect, would contain the value 
+      <TT>1001</TT>. Nevertheless, <TT>myshort</TT> would contain the value 
+      <TT>2002</TT>, and <TT>mylong</TT> would contain <TT>3004</TT>. The reason 
+      is that when adding one to a pointer we are making it to point to the 
+      following element of the same type with which it has been defined, and 
+      therefore the size in bytes of the type pointed is added to the pointer.
+      <P><IMG src="Pointers_files/11-imgpoin5.gif">
+      <P>This is applicable both when adding and subtracting any number to a 
+      pointer. It would happen exactly the same if we write: 
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>mychar = mychar + 1;
+myshort = myshort + 1;
+mylong = mylong + 1;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Both the increase (<TT>++</TT>) and decrease (<TT>--</TT>) operators 
+      have greater operator precedence than the dereference operator 
+      (<TT>*</TT>), but both have a special behavior when used as suffix (the 
+      expression is evaluated with the value it had before being increased). 
+      Therefore, the following expression may lead to confusion: 
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>*p++
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Because <TT>++</TT> has greater precedence than <TT>*</TT>, this 
+      expression is equivalent to <TT>*(p++)</TT>. Therefore, what it does is to 
+      increase the value of p (so it now points to the next element), but 
+      because ++ is used as postfix the whole expression is evaluated as the 
+      value pointed by the original reference (the address the pointer pointed 
+      to before being increased).
+      <P>Notice the difference with:
+      <P><TT>(*p)++</TT>
+      <P>Here, the expression would have been evaluated as the value pointed by 
+      <TT>p</TT> increased by one. The value of <TT>p</TT> (the pointer itself) 
+      would not be modified (what is being modified is what it is being pointed 
+      to by this pointer).
+      <P>If we write:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>*p++ = *q++; 
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Because <TT>++</TT> has a higher precedence than <TT>*</TT>, both 
+      <TT>p</TT> and <TT>q</TT> are increased, but because both increase 
+      operators (<TT>++</TT>) are used as postfix and not prefix, the value 
+      assigned to <TT>*p</TT> is <TT>*q</TT> <U>before</U> both <TT>p</TT> and 
+      <TT>q</TT> are increased. And then both are increased. It would be roughly 
+      equivalent to:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>*p = *q;
+++p;
+++q;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Like always, I recommend you to use parentheses <TT>()</TT> in order to 
+      avoid unexpected results and to give more legibility.
+      <P><A name=""></A>
+      <H3>Pointers to pointers</H3>C++ allows the use of pointers that point to 
+      pointers, that these, in its turn, point to data (or even to other 
+      pointers). In order to do that, we only need to add an asterisk 
+      (<TT>*</TT>) for each level of reference in their declarations:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>char</SPAN> a;
+<SPAN class=kw>char</SPAN> * b;
+<SPAN class=kw>char</SPAN> ** c;
+a = <SPAN class=str>'z'</SPAN>;
+b = &amp;a;
+c = &amp;b;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>This, supposing the randomly chosen memory locations for each variable 
+      of <TT>7230</TT>, <TT>8092</TT> and <TT>10502</TT>, could be represented 
+      as:
+      <P><IMG src="Pointers_files/11-imgpoin6.gif">
+      <P>The value of each variable is written inside each cell; under the cells 
+      are their respective addresses in memory.
+      <P>The new thing in this example is variable <TT>c</TT>, which can be used 
+      in three different levels of indirection, each one of them would 
+      correspond to a different value:
+      <P>
+      <UL>
+        <LI><TT>c</TT> has type <TT>char**</TT> and a value of <TT>8092</TT> 
+        <LI><TT>*c</TT> has type <TT>char*</TT> and a value of <TT>7230</TT> 
+        <LI><TT>**c</TT> has type <TT>char</TT> and a value of <TT>'z'</TT> 
+      </LI></UL>
+      <P><A name=""></A>
+      <H3>void pointers</H3>The <TT>void</TT> type of pointer is a special type 
+      of pointer. In C++, <TT>void</TT> represents the absence of type, so void 
+      pointers are pointers that point to a value that has no type (and thus 
+      also an undetermined length and undetermined dereference properties).
+      <P>This allows void pointers to point to any data type, from an integer 
+      value or a float to a string of characters. But in exchange they have a 
+      great limitation: the data pointed by them cannot be directly dereferenced 
+      (which is logical, since we have no type to dereference to), and for that 
+      reason we will always have to change the type of the void pointer to some 
+      other pointer type that points to a concrete data type before 
+      dereferencing it. This is done by performing type-castings.
+      <P>One of its uses may be to pass generic parameters to a function: 
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// increaser</SPAN>
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>void</SPAN> increase (<SPAN class=kw>void</SPAN>* data, <SPAN class=kw>int</SPAN> size)
+{
+  <SPAN class=kw>switch</SPAN> (size)
+  {
+    <SPAN class=kw>case</SPAN> <SPAN class=kw>sizeof</SPAN>(<SPAN class=kw>char</SPAN>) : (*((<SPAN class=kw>char</SPAN>*)data))++; <SPAN class=kw>break</SPAN>;
+    <SPAN class=kw>case</SPAN> <SPAN class=kw>sizeof</SPAN>(<SPAN class=kw>int</SPAN>) : (*((<SPAN class=kw>int</SPAN>*)data))++; <SPAN class=kw>break</SPAN>;
+  }
+}
+
+<SPAN class=kw>int</SPAN> main ()
+{
+  <SPAN class=kw>char</SPAN> a = <SPAN class=str>'x'</SPAN>;
+  <SPAN class=kw>int</SPAN> b = 1602;
+  increase (&amp;a,<SPAN class=kw>sizeof</SPAN>(a));
+  increase (&amp;b,<SPAN class=kw>sizeof</SPAN>(b));
+  cout &lt;&lt; a &lt;&lt; <SPAN class=str>", "</SPAN> &lt;&lt; b &lt;&lt; endl;
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>y, 1603
+</PRE></TD></TR></TBODY></TABLE>
+      <P><TT>sizeof</TT> is an operator integrated in the C++ language that 
+      returns the size in bytes of its parameter. For non-dynamic data types 
+      this value is a constant. Therefore, for example, <TT>sizeof(char)</TT> is 
+      <TT>1</TT>, because <TT>char</TT> type is one byte long. 
+      <P><A name=""></A>
+      <H3>Null pointer</H3>A null pointer is a regular pointer of any pointer 
+      type which has a special value that indicates that it is not pointing to 
+      any valid reference or memory address. This value is the result of 
+      type-casting the integer value zero to any pointer type.
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>int</SPAN> * p;
+p = 0;     <SPAN class=comm>// p has a null pointer value</SPAN>
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Do not confuse null pointers with void pointers. A null pointer is a 
+      value that any pointer may take to represent that it is pointing to 
+      "nowhere", while a void pointer is a special type of pointer that can 
+      point to somewhere without a specific type. One refers to the value stored 
+      in the pointer itself and the other to the type of data it points to.
+      <P><A name=""></A>
+      <H3>Pointers to functions</H3>C++ allows operations with pointers to 
+      functions. The typical use of this is for passing a function as an 
+      argument to another function, since these cannot be passed dereferenced. 
+      In order to declare a pointer to a function we have to declare it like the 
+      prototype of the function except that the name of the function is enclosed 
+      between parentheses <TT>()</TT> and an asterisk (<TT>*</TT>) is inserted 
+      before the name:<BR><BR>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// pointer to functions</SPAN>
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>int</SPAN> addition (<SPAN class=kw>int</SPAN> a, <SPAN class=kw>int</SPAN> b)
+{ <SPAN class=kw>return</SPAN> (a+b); }
+
+<SPAN class=kw>int</SPAN> subtraction (<SPAN class=kw>int</SPAN> a, <SPAN class=kw>int</SPAN> b)
+{ <SPAN class=kw>return</SPAN> (a-b); }
+
+<SPAN class=kw>int</SPAN> (*minus)(<SPAN class=kw>int</SPAN>,<SPAN class=kw>int</SPAN>) = subtraction;
+
+<SPAN class=kw>int</SPAN> operation (<SPAN class=kw>int</SPAN> x, <SPAN class=kw>int</SPAN> y, <SPAN class=kw>int</SPAN> (*functocall)(<SPAN class=kw>int</SPAN>,<SPAN class=kw>int</SPAN>))
+{
+  <SPAN class=kw>int</SPAN> g;
+  g = (*functocall)(x,y);
+  <SPAN class=kw>return</SPAN> (g);
+}
+
+<SPAN class=kw>int</SPAN> main ()
+{
+  <SPAN class=kw>int</SPAN> m,n;
+  m = operation (7, 5, addition);
+  n = operation (20, m, minus);
+  cout &lt;&lt;n;
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>8
+</PRE></TD></TR></TBODY></TABLE>
+      <P>In the example, <TT>minus</TT> is a global pointer to a function that 
+      has two parameters of type <TT>int</TT>. It is immediately assigned to 
+      point to the function <TT>subtraction</TT>, all in a single line: 
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>int</SPAN> (* minus)(<SPAN class=kw>int</SPAN>,<SPAN class=kw>int</SPAN>) = subtraction;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>
+      <CENTER>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD align=right width="49%"><A 
+            href="http://www.cplusplus.com/doc/tutorial/ntcs.html"><IMG 
+            src="Pointers_files/navigate_previous.gif" align=right 
+            border=0>Previous:<BR><B>Character Sequences</B></A> </TD>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/"><IMG 
+            src="Pointers_files/navigate_index.gif" border=0><BR>index</A></TD>
+          <TD align=left width="49%"><A 
+            href="http://www.cplusplus.com/doc/tutorial/dynamic.html"><IMG 
+            src="Pointers_files/navigate_next.gif" align=left 
+            border=0>Next:<BR><B>Dynamic Memory</B></A> 
+      </TD></TR></TBODY></TABLE></CENTER>
+      <P></P>
+      <P>
+      <SCRIPT type=text/javascript>
+<!--
+SuOptions()
+-->
+</SCRIPT>
+      </P></DIV></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-TOP: black 1px solid; BACKGROUND: #d7d7d7; PADDING-BOTTOM: 5px" 
+    align=middle colSpan=2><SMALL>© The C++ Resources Network, 2000-2005 - All 
+      rights reserved</SMALL></TD></TR></TBODY></TABLE></BODY></HTML>

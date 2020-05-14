@@ -1,0 +1,39 @@
+\frametitle{Applications of signal processing}
+
+\begin{tikzpicture}
+\node [mybox2] (box){%
+    \begin{minipage}{1.8\textwidth}
+\begin{verbatim}
+N=10000;
+NFFT =2^nextpow2(N);
+fs=1000;
+Ts=1/fs;
+t=(0:N-1)*Ts;
+xclean=5*sin(2*pi*220*t) + 2.2*cos(2*pi*120*t);
+x=xclean + 20*randn(size(t));
+[f,Xclean]=createfft(xclean, fs, NFFT);
+[f,X]=createfft(x,fs,NFFT);
+subplot(2,2,1); plot(1000*t(1:350),xclean(1:350))
+title('Clean signal')
+xlabel('time (milliseconds)')
+
+subplot(2,2,2); plot(1000*t(1:350),x(1:350))
+title('Signal Corrupted with Zero-Mean Random Noise')
+xlabel('time (milliseconds)')
+
+% plot fft
+subplot(2,2,3); plot(f,Xclean);%x2 because single sided
+title('Single-Sided Amplitude Spectrum of x_clean (t)')
+xlabel('Frequency(Hz)')
+ylabel('|Xclean(f)|')
+
+subplot(2,2,4); plot(f,X) ;%2 is multiplied because single sided
+title('Single-Sided Amplitude Spectrum of x(t)')
+xlabel('Frequency (Hz)')
+ylabel('|X(f)|')
+\end{verbatim}
+    \end{minipage}
+};
+\node[fancytitle2, right=10pt] at (box.north west) {Signal $\&$ Noise};
+%\node[fancytitle2, rounded corners] at (box.east) {$\spadesuit$};
+\end{tikzpicture}%

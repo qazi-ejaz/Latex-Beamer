@@ -1,0 +1,546 @@
+\headcommand {\slideentry {0}{0}{1}{1/1}{}{0}}
+\headcommand {\beamer@framepages {1}{1}}
+\headcommand {\slideentry {0}{0}{2}{2/2}{}{0}}
+\headcommand {\beamer@framepages {2}{2}}
+\headcommand {\beamer@sectionpages {1}{2}}
+\headcommand {\beamer@subsectionpages {1}{2}}
+\headcommand {\sectionentry {1}{Introduction}{3}{Introduction}{0}}
+\headcommand {\beamer@subsectionpages {3}{2}}
+\headcommand {\beamer@subsectionentry {0}{1}{1}{3}{Administration}}
+\headcommand {\slideentry {1}{1}{1}{3/3}{Administration}{0}}
+\headcommand {\beamer@framepages {3}{3}}
+\headcommand {\slideentry {1}{1}{2}{4/4}{Administration}{0}}
+\headcommand {\beamer@framepages {4}{4}}
+\headcommand {\slideentry {1}{1}{3}{5/5}{Administration}{0}}
+\headcommand {\beamer@framepages {5}{5}}
+\headcommand {\slideentry {1}{1}{4}{6/6}{Administration}{0}}
+\headcommand {\beamer@framepages {6}{6}}
+\headcommand {\slideentry {1}{1}{5}{7/7}{Administration}{0}}
+\headcommand {\beamer@framepages {7}{7}}
+\headcommand {\slideentry {1}{1}{6}{8/8}{Administration}{0}}
+\headcommand {\beamer@framepages {8}{8}}
+\headcommand {\slideentry {1}{1}{7}{9/9}{Administration}{0}}
+\headcommand {\beamer@framepages {9}{9}}
+\headcommand {\slideentry {1}{1}{8}{10/10}{Administration}{0}}
+\headcommand {\beamer@framepages {10}{10}}
+\headcommand {\slideentry {1}{1}{9}{11/11}{Administration}{0}}
+\headcommand {\beamer@framepages {11}{11}}
+\headcommand {\slideentry {1}{1}{10}{12/12}{Administration}{0}}
+\headcommand {\beamer@framepages {12}{12}}
+\headcommand {\slideentry {1}{1}{11}{13/13}{Administration}{0}}
+\headcommand {\beamer@framepages {13}{13}}
+\headcommand {\slideentry {1}{1}{12}{14/14}{Administration}{0}}
+\headcommand {\beamer@framepages {14}{14}}
+\headcommand {\slideentry {1}{1}{13}{15/15}{Administration}{0}}
+\headcommand {\beamer@framepages {15}{15}}
+\headcommand {\slideentry {1}{1}{14}{16/16}{Administration}{0}}
+\headcommand {\beamer@framepages {16}{16}}
+\headcommand {\slideentry {1}{1}{15}{17/17}{Administration}{0}}
+\headcommand {\beamer@framepages {17}{17}}
+\headcommand {\slideentry {1}{1}{16}{18/18}{Administration}{0}}
+\headcommand {\beamer@framepages {18}{18}}
+\headcommand {\slideentry {1}{1}{17}{19/19}{Administration}{0}}
+\headcommand {\beamer@framepages {19}{19}}
+\headcommand {\slideentry {1}{1}{18}{20/20}{Administration}{0}}
+\headcommand {\beamer@framepages {20}{20}}
+\headcommand {\slideentry {1}{1}{19}{21/21}{Administration}{0}}
+\headcommand {\beamer@framepages {21}{21}}
+\headcommand {\slideentry {1}{1}{20}{22/22}{Administration}{0}}
+\headcommand {\beamer@framepages {22}{22}}
+\headcommand {\slideentry {1}{1}{21}{23/23}{Administration}{0}}
+\headcommand {\beamer@framepages {23}{23}}
+\headcommand {\slideentry {1}{1}{22}{24/24}{Administration}{0}}
+\headcommand {\beamer@framepages {24}{24}}
+\headcommand {\beamer@subsectionpages {3}{24}}
+\headcommand {\beamer@subsectionentry {0}{1}{2}{25}{Matlab}}
+\headcommand {\slideentry {1}{2}{1}{25/25}{Matlab}{0}}
+\headcommand {\beamer@framepages {25}{25}}
+\headcommand {\beamer@subsectionpages {25}{25}}
+\headcommand {\beamer@subsectionentry {0}{1}{3}{26}{LabVIEW}}
+\headcommand {\slideentry {1}{3}{1}{26/26}{LabVIEW}{0}}
+\headcommand {\beamer@framepages {26}{26}}
+\headcommand {\beamer@subsectionpages {26}{26}}
+\headcommand {\beamer@subsectionentry {0}{1}{4}{27}{Basic Math}}
+\headcommand {\slideentry {1}{4}{1}{27/27}{Basic Math}{0}}
+\headcommand {\beamer@framepages {27}{27}}
+\headcommand {\slideentry {1}{4}{2}{28/28}{Basic Math}{0}}
+\headcommand {\beamer@framepages {28}{28}}
+\headcommand {\slideentry {1}{4}{3}{29/29}{Basic Math}{0}}
+\headcommand {\beamer@framepages {29}{29}}
+\headcommand {\slideentry {1}{4}{4}{30/30}{Basic Math}{0}}
+\headcommand {\beamer@framepages {30}{30}}
+\headcommand {\slideentry {1}{4}{5}{31/31}{Basic Math}{0}}
+\headcommand {\beamer@framepages {31}{31}}
+\headcommand {\slideentry {1}{4}{6}{32/32}{Basic Math}{0}}
+\headcommand {\beamer@framepages {32}{32}}
+\headcommand {\beamer@subsectionpages {27}{32}}
+\headcommand {\beamer@subsectionentry {0}{1}{5}{33}{Laplace}}
+\headcommand {\slideentry {1}{5}{1}{33/33}{Laplace}{0}}
+\headcommand {\beamer@framepages {33}{33}}
+\headcommand {\slideentry {1}{5}{2}{34/34}{Laplace}{0}}
+\headcommand {\beamer@framepages {34}{34}}
+\headcommand {\slideentry {1}{5}{3}{35/35}{Laplace}{0}}
+\headcommand {\beamer@framepages {35}{35}}
+\headcommand {\slideentry {1}{5}{4}{36/36}{Laplace}{0}}
+\headcommand {\beamer@framepages {36}{36}}
+\headcommand {\slideentry {1}{5}{5}{37/37}{Laplace}{0}}
+\headcommand {\beamer@framepages {37}{37}}
+\headcommand {\slideentry {1}{5}{6}{38/38}{Laplace}{0}}
+\headcommand {\beamer@framepages {38}{38}}
+\headcommand {\slideentry {1}{5}{7}{39/39}{Laplace}{0}}
+\headcommand {\beamer@framepages {39}{39}}
+\headcommand {\beamer@sectionpages {3}{39}}
+\headcommand {\beamer@subsectionpages {33}{39}}
+\headcommand {\sectionentry {2}{Overview}{40}{Overview}{0}}
+\headcommand {\slideentry {2}{0}{1}{40/40}{}{0}}
+\headcommand {\beamer@framepages {40}{40}}
+\headcommand {\slideentry {2}{0}{2}{41/41}{}{0}}
+\headcommand {\beamer@framepages {41}{41}}
+\headcommand {\slideentry {2}{0}{3}{42/42}{}{0}}
+\headcommand {\beamer@framepages {42}{42}}
+\headcommand {\slideentry {2}{0}{4}{43/43}{}{0}}
+\headcommand {\beamer@framepages {43}{43}}
+\headcommand {\slideentry {2}{0}{5}{44/44}{}{0}}
+\headcommand {\beamer@framepages {44}{44}}
+\headcommand {\slideentry {2}{0}{6}{45/45}{}{0}}
+\headcommand {\beamer@framepages {45}{45}}
+\headcommand {\slideentry {2}{0}{7}{46/46}{}{0}}
+\headcommand {\beamer@framepages {46}{46}}
+\headcommand {\slideentry {2}{0}{8}{47/47}{}{0}}
+\headcommand {\beamer@framepages {47}{47}}
+\headcommand {\slideentry {2}{0}{9}{48/48}{}{0}}
+\headcommand {\beamer@framepages {48}{48}}
+\headcommand {\beamer@sectionpages {40}{48}}
+\headcommand {\beamer@subsectionpages {40}{48}}
+\headcommand {\sectionentry {3}{Signal and Systems}{49}{Signal and Systems}{0}}
+\headcommand {\slideentry {3}{0}{1}{49/49}{}{0}}
+\headcommand {\beamer@framepages {49}{49}}
+\headcommand {\slideentry {3}{0}{2}{50/50}{}{0}}
+\headcommand {\beamer@framepages {50}{50}}
+\headcommand {\slideentry {3}{0}{3}{51/51}{}{0}}
+\headcommand {\beamer@framepages {51}{51}}
+\headcommand {\beamer@subsectionpages {49}{51}}
+\headcommand {\beamer@subsectionentry {0}{3}{1}{52}{Matrix reconstruction}}
+\headcommand {\slideentry {3}{1}{1}{52/52}{Matrix reconstruction}{0}}
+\headcommand {\beamer@framepages {52}{52}}
+\headcommand {\slideentry {3}{1}{2}{53/53}{Matrix reconstruction}{0}}
+\headcommand {\beamer@framepages {53}{53}}
+\headcommand {\slideentry {3}{1}{3}{54/54}{Matrix reconstruction}{0}}
+\headcommand {\beamer@framepages {54}{54}}
+\headcommand {\slideentry {3}{1}{4}{55/55}{Matrix reconstruction}{0}}
+\headcommand {\beamer@framepages {55}{55}}
+\headcommand {\slideentry {3}{1}{5}{56/56}{Matrix reconstruction}{0}}
+\headcommand {\beamer@framepages {56}{56}}
+\headcommand {\slideentry {3}{1}{6}{57/57}{Matrix reconstruction}{0}}
+\headcommand {\beamer@framepages {57}{57}}
+\headcommand {\slideentry {3}{1}{7}{58/58}{Matrix reconstruction}{0}}
+\headcommand {\beamer@framepages {58}{58}}
+\headcommand {\slideentry {3}{1}{8}{59/59}{Matrix reconstruction}{0}}
+\headcommand {\beamer@framepages {59}{59}}
+\headcommand {\slideentry {3}{1}{9}{60/60}{Matrix reconstruction}{0}}
+\headcommand {\beamer@framepages {60}{60}}
+\headcommand {\slideentry {3}{1}{10}{61/61}{Matrix reconstruction}{0}}
+\headcommand {\beamer@framepages {61}{61}}
+\headcommand {\slideentry {3}{1}{11}{62/62}{Matrix reconstruction}{0}}
+\headcommand {\beamer@framepages {62}{62}}
+\headcommand {\slideentry {3}{1}{12}{63/63}{Matrix reconstruction}{0}}
+\headcommand {\beamer@framepages {63}{63}}
+\headcommand {\slideentry {3}{1}{13}{64/64}{Matrix reconstruction}{0}}
+\headcommand {\beamer@framepages {64}{64}}
+\headcommand {\slideentry {3}{1}{14}{65/65}{Matrix reconstruction}{0}}
+\headcommand {\beamer@framepages {65}{65}}
+\headcommand {\slideentry {3}{1}{15}{66/66}{Matrix reconstruction}{0}}
+\headcommand {\beamer@framepages {66}{66}}
+\headcommand {\beamer@subsectionpages {52}{66}}
+\headcommand {\beamer@subsectionentry {0}{3}{2}{67}{Image reconstruction}}
+\headcommand {\slideentry {3}{2}{1}{67/67}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {67}{67}}
+\headcommand {\slideentry {3}{2}{2}{68/68}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {68}{68}}
+\headcommand {\slideentry {3}{2}{3}{69/69}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {69}{69}}
+\headcommand {\slideentry {3}{2}{4}{70/70}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {70}{70}}
+\headcommand {\slideentry {3}{2}{5}{71/71}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {71}{71}}
+\headcommand {\slideentry {3}{2}{6}{72/72}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {72}{72}}
+\headcommand {\slideentry {3}{2}{7}{73/73}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {73}{73}}
+\headcommand {\slideentry {3}{2}{8}{74/74}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {74}{74}}
+\headcommand {\slideentry {3}{2}{9}{75/75}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {75}{75}}
+\headcommand {\slideentry {3}{2}{10}{76/76}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {76}{76}}
+\headcommand {\slideentry {3}{2}{11}{77/77}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {77}{77}}
+\headcommand {\slideentry {3}{2}{12}{78/78}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {78}{78}}
+\headcommand {\slideentry {3}{2}{13}{79/79}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {79}{79}}
+\headcommand {\slideentry {3}{2}{14}{80/80}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {80}{80}}
+\headcommand {\slideentry {3}{2}{15}{81/81}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {81}{81}}
+\headcommand {\slideentry {3}{2}{16}{82/82}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {82}{82}}
+\headcommand {\slideentry {3}{2}{17}{83/83}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {83}{83}}
+\headcommand {\slideentry {3}{2}{18}{84/84}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {84}{84}}
+\headcommand {\slideentry {3}{2}{19}{85/85}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {85}{85}}
+\headcommand {\slideentry {3}{2}{20}{86/86}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {86}{86}}
+\headcommand {\slideentry {3}{2}{21}{87/87}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {87}{87}}
+\headcommand {\slideentry {3}{2}{22}{88/88}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {88}{88}}
+\headcommand {\slideentry {3}{2}{23}{89/89}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {89}{89}}
+\headcommand {\slideentry {3}{2}{24}{90/90}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {90}{90}}
+\headcommand {\slideentry {3}{2}{25}{91/91}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {91}{91}}
+\headcommand {\slideentry {3}{2}{26}{92/92}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {92}{92}}
+\headcommand {\slideentry {3}{2}{27}{93/93}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {93}{93}}
+\headcommand {\slideentry {3}{2}{28}{94/94}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {94}{94}}
+\headcommand {\slideentry {3}{2}{29}{95/95}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {95}{95}}
+\headcommand {\slideentry {3}{2}{30}{96/96}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {96}{96}}
+\headcommand {\slideentry {3}{2}{31}{97/97}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {97}{97}}
+\headcommand {\slideentry {3}{2}{32}{98/98}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {98}{98}}
+\headcommand {\slideentry {3}{2}{33}{99/99}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {99}{99}}
+\headcommand {\slideentry {3}{2}{34}{100/100}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {100}{100}}
+\headcommand {\slideentry {3}{2}{35}{101/101}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {101}{101}}
+\headcommand {\slideentry {3}{2}{36}{102/102}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {102}{102}}
+\headcommand {\slideentry {3}{2}{37}{103/103}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {103}{103}}
+\headcommand {\slideentry {3}{2}{38}{104/104}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {104}{104}}
+\headcommand {\slideentry {3}{2}{39}{105/105}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {105}{105}}
+\headcommand {\slideentry {3}{2}{40}{106/106}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {106}{106}}
+\headcommand {\slideentry {3}{2}{41}{107/107}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {107}{107}}
+\headcommand {\slideentry {3}{2}{42}{108/108}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {108}{108}}
+\headcommand {\slideentry {3}{2}{43}{109/109}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {109}{109}}
+\headcommand {\slideentry {3}{2}{44}{110/110}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {110}{110}}
+\headcommand {\slideentry {3}{2}{45}{111/111}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {111}{111}}
+\headcommand {\slideentry {3}{2}{46}{112/112}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {112}{112}}
+\headcommand {\slideentry {3}{2}{47}{113/113}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {113}{113}}
+\headcommand {\slideentry {3}{2}{48}{114/114}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {114}{114}}
+\headcommand {\slideentry {3}{2}{49}{115/115}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {115}{115}}
+\headcommand {\slideentry {3}{2}{50}{116/116}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {116}{116}}
+\headcommand {\slideentry {3}{2}{51}{117/117}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {117}{117}}
+\headcommand {\slideentry {3}{2}{52}{118/118}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {118}{118}}
+\headcommand {\slideentry {3}{2}{53}{119/119}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {119}{119}}
+\headcommand {\slideentry {3}{2}{54}{120/120}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {120}{120}}
+\headcommand {\slideentry {3}{2}{55}{121/121}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {121}{121}}
+\headcommand {\slideentry {3}{2}{56}{122/122}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {122}{122}}
+\headcommand {\slideentry {3}{2}{57}{123/123}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {123}{123}}
+\headcommand {\slideentry {3}{2}{58}{124/124}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {124}{124}}
+\headcommand {\slideentry {3}{2}{59}{125/125}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {125}{125}}
+\headcommand {\slideentry {3}{2}{60}{126/126}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {126}{126}}
+\headcommand {\slideentry {3}{2}{61}{127/127}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {127}{127}}
+\headcommand {\slideentry {3}{2}{62}{128/128}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {128}{128}}
+\headcommand {\slideentry {3}{2}{63}{129/129}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {129}{129}}
+\headcommand {\slideentry {3}{2}{64}{130/130}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {130}{130}}
+\headcommand {\slideentry {3}{2}{65}{131/131}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {131}{131}}
+\headcommand {\slideentry {3}{2}{66}{132/132}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {132}{132}}
+\headcommand {\slideentry {3}{2}{67}{133/133}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {133}{133}}
+\headcommand {\slideentry {3}{2}{68}{134/134}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {134}{134}}
+\headcommand {\slideentry {3}{2}{69}{135/135}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {135}{135}}
+\headcommand {\slideentry {3}{2}{70}{136/136}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {136}{136}}
+\headcommand {\slideentry {3}{2}{71}{137/137}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {137}{137}}
+\headcommand {\slideentry {3}{2}{72}{138/138}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {138}{138}}
+\headcommand {\slideentry {3}{2}{73}{139/139}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {139}{139}}
+\headcommand {\slideentry {3}{2}{74}{140/140}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {140}{140}}
+\headcommand {\slideentry {3}{2}{75}{141/141}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {141}{141}}
+\headcommand {\slideentry {3}{2}{76}{142/142}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {142}{142}}
+\headcommand {\slideentry {3}{2}{77}{143/143}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {143}{143}}
+\headcommand {\slideentry {3}{2}{78}{144/144}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {144}{144}}
+\headcommand {\slideentry {3}{2}{79}{145/145}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {145}{145}}
+\headcommand {\slideentry {3}{2}{80}{146/146}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {146}{146}}
+\headcommand {\slideentry {3}{2}{81}{147/147}{Image reconstruction}{0}}
+\headcommand {\beamer@framepages {147}{147}}
+\headcommand {\beamer@sectionpages {49}{147}}
+\headcommand {\beamer@subsectionpages {67}{147}}
+\headcommand {\sectionentry {4}{Modeling}{148}{Modeling}{0}}
+\headcommand {\beamer@subsectionpages {148}{147}}
+\headcommand {\beamer@subsectionentry {0}{4}{1}{148}{Electrical}}
+\headcommand {\slideentry {4}{1}{1}{148/148}{Electrical}{0}}
+\headcommand {\beamer@framepages {148}{148}}
+\headcommand {\slideentry {4}{1}{2}{149/149}{Electrical}{0}}
+\headcommand {\beamer@framepages {149}{149}}
+\headcommand {\slideentry {4}{1}{3}{150/150}{Electrical}{0}}
+\headcommand {\beamer@framepages {150}{150}}
+\headcommand {\slideentry {4}{1}{4}{151/151}{Electrical}{0}}
+\headcommand {\beamer@framepages {151}{151}}
+\headcommand {\beamer@subsectionpages {148}{151}}
+\headcommand {\beamer@subsectionentry {0}{4}{2}{152}{Mechanical}}
+\headcommand {\slideentry {4}{2}{1}{152/152}{Mechanical}{0}}
+\headcommand {\beamer@framepages {152}{152}}
+\headcommand {\slideentry {4}{2}{2}{153/153}{Mechanical}{0}}
+\headcommand {\beamer@framepages {153}{153}}
+\headcommand {\slideentry {4}{2}{3}{154/154}{Mechanical}{0}}
+\headcommand {\beamer@framepages {154}{154}}
+\headcommand {\slideentry {4}{2}{4}{155/155}{Mechanical}{0}}
+\headcommand {\beamer@framepages {155}{155}}
+\headcommand {\slideentry {4}{2}{5}{156/156}{Mechanical}{0}}
+\headcommand {\beamer@framepages {156}{156}}
+\headcommand {\beamer@sectionpages {148}{156}}
+\headcommand {\beamer@subsectionpages {152}{156}}
+\headcommand {\sectionentry {5}{Frequency (continous)}{157}{Frequency (continous)}{0}}
+\headcommand {\beamer@subsectionpages {157}{156}}
+\headcommand {\beamer@subsectionentry {0}{5}{1}{157}{Analysis}}
+\headcommand {\slideentry {5}{1}{1}{157/157}{Analysis}{0}}
+\headcommand {\beamer@framepages {157}{157}}
+\headcommand {\slideentry {5}{1}{2}{158/158}{Analysis}{0}}
+\headcommand {\beamer@framepages {158}{158}}
+\headcommand {\slideentry {5}{1}{3}{159/159}{Analysis}{0}}
+\headcommand {\beamer@framepages {159}{159}}
+\headcommand {\slideentry {5}{1}{4}{160/160}{Analysis}{0}}
+\headcommand {\beamer@framepages {160}{160}}
+\headcommand {\slideentry {5}{1}{5}{161/161}{Analysis}{0}}
+\headcommand {\beamer@framepages {161}{161}}
+\headcommand {\slideentry {5}{1}{6}{162/162}{Analysis}{0}}
+\headcommand {\beamer@framepages {162}{162}}
+\headcommand {\slideentry {5}{1}{7}{163/163}{Analysis}{0}}
+\headcommand {\beamer@framepages {163}{163}}
+\headcommand {\slideentry {5}{1}{8}{164/164}{Analysis}{0}}
+\headcommand {\beamer@framepages {164}{164}}
+\headcommand {\slideentry {5}{1}{9}{165/165}{Analysis}{0}}
+\headcommand {\beamer@framepages {165}{165}}
+\headcommand {\slideentry {5}{1}{10}{166/166}{Analysis}{0}}
+\headcommand {\beamer@framepages {166}{166}}
+\headcommand {\slideentry {5}{1}{11}{167/167}{Analysis}{0}}
+\headcommand {\beamer@framepages {167}{167}}
+\headcommand {\slideentry {5}{1}{12}{168/168}{Analysis}{0}}
+\headcommand {\beamer@framepages {168}{168}}
+\headcommand {\slideentry {5}{1}{13}{169/169}{Analysis}{0}}
+\headcommand {\beamer@framepages {169}{169}}
+\headcommand {\slideentry {5}{1}{14}{170/170}{Analysis}{0}}
+\headcommand {\beamer@framepages {170}{170}}
+\headcommand {\slideentry {5}{1}{15}{171/171}{Analysis}{0}}
+\headcommand {\beamer@framepages {171}{171}}
+\headcommand {\slideentry {5}{1}{16}{172/172}{Analysis}{0}}
+\headcommand {\beamer@framepages {172}{172}}
+\headcommand {\slideentry {5}{1}{17}{173/173}{Analysis}{0}}
+\headcommand {\beamer@framepages {173}{173}}
+\headcommand {\slideentry {5}{1}{18}{174/174}{Analysis}{0}}
+\headcommand {\beamer@framepages {174}{174}}
+\headcommand {\slideentry {5}{1}{19}{175/175}{Analysis}{0}}
+\headcommand {\beamer@framepages {175}{175}}
+\headcommand {\slideentry {5}{1}{20}{176/176}{Analysis}{0}}
+\headcommand {\beamer@framepages {176}{176}}
+\headcommand {\slideentry {5}{1}{21}{177/177}{Analysis}{0}}
+\headcommand {\beamer@framepages {177}{177}}
+\headcommand {\slideentry {5}{1}{22}{178/178}{Analysis}{0}}
+\headcommand {\beamer@framepages {178}{178}}
+\headcommand {\slideentry {5}{1}{23}{179/179}{Analysis}{0}}
+\headcommand {\beamer@framepages {179}{179}}
+\headcommand {\slideentry {5}{1}{24}{180/180}{Analysis}{0}}
+\headcommand {\beamer@framepages {180}{180}}
+\headcommand {\slideentry {5}{1}{25}{181/181}{Analysis}{0}}
+\headcommand {\beamer@framepages {181}{181}}
+\headcommand {\slideentry {5}{1}{26}{182/182}{Analysis}{0}}
+\headcommand {\beamer@framepages {182}{182}}
+\headcommand {\beamer@sectionpages {157}{182}}
+\headcommand {\beamer@subsectionpages {157}{182}}
+\headcommand {\sectionentry {6}{Time (Continous)}{183}{Time (Continous)}{0}}
+\headcommand {\beamer@subsectionpages {183}{182}}
+\headcommand {\beamer@subsectionentry {0}{6}{1}{183}{Analysis}}
+\headcommand {\slideentry {6}{1}{1}{183/183}{Analysis}{0}}
+\headcommand {\beamer@framepages {183}{183}}
+\headcommand {\slideentry {6}{1}{2}{184/184}{Analysis}{0}}
+\headcommand {\beamer@framepages {184}{184}}
+\headcommand {\slideentry {6}{1}{3}{185/185}{Analysis}{0}}
+\headcommand {\beamer@framepages {185}{185}}
+\headcommand {\slideentry {6}{1}{4}{186/186}{Analysis}{0}}
+\headcommand {\beamer@framepages {186}{186}}
+\headcommand {\slideentry {6}{1}{5}{187/187}{Analysis}{0}}
+\headcommand {\beamer@framepages {187}{187}}
+\headcommand {\slideentry {6}{1}{6}{188/188}{Analysis}{0}}
+\headcommand {\beamer@framepages {188}{188}}
+\headcommand {\slideentry {6}{1}{7}{189/189}{Analysis}{0}}
+\headcommand {\beamer@framepages {189}{189}}
+\headcommand {\slideentry {6}{1}{8}{190/190}{Analysis}{0}}
+\headcommand {\beamer@framepages {190}{190}}
+\headcommand {\slideentry {6}{1}{9}{191/191}{Analysis}{0}}
+\headcommand {\beamer@framepages {191}{191}}
+\headcommand {\slideentry {6}{1}{10}{192/192}{Analysis}{0}}
+\headcommand {\beamer@framepages {192}{192}}
+\headcommand {\beamer@sectionpages {183}{192}}
+\headcommand {\beamer@subsectionpages {183}{192}}
+\headcommand {\sectionentry {7}{Software}{193}{Software}{0}}
+\headcommand {\slideentry {7}{0}{1}{193/197}{}{0}}
+\headcommand {\beamer@framepages {193}{197}}
+\headcommand {\slideentry {7}{0}{2}{198/198}{}{0}}
+\headcommand {\beamer@framepages {198}{198}}
+\headcommand {\slideentry {7}{0}{3}{199/199}{}{0}}
+\headcommand {\beamer@framepages {199}{199}}
+\headcommand {\beamer@sectionpages {193}{199}}
+\headcommand {\beamer@subsectionpages {193}{199}}
+\headcommand {\sectionentry {8}{Optional}{200}{Optional}{0}}
+\headcommand {\slideentry {8}{0}{1}{200/200}{}{0}}
+\headcommand {\beamer@framepages {200}{200}}
+\headcommand {\beamer@subsectionpages {200}{200}}
+\headcommand {\beamer@subsectionentry {0}{8}{1}{201}{Signal \& Systems Lab}}
+\headcommand {\slideentry {8}{1}{1}{201/201}{Signal \& Systems Lab}{0}}
+\headcommand {\beamer@framepages {201}{201}}
+\headcommand {\slideentry {8}{1}{2}{202/202}{Signal \& Systems Lab}{0}}
+\headcommand {\beamer@framepages {202}{202}}
+\headcommand {\slideentry {8}{1}{3}{203/203}{Signal \& Systems Lab}{0}}
+\headcommand {\beamer@framepages {203}{203}}
+\headcommand {\slideentry {8}{1}{4}{204/204}{Signal \& Systems Lab}{0}}
+\headcommand {\beamer@framepages {204}{204}}
+\headcommand {\slideentry {8}{1}{5}{205/205}{Signal \& Systems Lab}{0}}
+\headcommand {\beamer@framepages {205}{205}}
+\headcommand {\slideentry {8}{1}{6}{206/206}{Signal \& Systems Lab}{0}}
+\headcommand {\beamer@framepages {206}{206}}
+\headcommand {\slideentry {8}{1}{7}{207/207}{Signal \& Systems Lab}{0}}
+\headcommand {\beamer@framepages {207}{207}}
+\headcommand {\slideentry {8}{1}{8}{208/208}{Signal \& Systems Lab}{0}}
+\headcommand {\beamer@framepages {208}{208}}
+\headcommand {\slideentry {8}{1}{9}{209/209}{Signal \& Systems Lab}{0}}
+\headcommand {\beamer@framepages {209}{209}}
+\headcommand {\slideentry {8}{1}{10}{210/210}{Signal \& Systems Lab}{0}}
+\headcommand {\beamer@framepages {210}{210}}
+\headcommand {\slideentry {8}{1}{11}{211/211}{Signal \& Systems Lab}{0}}
+\headcommand {\beamer@framepages {211}{211}}
+\headcommand {\slideentry {8}{1}{12}{212/212}{Signal \& Systems Lab}{0}}
+\headcommand {\beamer@framepages {212}{212}}
+\headcommand {\slideentry {8}{1}{13}{213/213}{Signal \& Systems Lab}{0}}
+\headcommand {\beamer@framepages {213}{213}}
+\headcommand {\slideentry {8}{1}{14}{214/214}{Signal \& Systems Lab}{0}}
+\headcommand {\beamer@framepages {214}{214}}
+\headcommand {\beamer@sectionpages {200}{214}}
+\headcommand {\beamer@subsectionpages {201}{214}}
+\headcommand {\sectionentry {9}{Labs}{215}{Labs}{0}}
+\headcommand {\slideentry {9}{0}{1}{215/215}{}{0}}
+\headcommand {\beamer@framepages {215}{215}}
+\headcommand {\slideentry {9}{0}{2}{216/216}{}{0}}
+\headcommand {\beamer@framepages {216}{216}}
+\headcommand {\slideentry {9}{0}{3}{217/217}{}{0}}
+\headcommand {\beamer@framepages {217}{217}}
+\headcommand {\slideentry {9}{0}{4}{218/218}{}{0}}
+\headcommand {\beamer@framepages {218}{218}}
+\headcommand {\slideentry {9}{0}{5}{219/219}{}{0}}
+\headcommand {\beamer@framepages {219}{219}}
+\headcommand {\slideentry {9}{0}{6}{220/220}{}{0}}
+\headcommand {\beamer@framepages {220}{220}}
+\headcommand {\slideentry {9}{0}{7}{221/221}{}{0}}
+\headcommand {\beamer@framepages {221}{221}}
+\headcommand {\slideentry {9}{0}{8}{222/222}{}{0}}
+\headcommand {\beamer@framepages {222}{222}}
+\headcommand {\slideentry {9}{0}{9}{223/223}{}{0}}
+\headcommand {\beamer@framepages {223}{223}}
+\headcommand {\slideentry {9}{0}{10}{224/224}{}{0}}
+\headcommand {\beamer@framepages {224}{224}}
+\headcommand {\slideentry {9}{0}{11}{225/225}{}{0}}
+\headcommand {\beamer@framepages {225}{225}}
+\headcommand {\slideentry {9}{0}{12}{226/226}{}{0}}
+\headcommand {\beamer@framepages {226}{226}}
+\headcommand {\slideentry {9}{0}{13}{227/227}{}{0}}
+\headcommand {\beamer@framepages {227}{227}}
+\headcommand {\slideentry {9}{0}{14}{228/228}{}{0}}
+\headcommand {\beamer@framepages {228}{228}}
+\headcommand {\slideentry {9}{0}{15}{229/229}{}{0}}
+\headcommand {\beamer@framepages {229}{229}}
+\headcommand {\slideentry {9}{0}{16}{230/230}{}{0}}
+\headcommand {\beamer@framepages {230}{230}}
+\headcommand {\slideentry {9}{0}{17}{231/231}{}{0}}
+\headcommand {\beamer@framepages {231}{231}}
+\headcommand {\slideentry {9}{0}{18}{232/232}{}{0}}
+\headcommand {\beamer@framepages {232}{232}}
+\headcommand {\slideentry {9}{0}{19}{233/233}{}{0}}
+\headcommand {\beamer@framepages {233}{233}}
+\headcommand {\slideentry {9}{0}{20}{234/234}{}{0}}
+\headcommand {\beamer@framepages {234}{234}}
+\headcommand {\slideentry {9}{0}{21}{235/235}{}{0}}
+\headcommand {\beamer@framepages {235}{235}}
+\headcommand {\slideentry {9}{0}{22}{236/236}{}{0}}
+\headcommand {\beamer@framepages {236}{236}}
+\headcommand {\slideentry {9}{0}{23}{237/237}{}{0}}
+\headcommand {\beamer@framepages {237}{237}}
+\headcommand {\beamer@sectionpages {215}{237}}
+\headcommand {\beamer@subsectionpages {215}{237}}
+\headcommand {\sectionentry {10}{Quiz}{238}{Quiz}{0}}
+\headcommand {\slideentry {10}{0}{1}{238/238}{}{0}}
+\headcommand {\beamer@framepages {238}{238}}
+\headcommand {\beamer@sectionpages {238}{238}}
+\headcommand {\beamer@subsectionpages {238}{238}}
+\headcommand {\sectionentry {11}{kalman Filter}{239}{kalman Filter}{0}}
+\headcommand {\slideentry {11}{0}{1}{239/239}{}{0}}
+\headcommand {\beamer@framepages {239}{239}}
+\headcommand {\slideentry {11}{0}{2}{240/240}{}{0}}
+\headcommand {\beamer@framepages {240}{240}}
+\headcommand {\slideentry {11}{0}{3}{241/243}{}{0}}
+\headcommand {\beamer@framepages {241}{243}}
+\headcommand {\slideentry {11}{0}{4}{244/244}{}{0}}
+\headcommand {\beamer@framepages {244}{244}}
+\headcommand {\slideentry {11}{0}{5}{245/245}{}{0}}
+\headcommand {\beamer@framepages {245}{245}}
+\headcommand {\slideentry {11}{0}{6}{246/246}{}{0}}
+\headcommand {\beamer@framepages {246}{246}}
+\headcommand {\slideentry {11}{0}{7}{247/247}{}{0}}
+\headcommand {\beamer@framepages {247}{247}}
+\headcommand {\slideentry {11}{0}{8}{248/248}{}{0}}
+\headcommand {\beamer@framepages {248}{248}}
+\headcommand {\beamer@partpages {1}{248}}
+\headcommand {\beamer@subsectionpages {239}{248}}
+\headcommand {\beamer@sectionpages {239}{248}}
+\headcommand {\beamer@documentpages {248}}
+\headcommand {\gdef \inserttotalframenumber {242}}

@@ -1,0 +1,1265 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0052)http://www.cplusplus.com/doc/tutorial/operators.html -->
+<HTML><HEAD><TITLE>Operators</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<STYLE type=text/css>BODY {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+TABLE {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+INPUT {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+SELECT {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+TEXTAREA {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+FORM {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+PRE {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+DT {
+	FONT-WEIGHT: bold
+}
+DD {
+	MARGIN-BOTTOM: 12px
+}
+UL {
+	MARGIN-BOTTOM: 12px
+}
+UL {
+	MARGIN-TOP: 4px
+}
+LI {
+	MARGIN-BOTTOM: 4px
+}
+A:link {
+	COLOR: #000070; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #000070; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #000070; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #0000a0; TEXT-DECORATION: underline
+}
+.imgbox {
+	LINE-HEIGHT: 1px
+}
+.stdform {
+	BORDER-RIGHT: #00007f 1px solid; BORDER-TOP: #00007f 1px solid; BORDER-LEFT: #00007f 1px solid; BORDER-BOTTOM: #00007f 1px solid
+}
+.stdform TH {
+	BORDER-RIGHT: #00007f 1px solid; BORDER-TOP: #00007f 1px solid; BORDER-LEFT: #00007f 1px solid; BORDER-BOTTOM: #00007f 1px solid
+}
+.stdform TD {
+	BORDER-RIGHT: #707080 1px solid; BORDER-TOP: #707080 1px solid; BORDER-LEFT: #707080 1px solid; BORDER-BOTTOM: #707080 1px solid; TEXT-ALIGN: left
+}
+.stdform TR TD {
+	BACKGROUND: #f0f0ff
+}
+.stdform TR.odd TD {
+	BACKGROUND: #e0e0ff
+}
+.stdform TH {
+	BACKGROUND: url(/img/blue.gif) blue; COLOR: #ffffff
+}
+.stdform TH A:link {
+	COLOR: white
+}
+.stdform TH A:visited {
+	COLOR: white
+}
+.stdform TH A:active {
+	COLOR: white
+}
+.stdform TH A:hover {
+	COLOR: yellow
+}
+.stdform .txt {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid; BACKGROUND-COLOR: #fffff0
+}
+.stdform SELECT {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid; BACKGROUND-COLOR: #fffff0
+}
+.stdform TEXTAREA {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid; BACKGROUND-COLOR: #fffff0
+}
+.stdform TEXTAREA {
+	FONT-FAMILY: monospace
+}
+.stdform .field {
+	FONT-WEIGHT: bold; TEXT-ALIGN: right
+}
+.stdform .value {
+	FONT-FAMILY: courier,monospace
+}
+.stdform .description {
+	FONT-SIZE: 80%
+}
+.stdform .buttons {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; TEXT-ALIGN: center
+}
+.stdform TR.separator TD {
+	FONT-WEIGHT: bold; BACKGROUND: white
+}
+.stdform .number {
+	TEXT-ALIGN: center
+}
+.secform {
+	BORDER-RIGHT: #ff6020 1px solid; BORDER-TOP: #ff6020 1px solid; BORDER-LEFT: #ff6020 1px solid; BORDER-BOTTOM: #ff6020 1px solid; BORDER-COLLAPSE: collapse
+}
+.secform TD {
+	BORDER-RIGHT: #ff6020 1px solid; BORDER-TOP: #ff6020 1px solid; BORDER-LEFT: #ff6020 1px solid; BORDER-BOTTOM: #ff6020 1px solid; BORDER-COLLAPSE: collapse
+}
+.secform TR {
+	BACKGROUND: #fffff0
+}
+.secform TR.odd TD {
+	BACKGROUND: #ffffd0
+}
+.secform TH {
+	BACKGROUND: url(/img/orange.gif) #ff6020; COLOR: #ffffff
+}
+.errors {
+	BORDER-RIGHT: #7f0000 1px solid; BORDER-TOP: #7f0000 1px solid; BORDER-LEFT: #7f0000 1px solid; BORDER-BOTTOM: #7f0000 1px solid
+}
+.errors TH {
+	BORDER-RIGHT: #7f0000 1px solid; BORDER-TOP: #7f0000 1px solid; BORDER-LEFT: #7f0000 1px solid; BORDER-BOTTOM: #7f0000 1px solid
+}
+.errors TD {
+	BORDER-RIGHT: #807070 1px solid; BORDER-TOP: #807070 1px solid; BORDER-LEFT: #807070 1px solid; BORDER-BOTTOM: #807070 1px solid; TEXT-ALIGN: left
+}
+.errors TH {
+	BACKGROUND: red; COLOR: #ffffff
+}
+.errors TD {
+	BACKGROUND: #ffe0e0
+}
+.bar {
+	BACKGROUND: url(/img/headbg.gif); COLOR: white; LINE-HEIGHT: 20px
+}
+.bar TABLE {
+	FONT-SIZE: 9px; COLOR: white; LINE-HEIGHT: 16px
+}
+.bar A:link {
+	COLOR: white
+}
+.bar A:visited {
+	COLOR: white
+}
+.bar A:active {
+	COLOR: white
+}
+.bar A:hover {
+	COLOR: yellow; TEXT-DECORATION: none
+}
+.bar .txt {
+	BORDER-RIGHT: 1px inset; BORDER-TOP: 1px inset; BORDER-LEFT: 1px inset; BORDER-BOTTOM: 1px inset; HEIGHT: 14px; BACKGROUND-COLOR: #c0c0ff
+}
+.bar .btn {
+	BORDER-RIGHT: 1px outset; BORDER-TOP: 1px outset; FONT-SIZE: 9px; BORDER-LEFT: 1px outset; BORDER-BOTTOM: 1px outset; HEIGHT: 18px; BACKGROUND-COLOR: #c0c0ff
+}
+.left {
+	BORDER-RIGHT: black 1px solid
+}
+.left TABLE {
+	BORDER-RIGHT: #00007f 1px solid; BORDER-TOP: #00007f 1px solid; MARGIN-TOP: 5px; BACKGROUND: white; BORDER-LEFT: #00007f 1px solid; WIDTH: 160px; BORDER-BOTTOM: #00007f 1px solid; BORDER-COLLAPSE: collapse
+}
+.left TD {
+	FONT-SIZE: x-small; COLOR: #000070; FONT-FAMILY: verdana,arial,helvetica,sans-serif; TEXT-ALIGN: left
+}
+.left TH {
+	FONT-SIZE: xx-small; BACKGROUND: url(/img/blue.gif) blue; COLOR: #ffffff; FONT-FAMILY: verdana,arial,helvetica,sans-serif; HEIGHT: 14px
+}
+.left TH A:link {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.left TH A:visited {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.left TH A:active {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.left TH A:hover {
+	COLOR: yellow; TEXT-DECORATION: none
+}
+.warning {
+	BORDER-RIGHT: red 2px solid; BORDER-TOP: red 2px solid; BACKGROUND: #ffc000; BORDER-LEFT: red 2px solid; BORDER-BOTTOM: red 2px solid
+}
+.content {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px
+}
+.boxed {
+	BORDER-COLLAPSE: collapse
+}
+.boxed TH {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BACKGROUND: #e0e0e0; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid
+}
+.boxed TD {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid
+}
+.code A:link {
+	COLOR: black; TEXT-DECORATION: none
+}
+.code A:visited {
+	COLOR: black; TEXT-DECORATION: none
+}
+.code A:active {
+	COLOR: black; TEXT-DECORATION: none
+}
+.code A:hover {
+	BACKGROUND: yellow; COLOR: black; TEXT-DECORATION: none
+}
+.codebox {
+	WIDTH: 100%
+}
+.snippet {
+	MARGIN-LEFT: 20px
+}
+.code {
+	BORDER-RIGHT: #c0c0d0 1px solid; BORDER-TOP: #c0c0d0 1px solid; BACKGROUND: #efefff; BORDER-LEFT: #c0c0d0 1px solid; BORDER-BOTTOM: #c0c0d0 1px solid
+}
+.result {
+	BORDER-RIGHT: #c0c0c0 1px solid; BORDER-TOP: #c0c0c0 1px solid; BACKGROUND: #e7e7e7; VERTICAL-ALIGN: top; BORDER-LEFT: #c0c0c0 1px solid; WIDTH: 50%; BORDER-BOTTOM: #c0c0c0 1px solid
+}
+.codebox {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-TOP-STYLE: none; PADDING-TOP: 0px; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+.kw {
+	COLOR: #0000b0
+}
+A.kw:hover {
+	COLOR: #0000b0
+}
+A.kw:link {
+	COLOR: #0000b0
+}
+A.kw:visited {
+	COLOR: #0000b0
+}
+A.kw:active {
+	COLOR: #0000b0
+}
+.prep {
+	COLOR: #500070
+}
+.comm {
+	COLOR: #007000
+}
+.str {
+	COLOR: #600030
+}
+</STYLE>
+
+<SCRIPT type=text/javascript>
+<!--
+function GetCookie(name) {
+  var dc = document.cookie;
+  var prefix = name + '=';
+  var begin = dc.indexOf('; ' + prefix);
+  if (begin == -1) {
+    begin = dc.indexOf(prefix);
+    if (begin != 0) return null;
+  } else
+    begin += 2;
+  var end = document.cookie.indexOf(';', begin);
+  if (end == -1)
+    end = dc.length;
+  var sret=unescape(dc.substring(begin + prefix.length, end));
+  var aret=sret.split('+'); sret=aret.join(' ');
+  return sret;
+}
+
+var user=GetCookie ('codehq_user');
+
+var mo = new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
+
+function When(ts) {
+ var dt = new Date(ts*1000);
+ document.write(mo[dt.getMonth()]+" "+dt.getDate()+", "+(dt.getYear()+(dt.getYear()<1900?1900:0)));
+ document.write(" at "+((dt.getHours()%12)==0?12:dt.getHours()%12)+":"+(dt.getMinutes()<10?"0":"")+dt.getMinutes()+(dt.getHours()<12?"am":"pm"));
+}
+
+function LoginBox() {
+if (!user)
+{
+	document.write ('<table cellspacing=2 cellpadding="0" valign="top">');
+	document.write ('<tr><td align="center"><b>user<\/b><\/td><td align="center"><b>pass<\/b><\/td><td align="center">[<a href="/member/signup.form">register<\/a>]<\/td><\/tr>');
+	document.write ('<tr><td align="center"><input class="txt" name="l" size="4" type="text"><\/td>');
+	document.write (' <td align="center"><input class="txt" name="p" size="4" type="password"><\/td>');
+	document.write (' <td align="center"><input class="btn" value="sign in" type="submit"><\/td><\/tr>');
+	document.write ('<\/table>');
+}
+else
+{
+	document.write ('<table width="150" cellspacing="2" cellpadding="0" valign="top">');
+	document.write ('<tr><td colspan="2" align="center">Logged in as: <b>'+user+'<\/b></td></tr>');	
+	document.write ('<tr><td align="right"><input class="btn" value="log out" type="submit"><input type="hidden" name="redirectto" value="/doc/tutorial/operators.html"><input type="hidden" name="logout" value="sign out"></td>');
+	document.write ('<td align="left">[<b><a href="/member/">profile<\/a><\/b>]<\/font>');
+	document.write ('<\/td><\/tr>');
+	document.write ('<\/table>');
+}
+}
+
+var lowuser=user.toLowerCase();
+var faaccess=new Boolean ( (( GetCookie('codehq_access') & 256 )==256 ));
+function SuOptions() {
+	if ((faaccess==true)||(lowuser=="juan soulie"))
+	{
+		document.write(' [<a href="/doc/publish.form?what=edit&itemid=4">Edit this document<\/a>] ');
+	}
+}
+//-->
+</SCRIPT>
+
+<META content="MSHTML 6.00.2900.2180" name=GENERATOR></HEAD>
+<BODY bgColor=#d7d7d7>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=imgbox vAlign=top bgColor=#b0c0d0 rowSpan=2><A 
+      href="http://www.cplusplus.com/"><IMG height=75 
+      src="Operators_files/headlogo1.gif" width=165 border=0></A></TD>
+    <TD class=imgbox vAlign=top bgColor=#ffffff><A 
+      href="http://www.cplusplus.com/"><IMG height=18 
+      src="Operators_files/headlogo2.gif" width=33 border=0></A></TD>
+    <TD width="95%" bgColor=#d7d7d7></TD>
+    <TD bgColor=#d7d7d7></TD></TR>
+  <TR>
+    <TD class=imgbox vAlign=top bgColor=#ffffff><A 
+      href="http://www.cplusplus.com/"><IMG height=57 
+      src="Operators_files/headlogo3.gif" width=33 border=0></A></TD>
+    <TD class=bar vAlign=top width="95%">&nbsp; <B><A 
+      href="http://www.cplusplus.com/">C++</A> : <A 
+      href="http://www.cplusplus.com/doc/">Documents</A> : <A 
+      href="http://www.cplusplus.com/doc/tutorial/">C++ Language Tutorial</A> : 
+      Operators </B><BR>
+      <FORM name=search action=/search/search.php method=get>&nbsp; Search: 
+      <INPUT class=txt size=13 name=q> <INPUT class=btn type=submit value=Search> </FORM></TD>
+    <TD class=bar vAlign=top>
+      <FORM name=login action=/member/login.form method=post><INPUT type=hidden 
+      value=1 name=login><INPUT type=hidden value=/doc/tutorial/operators.html 
+      name=redirectto>
+      <SCRIPT type=text/javascript>
+<!--
+LoginBox();
+// -->
+</SCRIPT>
+       </FORM><NOSCRIPT>
+      <CENTER>javascript and cookies 
+required</CENTER></NOSCRIPT></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD style="BORDER-RIGHT: black 1px solid; LINE-HEIGHT: 1px" width=165 
+    bgColor=#b0c0d0><IMG height=1 src="Operators_files/165x1.gif" 
+width=165></TD>
+    <TD class=imgbox width="99%" bgColor=white><IMG height=1 
+      src="Operators_files/165x1.gif" width=165></TD></TR>
+  <TR><!-- left -->
+    <TD class=left vAlign=top align=middle width=165 bgColor=#b0c0d0>
+      <TABLE class=box>
+        <TBODY>
+        <TR>
+          <TH><A href="http://www.cplusplus.com/doc/tutorial/">C++ Language 
+            Tutorial</A></TH></TR>
+        <TR>
+          <TD><B>Introduction</B></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/introduction.html">· 
+            Instructions for use</A></TD></TR>
+        <TR>
+          <TD><B>Basics of C++</B></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/program_structure.html">· 
+            Structure of a program</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/variables.html">· 
+            Variables. Data Types.</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/constants.html">· 
+            Constants</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/operators.html">· 
+            Operators</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/basic_io.html">· 
+            Basic Input/Output</A></TD></TR>
+        <TR>
+          <TD><B>Control Structures</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/control.html">· 
+            Control Structures</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/functions.html">· 
+            Functions (I)</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/functions2.html">· 
+            Functions (II)</A></TD></TR>
+        <TR>
+          <TD><B>Compound Data Types</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/arrays.html">· 
+            Arrays</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/ntcs.html">· 
+            Character Sequences</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/pointers.html">· 
+            Pointers</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/dynamic.html">· 
+            Dynamic Memory</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/structures.html">· Data 
+            Structures</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/other_data_types.html">· 
+            Other Data Types</A></TD></TR>
+        <TR>
+          <TD><B>Object Oriented Programming</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/classes.html">· 
+            Classes (I)</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/classes2.html">· 
+            Classes (II)</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/inheritance.html">· 
+            Friendship and inheritance</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/polymorphism.html">· 
+            Polymorphism</A></TD></TR>
+        <TR>
+          <TD><B>Advanced Concepts</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/templates.html">· 
+            Templates</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/namespaces.html">· 
+            Namespaces</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/exceptions.html">· 
+            Exceptions</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/typecasting.html">· Type 
+            Casting</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/preprocessor.html">· 
+            Preprocessor directives</A></TD></TR>
+        <TR>
+          <TD><B>C++ Standard Library</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/files.html">· 
+            Input/Output with files</A></TD></TR></TBODY></TABLE>
+      <TABLE class=box>
+        <TBODY>
+        <TR>
+          <TH><A href="http://www.cplusplus.com/doc/">Document 
+          categories</A></TH></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/information/">Information 
+            about C++</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/">C++ Language 
+            Tutorial</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/papers/">Additional 
+            Papers</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/general/">User-contributed</A></TD></TR></TBODY></TABLE>
+      <TABLE class=box>
+        <TBODY>
+        <TR>
+          <TH><A href="http://www.cplusplus.com/">cplusplus.com</A></TH></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/">documents</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/ref/">reference</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/src/">sourcecodes</A></TD></TR>
+        <TR>
+          <TD><A 
+      href="http://www.cplusplus.com/forum/">forum</A></TD></TR></TBODY></TABLE><BR><IMG 
+      height=1 src="Operators_files/165x1.gif" width=165>
+      <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-5777024789006368";
+google_ad_width = 125;
+google_ad_height = 125;
+google_ad_format = "125x125_as";
+google_ad_type = "text_image";
+google_ad_channel ="5923551140";
+google_color_border = "3333CC";
+google_color_bg = "FFFFFF";
+google_color_link = "3333CC";
+google_color_url = "000000";
+google_color_text = "000000";
+//--></SCRIPT>
+
+      <SCRIPT language=javascript src="Operators_files/1x1.js"></SCRIPT>
+       <NOSCRIPT><A 
+      href="http://media.fastclick.net/w/click.here?sid=4636&amp;m=3&amp;c=1" 
+      target=_top><IMG height=600 src="Operators_files/1x1.gif" width=160 
+      border=1></A></NOSCRIPT> <IMG height=1 src="Operators_files/165x1.gif" 
+      width=165> </TD><!-- /left -->
+    <TD vAlign=top width="99%" bgColor=white>
+      <CENTER>
+      <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-5777024789006368";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text_image";
+google_ad_channel ="1922709837";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "000000";
+google_color_text = "000000";
+//--></SCRIPT>
+
+      <SCRIPT language=javascript src="Operators_files/show_ads.js"></SCRIPT>
+      <NOSCRIPT><A 
+      href="http://media.fastclick.net/w/click.here?sid=4636&amp;m=1&amp;c=1" 
+      target=_top><IMG height=90 src="F:\New Folder\Operators_files\1x1(1).gif" 
+      width=728 border=1></A></NOSCRIPT> </CENTER>
+      <DIV class=content>
+      <TABLE width="100%">
+        <TBODY>
+        <TR>
+          <TD>
+            <H1>Operators</H1></TD>
+          <TD align=right>
+            <TABLE>
+              <TBODY>
+              <TR>
+                <TD align=right>Published by <B><A 
+                  href="http://www.cplusplus.com/member/Juan_Soulie/">Juan 
+                  Soulie</A></B></TD></TR>
+              <TR>
+                <TD align=right><SMALL>Last update on
+                  <SCRIPT type=text/javascript>When(1147803959)</SCRIPT>
+                   </SMALL></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>Once we know 
+      of the existence of variables and constants, we can begin to operate with 
+      them. For that purpose, C++ integrates operators. Unlike other languages 
+      whose operators are mainly keywords, operators in C++ are mostly made of 
+      signs that are not part of the alphabet but are available in all 
+      keyboards. This makes C++ code shorter and more international, since it 
+      relies less on English words, but requires a little of learning effort in 
+      the beginning.
+      <P>You do not have to memorize all the content of this page. Most details 
+      are only provided to serve as a later reference in case you need it. 
+      <P><A name=""></A>
+      <H3>Assignation (=)</H3>The assignation operator assigns a value to a 
+      variable.
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>a = 5;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>This statement assigns the integer value 5 to the variable <TT>a</TT>. 
+      The part at the left of the assignation operator (<TT>=</TT>) is known as 
+      the <I>lvalue</I> (left value) and the right one as the <I>rvalue</I> 
+      (right value). The lvalue has to be a variable whereas the rvalue can be 
+      either a constant, a variable, the result of an operation or any 
+      combination of these.<BR>The most important rule of assignation is the 
+      <I>right-to-left</I> rule: The assignation operation always takes place 
+      from right to left, and never the other way:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>a = b;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>This statement assigns to variable <TT>a</TT> (the lvalue) the value 
+      contained in variable <TT>b</TT> (the rvalue). The value that was stored 
+      until this moment in <TT>a</TT> is not considered at all in this 
+      operation, and in fact that value is lost.
+      <P>Consider also that we are only assigning the value of <TT>b</TT> to 
+      <TT>a</TT> at the moment of the assignation. Therefore a later change of 
+      <TT>b</TT> will not affect the new value of <TT>a</TT>.
+      <P>For example, let us have a look at the following code - I have included 
+      the evolution of the content stored in the variables as comments:
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// assignation operator</SPAN>
+
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>int</SPAN> main ()
+{
+  <SPAN class=kw>int</SPAN> a, b;         <SPAN class=comm>// a:?,  b:?</SPAN>
+  a = 10;           <SPAN class=comm>// a:10, b:?</SPAN>
+  b = 4;            <SPAN class=comm>// a:10, b:4</SPAN>
+  a = b;            <SPAN class=comm>// a:4,  b:4</SPAN>
+  b = 7;            <SPAN class=comm>// a:4,  b:7</SPAN>
+
+  cout &lt;&lt; <SPAN class=str>"a:"</SPAN>;
+  cout &lt;&lt; a;
+  cout &lt;&lt; <SPAN class=str>" b:"</SPAN>;
+  cout &lt;&lt; b;
+
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>a:4 b:7
+</PRE></TD></TR></TBODY></TABLE>
+      <P>This code will give us as result that the value contained in <TT>a</TT> 
+      is <TT>4</TT> and the one contained in <TT>b</TT> is <TT>7</TT>. Notice 
+      how <TT>a</TT> was not affected by the final modification of <TT>b</TT>, 
+      even though we declared <TT>a = b</TT> earlier (that is because of the 
+      <I>right-to-left rule</I>).
+      <P>A property that C++ has over other programming languages is that the 
+      assignation operation can be used as the rvalue (or part of an rvalue) for 
+      another assignation. For example: 
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>a = 2 + (b = 5);
+</PRE></TD></TR></TBODY></TABLE>
+      <P>is equivalent to: 
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>b = 5;
+a = 2 + b;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>that means: first assign <TT>5</TT> to variable <TT>b</TT> and then 
+      assign to <TT>a</TT> the value <TT>2</TT> plus the result of the previous 
+      assignation of <TT>b</TT> (i.e. 5), leaving <TT>a</TT> with a final value 
+      of <TT>7</TT>.
+      <P>The following expression is also valid in C++: 
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>a = b = c = 5;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>It assigns <TT>5</TT> to the all the three variables: <TT>a</TT>, 
+      <TT>b</TT> and <TT>c</TT>. 
+      <P><A name=""></A>
+      <H3>Arithmetic operators ( +, -, *, /, % )</H3>The five arithmetical 
+      operations supported by the C++ language are: 
+      <P>
+      <TABLE class=boxed>
+        <TBODY>
+        <TR>
+          <TD>+</TD>
+          <TD>addition</TD></TR>
+        <TR>
+          <TD>-</TD>
+          <TD>subtraction</TD></TR>
+        <TR>
+          <TD>*</TD>
+          <TD>multiplication</TD></TR>
+        <TR>
+          <TD>/</TD>
+          <TD>division</TD></TR>
+        <TR>
+          <TD>%</TD>
+          <TD>modulo</TD></TR></TBODY></TABLE>
+      <P>Operations of addition, subtraction, multiplication and division 
+      literally correspond with their respective mathematical operators. The 
+      only one that you might not be so used to see may be <I>modulo</I>; whose 
+      operator is the percentage sign (<TT>%</TT>). Modulo is the operation that 
+      gives the remainder of a division of two values. For example, if we write:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>a = 11 % 3;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>the variable <TT>a</TT> will contain the value <TT>2</TT>, since 
+      <TT>2</TT> is the remainder from dividing <TT>11</TT> between <TT>3</TT>.
+      <P><A name=""></A>
+      <H3>Compound assignation (+=, -=, *=, /=, %=, &gt;&gt;=, &lt;&lt;=, 
+      &amp;=, ^=, |=)</H3>
+      <P>When we want to modify the value of a variable by performing an 
+      operation on the value currently stored in that variable we can use 
+      compound assignation operators:
+      <P>
+      <TABLE class=boxed>
+        <TBODY>
+        <TR>
+          <TH>expression</TH>
+          <TH>is equivalent to</TH></TR>
+        <TR>
+          <TD><TT>value += increase;</TT></TD>
+          <TD><TT>value = value + increase;</TT></TD></TR>
+        <TR>
+          <TD><TT>a -= 5;</TT></TD>
+          <TD><TT>a = a - 5;</TT></TD></TR>
+        <TR>
+          <TD><TT>a /= b;</TT></TD>
+          <TD><TT>a = a / b;</TT></TD></TR>
+        <TR>
+          <TD><TT>price *= units + 1;</TT></TD>
+          <TD><TT>price = price * (units + 1);</TT></TD></TR></TBODY></TABLE>
+      <P>and the same for all other operators. For example:
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// compund assignation</SPAN>
+
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>int</SPAN> main ()
+{
+  <SPAN class=kw>int</SPAN> a, b=3;
+  a = b;
+  a+=2;             <SPAN class=comm>// equivalent to a=a+2</SPAN>
+  cout &lt;&lt; a;
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>5
+</PRE></TD></TR></TBODY></TABLE>
+      <P><A name=""></A>
+      <H3>Increase and decrease (++, --)</H3>Shortening even more some 
+      expressions, the increase operator (<TT>++</TT>) and the decrease operator 
+      (<TT>--</TT>) increase or reduce by one the value stored in a variable. 
+      They are equivalent to <TT>+=1</TT> and to <TT>-=1</TT>, respectively. 
+      Thus:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>c++;
+c+=1;
+c=c+1;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>are all equivalent in its functionality: the three of them increase by 
+      one the value of c.
+      <P>In the early C compilers, the three previous expressions probably 
+      produced different executable code depending on which one was used. 
+      Nowadays, this type of code optimization is generally done automatically 
+      by the compiler, thus the three expressions should produce exactly the 
+      same executable code.
+      <P>A characteristic of this operator is that it can be used both as a 
+      prefix and as a suffix. That means that it can be written either before 
+      the variable identifier (<TT>++a</TT>) or after it (<TT>a++</TT>). 
+      Although in simple expressions like <TT>a++</TT> or <TT>++a</TT> both have 
+      exactly the same meaning, in other expressions in which the result of the 
+      increase or decrease operation is evaluated as a value in an outer 
+      expression they may have an important difference in their meaning: In the 
+      case that the increase operator is used as a prefix (++a) the value is 
+      increased <U>before</U> the result of the expression is evaluated and 
+      therefore the increased value is considered in the outer expression; in 
+      case that it is used as a suffix (<TT>a++</TT>) the value stored in a is 
+      increased after being evaluated and therefore the value stored before the 
+      increase operation is evaluated in the outer expression. Notice the 
+      difference:
+      <P>
+      <TABLE class=boxed>
+        <TBODY>
+        <TR>
+          <TH>Example 1</TH>
+          <TH>Example 2</TH></TR>
+        <TR>
+          <TD class=code><TT>B=3;<BR>A=++B;<BR>// A contains 4, B contains 
+            4</TT></TD>
+          <TD class=code><TT>B=3;<BR>A=B++;<BR>// A contains 3, B contains 
+            4</TT></TD></TR></TBODY></TABLE>
+      <P>In Example 1, <TT>B</TT> is increased before its value is copied to 
+      <TT>A</TT>. While in Example 2, the value of <TT>B</TT> is copied to 
+      <TT>A</TT> and then <TT>B</TT> is increased. 
+      <P><A name=""></A>
+      <H3>Relational and equality operators ( ==, !=, &gt;, &lt;, &gt;=, &lt;= 
+      )</H3>
+      <P>In order to evaluate a comparison between two expressions we can use 
+      the relational and equality operators. The result of a relational 
+      operation is a Boolean value that can only be true or false, according to 
+      its Boolean result.
+      <P>We may want to compare two expressions, for example, to know if they 
+      are equal or if one is greater than the other is. Here is a list of the 
+      relational and equality operators that can be used in C++: 
+      <P>
+      <TABLE class=boxed>
+        <TBODY>
+        <TR>
+          <TD>==</TD>
+          <TD>Equal to</TD></TR>
+        <TR>
+          <TD>!=</TD>
+          <TD>Not equal to</TD></TR>
+        <TR>
+          <TD>&gt;</TD>
+          <TD>Greater than</TD></TR>
+        <TR>
+          <TD>&lt;</TD>
+          <TD>Less than</TD></TR>
+        <TR>
+          <TD>&gt;=</TD>
+          <TD>Greater than or equal to</TD></TR>
+        <TR>
+          <TD>&lt;=</TD>
+          <TD>Less than or equal to</TD></TR></TBODY></TABLE>
+      <P>Here there are some examples:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>(7 == 5)     <SPAN class=comm>// evaluates to false.</SPAN>
+(5 &gt; 4)      <SPAN class=comm>// evaluates to true.</SPAN>
+(3 != 2)     <SPAN class=comm>// evaluates to true.</SPAN>
+(6 &gt;= 6)     <SPAN class=comm>// evaluates to true.</SPAN>
+(5 &lt; 5)      <SPAN class=comm>// evaluates to false.</SPAN>
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Of course, instead of using only numeric constants, we can use any 
+      valid expression, including variables. Suppose that <TT>a=2</TT>, 
+      <TT>b=3</TT> and <TT>c=6</TT>,
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>(a == 5)     <SPAN class=comm>// evaluates to false since a is not equal to 5.</SPAN>
+(a*b &gt;= c)   <SPAN class=comm>// evaluates to true since (2*3 &gt;= 6) is true. </SPAN>
+(b+4 &gt; a*c)  <SPAN class=comm>// evaluates to false since (3+4 &gt; 2*6) is false. </SPAN>
+((b=2) == a) <SPAN class=comm>// evaluates to true. </SPAN>
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Be careful! The operator <TT>=</TT> (one equal sign) is not the same as 
+      the operator <TT>==</TT> (two equal signs), the first one is an 
+      assignation operator (assigns the value at its right to the variable at 
+      its left) and the other one (<TT>==</TT>) is the equality operator that 
+      compares whether both expressions in the two sides of it are equal to each 
+      other. Thus, in the last expression <TT>((b=2) == a)</TT>, we first 
+      assigned the value <TT>2</TT> to <TT>b</TT> and then we compared it to 
+      <TT>a</TT>, that also stores the value <TT>2</TT>, so the result of the 
+      operation is true.
+      <P><A name=""></A>
+      <H3>Logical operators ( !, &amp;&amp;, || )</H3>
+      <P>The Operator <TT>!</TT> is the C++ operator to perform the Boolean 
+      operation NOT, it has only one operand, located at its right, and the only 
+      thing that it does is to inverse the value of it, producing false if its 
+      operand is true and true if its operand is false. Basically, it returns 
+      the opposite Boolean value of evaluating its operand. For example:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>!(5 == 5)    <SPAN class=comm>// evaluates to false because the expression at its right (5 == 5) is true. </SPAN>
+!(6 &lt;= 4)    <SPAN class=comm>// evaluates to true because (6 &lt;= 4) would be false. </SPAN>
+!<SPAN class=kw>true</SPAN>        <SPAN class=comm>// evaluates to false</SPAN>
+!<SPAN class=kw>false</SPAN>       <SPAN class=comm>// evaluates to true. </SPAN>
+</PRE></TD></TR></TBODY></TABLE>
+      <P>The logical operators <TT>&amp;&amp;</TT> and <TT>||</TT> are used when 
+      evaluating two expressions to obtain a single relational result. The 
+      operator <TT>&amp;&amp;</TT> corresponds with Boolean logical operation 
+      AND. This operation results true if both its two operands are true, and 
+      false otherwise. The following panel shows the result of operator 
+      <TT>&amp;&amp;</TT> evaluating the expression <TT>a &amp;&amp; b</TT>:
+      <P><B>&amp;&amp; OPERATOR</B> 
+      <TABLE class=boxed>
+        <TBODY>
+        <TR>
+          <TH>a</TH>
+          <TH>b</TH>
+          <TH>a &amp;&amp; b</TH></TR>
+        <TR>
+          <TD>true</TD>
+          <TD>true</TD>
+          <TD>true</TD></TR>
+        <TR>
+          <TD>true</TD>
+          <TD>false</TD>
+          <TD>false</TD></TR>
+        <TR>
+          <TD>false</TD>
+          <TD>true</TD>
+          <TD>false</TD></TR>
+        <TR>
+          <TD>false</TD>
+          <TD>false</TD>
+          <TD>false</TD></TR></TBODY></TABLE>
+      <P>The operator <TT>||</TT> corresponds with Boolean logical operation OR. 
+      This operation results true if either one of its two operands is true, 
+      thus being false only when both operands are false themselves. Here are 
+      the possible results of <TT>a || b</TT>:
+      <P><B>|| OPERATOR</B> 
+      <TABLE class=boxed>
+        <TBODY>
+        <TR>
+          <TH>a</TH>
+          <TH>b</TH>
+          <TH>a || b</TH></TR>
+        <TR>
+          <TD>true</TD>
+          <TD>true</TD>
+          <TD>true</TD></TR>
+        <TR>
+          <TD>true</TD>
+          <TD>false</TD>
+          <TD>true</TD></TR>
+        <TR>
+          <TD>false</TD>
+          <TD>true</TD>
+          <TD>true</TD></TR>
+        <TR>
+          <TD>false</TD>
+          <TD>false</TD>
+          <TD>false</TD></TR></TBODY></TABLE>
+      <P>For example:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>( (5 == 5) &amp;&amp; (3 &gt; 6) )  <SPAN class=comm>// evaluates to false ( true &amp;&amp; false ).</SPAN>
+( (5 == 5) || (3 &gt; 6) )  <SPAN class=comm>// evaluates to true ( true || false ).</SPAN>
+</PRE></TD></TR></TBODY></TABLE>
+      <P><A name=""></A>
+      <H3>Conditional operator ( ? )</H3>
+      <P>The conditional operator evaluates an expression returning a value if 
+      that expression is true and a different one if the expression is evaluated 
+      as false. Its format is: 
+      <P><TT>condition ? result1 : result2<BR></TT>
+      <P>If <TT>condition</TT> is true the expression will return 
+      <TT>result1</TT>, if it is not it will return <TT>result2</TT>.
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>7==5 ? 4 : 3     <SPAN class=comm>// returns 3, since 7 is not equal to 5.</SPAN>
+7==5+2 ? 4 : 3   <SPAN class=comm>// returns 4, since 7 is equal to 5+2.</SPAN>
+5&gt;3 ? a : b      <SPAN class=comm>// returns the value of a, since 5 is greater than 3.</SPAN>
+a&gt;b ? a : b      <SPAN class=comm>// returns whichever is greater, a or b.</SPAN>
+</PRE></TD></TR></TBODY></TABLE>
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// conditional operator</SPAN>
+
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>int</SPAN> main ()
+{
+  <SPAN class=kw>int</SPAN> a,b,c;
+
+  a=2;
+  b=7;
+  c = (a&gt;b) ? a : b;
+
+  cout &lt;&lt; c;
+
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>7
+</PRE></TD></TR></TBODY></TABLE>
+      <P>In this example <TT>a</TT> was <TT>2</TT> and <TT>b</TT> was 
+      <TT>7</TT>, so the expression being evaluated (<TT>a&gt;b</TT>) was not 
+      true, thus the first value specified after the question mark was discarded 
+      in favor of the second value (the one after the colon) which was 
+      <TT>b</TT>, with a value of <TT>7</TT>.
+      <P><A name=""></A>
+      <H3>Comma operator ( , )</H3>The comma operator (<TT>,</TT>) is used to 
+      separate two or more expressions that are included where only one 
+      expression is expected. When the set of expressions has to be evaluated 
+      for a value, only the rightmost expression is considered.
+      <P>For example, the following code:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>a = (b=3, b+2);
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Would first assign the value <TT>3</TT> to <TT>b</TT>, and then assign 
+      <TT>b+2</TT> to variable <TT>a</TT>. So, at the end, variable <TT>a</TT> 
+      would contain the value <TT>5</TT> while variable <TT>b</TT> would contain 
+      value <TT>3</TT>.
+      <P><A name=""></A>
+      <H3>Bitwise Operators ( &amp;, |, ^, ~, &lt;&lt;, &gt;&gt; )</H3>
+      <P>Bitwise operators modify variables considering the bit patterns that 
+      represent the values they store.
+      <P>
+      <TABLE class=boxed>
+        <TBODY>
+        <TR>
+          <TH>operator</TH>
+          <TH>asm equivalent</TH>
+          <TH>description</TH></TR>
+        <TR>
+          <TD><TT>&amp;</TT></TD>
+          <TD>AND</TD>
+          <TD>Bitwise AND</TD></TR>
+        <TR>
+          <TD><TT>|</TT></TD>
+          <TD>OR</TD>
+          <TD>Bitwise Inclusive OR</TD></TR>
+        <TR>
+          <TD><TT>^</TT></TD>
+          <TD>XOR</TD>
+          <TD>Bitwise Exclusive OR</TD></TR>
+        <TR>
+          <TD><TT>~</TT></TD>
+          <TD>NOT</TD>
+          <TD>Unary complement (bit inversion)</TD></TR>
+        <TR>
+          <TD><TT>&lt;&lt;</TT></TD>
+          <TD>SHL</TD>
+          <TD>Shift Left</TD></TR>
+        <TR>
+          <TD><TT>&gt;&gt;</TT></TD>
+          <TD>SHR</TD>
+          <TD>Shift Right</TD></TR></TBODY></TABLE>
+      <P><A name=""></A>
+      <H3>Explicit type casting operator</H3>Type casting operators allow you to 
+      convert a datum of a given type to another. There are several ways to do 
+      this in C++. The simplest one, which has been inherited from the C 
+      language, is to precede the expression to be converted by the new type 
+      enclosed between parentheses (<TT>()</TT>):
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>int</SPAN> i;
+<SPAN class=kw>float</SPAN> f = 3.14;
+i = (<SPAN class=kw>int</SPAN>) f;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>The previous code converts the float number <TT>3.14</TT> to an integer 
+      value (<TT>3</TT>), the remainder is lost. Here, the typecasting operator 
+      was <TT>(int)</TT>. Another way to do the same thing in C++ is using the 
+      functional notation: preceding the expression to be converted by the type 
+      and enclosing the expression between parentheses:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>i = <SPAN class=kw>int</SPAN> ( f );
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Both ways of type casting are valid in C++.
+      <P><A name=""></A>
+      <H3>sizeof()</H3>This operator accepts one parameter, which can be either 
+      a type or a variable itself and returns the size in bytes of that type or 
+      object:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>a = <SPAN class=kw>sizeof</SPAN> (<SPAN class=kw>char</SPAN>);
+</PRE></TD></TR></TBODY></TABLE>
+      <P>This will assign the value <TT>1</TT> to a because <TT>char</TT> is a 
+      one-byte long type.<BR>The value returned by <TT>sizeof</TT> is a 
+      constant, so it is always determined before program execution.
+      <P><A name=""></A>
+      <H3>Other operators</H3>Later in these tutorials, we will see a few more 
+      operators, like the ones referring to pointers or the specifics for 
+      object-oriented programming. Each one is treated in its respective 
+section.
+      <P><A name=""></A>
+      <H3>Precedence of operators</H3>When writing complex expressions with 
+      several operands, we may have some doubts about which operand is evaluated 
+      first and which later. For example, in this expression:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>a = 5 + 7 % 2
+</PRE></TD></TR></TBODY></TABLE>
+      <P>we may doubt if it really means:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>a = 5 + (7 % 2)    <SPAN class=comm>// with a result of 6, or</SPAN>
+a = (5 + 7) % 2    <SPAN class=comm>// with a result of 0</SPAN>
+</PRE></TD></TR></TBODY></TABLE>
+      <P>The correct answer is the first of the two expressions, with a result 
+      of <TT>6</TT>. There is an established order with the priority of each 
+      operator, and not only the arithmetic ones (those whose preference come 
+      from mathematics) but for all the operators which can appear in C++. From 
+      greatest to lowest priority, the priority order is as follows: 
+      <P>
+      <TABLE class=boxed>
+        <TBODY>
+        <TR>
+          <TH>Level</TH>
+          <TH>Operator</TH>
+          <TH>Description</TH>
+          <TH>Grouping</TH></TR>
+        <TR>
+          <TD>1</TD>
+          <TD><TT>::</TT></TD>
+          <TD>scope</TD>
+          <TD>Left-to-right</TD></TR>
+        <TR>
+          <TD>2</TD>
+          <TD><TT>() [] . -&gt; ++ -- dynamic_cast static_cast 
+            reinterpret_cast const_cast typeid</TT></TD>
+          <TD>postfix</TD>
+          <TD>Left-to-right</TD></TR>
+        <TR>
+          <TD rowSpan=3>3</TD>
+          <TD><TT>++ -- ~ ! sizeof new delete</TT></TD>
+          <TD>unary (prefix)</TD>
+          <TD rowSpan=3>Right-to-left</TD></TR>
+        <TR>
+          <TD><TT>* &amp;</TT></TD>
+          <TD>indirection and reference (pointers)</TD></TR>
+        <TR>
+          <TD><TT>+ -</TT></TD>
+          <TD>unary sign operator</TD></TR>
+        <TR>
+          <TD>4</TD>
+          <TD><TT>(type)</TT></TD>
+          <TD>type casting</TD>
+          <TD>Right-to-left</TD></TR>
+        <TR>
+          <TD>5</TD>
+          <TD><TT>.* -&gt;*</TT></TD>
+          <TD>pointer-to-member</TD>
+          <TD>Left-to-right</TD></TR>
+        <TR>
+          <TD>6</TD>
+          <TD><TT>* / %</TT></TD>
+          <TD>multiplicative</TD>
+          <TD>Left-to-right</TD></TR>
+        <TR>
+          <TD>7</TD>
+          <TD><TT>+ -</TT></TD>
+          <TD>additive</TD>
+          <TD>Left-to-right</TD></TR>
+        <TR>
+          <TD>8</TD>
+          <TD><TT>&lt;&lt; &gt;&gt;</TT></TD>
+          <TD>shift</TD>
+          <TD>Left-to-right</TD></TR>
+        <TR>
+          <TD>9</TD>
+          <TD><TT>&lt; &gt; &lt;= &gt;=</TT></TD>
+          <TD>relational</TD>
+          <TD>Left-to-right</TD></TR>
+        <TR>
+          <TD>10</TD>
+          <TD><TT>== !=</TT></TD>
+          <TD>equality</TD>
+          <TD>Left-to-right</TD></TR>
+        <TR>
+          <TD>11</TD>
+          <TD><TT>&amp;</TT></TD>
+          <TD>bitwise AND</TD>
+          <TD>Left-to-right</TD></TR>
+        <TR>
+          <TD>12</TD>
+          <TD><TT>^</TT></TD>
+          <TD>bitwise XOR</TD>
+          <TD>Left-to-right</TD></TR>
+        <TR>
+          <TD>13</TD>
+          <TD><TT>|</TT></TD>
+          <TD>bitwise OR</TD>
+          <TD>Left-to-right</TD></TR>
+        <TR>
+          <TD>14</TD>
+          <TD><TT>&amp;&amp;</TT></TD>
+          <TD>logical AND</TD>
+          <TD>Left-to-right</TD></TR>
+        <TR>
+          <TD>15</TD>
+          <TD><TT>||</TT></TD>
+          <TD>logical OR</TD>
+          <TD>Left-to-right</TD></TR>
+        <TR>
+          <TD>16</TD>
+          <TD><TT>?:</TT></TD>
+          <TD>conditional</TD>
+          <TD>Right-to-left</TD></TR>
+        <TR>
+          <TD>17</TD>
+          <TD><TT>= *= /= %= += -= &gt;&gt;= &lt;&lt;= &amp;= ^= !=</TT></TD>
+          <TD>assignment</TD>
+          <TD>Right-to-left</TD></TR>
+        <TR>
+          <TD>18</TD>
+          <TD><TT>,</TT></TD>
+          <TD>comma</TD>
+          <TD>Left-to-right</TD></TR></TBODY></TABLE>
+      <P>Grouping defines the precedence order in which operators are evaluated 
+      in the case that there are several operators of the same level in an 
+      expression.
+      <P>All these precedence levels for operators can be manipulated or become 
+      more legible by removing possible ambiguities using parentheses signs 
+      <TT>(</TT> and <TT>)</TT>, as in this example:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>a = 5 + 7 % 2;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>might be written either as:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>a = 5 + (7 % 2);
+</PRE></TD></TR></TBODY></TABLE>or<BR>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>a = (5 + 7) % 2;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>depending on the operation that we want to perform.
+      <P>So if you want to write complicated expressions and you are not 
+      completely sure of the precedence levels, always include parentheses. It 
+      will also become a code easier to read.<BR>
+      <P>
+      <CENTER>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD align=right width="49%"><A 
+            href="http://www.cplusplus.com/doc/tutorial/constants.html"><IMG 
+            src="Operators_files/navigate_previous.gif" align=right 
+            border=0>Previous:<BR><B>Constants</B></A> </TD>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/"><IMG 
+            src="Operators_files/navigate_index.gif" border=0><BR>index</A></TD>
+          <TD align=left width="49%"><A 
+            href="http://www.cplusplus.com/doc/tutorial/basic_io.html"><IMG 
+            src="Operators_files/navigate_next.gif" align=left 
+            border=0>Next:<BR><B>Basic Input/Output</B></A> 
+      </TD></TR></TBODY></TABLE></CENTER>
+      <P></P>
+      <P>
+      <SCRIPT type=text/javascript>
+<!--
+SuOptions()
+-->
+</SCRIPT>
+      </P></DIV></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-TOP: black 1px solid; BACKGROUND: #d7d7d7; PADDING-BOTTOM: 5px" 
+    align=middle colSpan=2><SMALL>© The C++ Resources Network, 2000-2005 - All 
+      rights reserved</SMALL></TD></TR></TBODY></TABLE></BODY></HTML>

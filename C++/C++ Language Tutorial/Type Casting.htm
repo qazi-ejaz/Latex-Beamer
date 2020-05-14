@@ -1,0 +1,956 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<!-- saved from url=(0054)http://www.cplusplus.com/doc/tutorial/typecasting.html -->
+<HTML><HEAD><TITLE>Type Casting</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<STYLE type=text/css>BODY {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+TABLE {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+INPUT {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+SELECT {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+TEXTAREA {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif
+}
+BODY {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+FORM {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+PRE {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+DT {
+	FONT-WEIGHT: bold
+}
+DD {
+	MARGIN-BOTTOM: 12px
+}
+UL {
+	MARGIN-BOTTOM: 12px
+}
+UL {
+	MARGIN-TOP: 4px
+}
+LI {
+	MARGIN-BOTTOM: 4px
+}
+A:link {
+	COLOR: #000070; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #000070; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #000070; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #0000a0; TEXT-DECORATION: underline
+}
+.imgbox {
+	LINE-HEIGHT: 1px
+}
+.stdform {
+	BORDER-RIGHT: #00007f 1px solid; BORDER-TOP: #00007f 1px solid; BORDER-LEFT: #00007f 1px solid; BORDER-BOTTOM: #00007f 1px solid
+}
+.stdform TH {
+	BORDER-RIGHT: #00007f 1px solid; BORDER-TOP: #00007f 1px solid; BORDER-LEFT: #00007f 1px solid; BORDER-BOTTOM: #00007f 1px solid
+}
+.stdform TD {
+	BORDER-RIGHT: #707080 1px solid; BORDER-TOP: #707080 1px solid; BORDER-LEFT: #707080 1px solid; BORDER-BOTTOM: #707080 1px solid; TEXT-ALIGN: left
+}
+.stdform TR TD {
+	BACKGROUND: #f0f0ff
+}
+.stdform TR.odd TD {
+	BACKGROUND: #e0e0ff
+}
+.stdform TH {
+	BACKGROUND: url(/img/blue.gif) blue; COLOR: #ffffff
+}
+.stdform TH A:link {
+	COLOR: white
+}
+.stdform TH A:visited {
+	COLOR: white
+}
+.stdform TH A:active {
+	COLOR: white
+}
+.stdform TH A:hover {
+	COLOR: yellow
+}
+.stdform .txt {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid; BACKGROUND-COLOR: #fffff0
+}
+.stdform SELECT {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid; BACKGROUND-COLOR: #fffff0
+}
+.stdform TEXTAREA {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid; BACKGROUND-COLOR: #fffff0
+}
+.stdform TEXTAREA {
+	FONT-FAMILY: monospace
+}
+.stdform .field {
+	FONT-WEIGHT: bold; TEXT-ALIGN: right
+}
+.stdform .value {
+	FONT-FAMILY: courier,monospace
+}
+.stdform .description {
+	FONT-SIZE: 80%
+}
+.stdform .buttons {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; TEXT-ALIGN: center
+}
+.stdform TR.separator TD {
+	FONT-WEIGHT: bold; BACKGROUND: white
+}
+.stdform .number {
+	TEXT-ALIGN: center
+}
+.secform {
+	BORDER-RIGHT: #ff6020 1px solid; BORDER-TOP: #ff6020 1px solid; BORDER-LEFT: #ff6020 1px solid; BORDER-BOTTOM: #ff6020 1px solid; BORDER-COLLAPSE: collapse
+}
+.secform TD {
+	BORDER-RIGHT: #ff6020 1px solid; BORDER-TOP: #ff6020 1px solid; BORDER-LEFT: #ff6020 1px solid; BORDER-BOTTOM: #ff6020 1px solid; BORDER-COLLAPSE: collapse
+}
+.secform TR {
+	BACKGROUND: #fffff0
+}
+.secform TR.odd TD {
+	BACKGROUND: #ffffd0
+}
+.secform TH {
+	BACKGROUND: url(/img/orange.gif) #ff6020; COLOR: #ffffff
+}
+.errors {
+	BORDER-RIGHT: #7f0000 1px solid; BORDER-TOP: #7f0000 1px solid; BORDER-LEFT: #7f0000 1px solid; BORDER-BOTTOM: #7f0000 1px solid
+}
+.errors TH {
+	BORDER-RIGHT: #7f0000 1px solid; BORDER-TOP: #7f0000 1px solid; BORDER-LEFT: #7f0000 1px solid; BORDER-BOTTOM: #7f0000 1px solid
+}
+.errors TD {
+	BORDER-RIGHT: #807070 1px solid; BORDER-TOP: #807070 1px solid; BORDER-LEFT: #807070 1px solid; BORDER-BOTTOM: #807070 1px solid; TEXT-ALIGN: left
+}
+.errors TH {
+	BACKGROUND: red; COLOR: #ffffff
+}
+.errors TD {
+	BACKGROUND: #ffe0e0
+}
+.bar {
+	BACKGROUND: url(/img/headbg.gif); COLOR: white; LINE-HEIGHT: 20px
+}
+.bar TABLE {
+	FONT-SIZE: 9px; COLOR: white; LINE-HEIGHT: 16px
+}
+.bar A:link {
+	COLOR: white
+}
+.bar A:visited {
+	COLOR: white
+}
+.bar A:active {
+	COLOR: white
+}
+.bar A:hover {
+	COLOR: yellow; TEXT-DECORATION: none
+}
+.bar .txt {
+	BORDER-RIGHT: 1px inset; BORDER-TOP: 1px inset; BORDER-LEFT: 1px inset; BORDER-BOTTOM: 1px inset; HEIGHT: 14px; BACKGROUND-COLOR: #c0c0ff
+}
+.bar .btn {
+	BORDER-RIGHT: 1px outset; BORDER-TOP: 1px outset; FONT-SIZE: 9px; BORDER-LEFT: 1px outset; BORDER-BOTTOM: 1px outset; HEIGHT: 18px; BACKGROUND-COLOR: #c0c0ff
+}
+.left {
+	BORDER-RIGHT: black 1px solid
+}
+.left TABLE {
+	BORDER-RIGHT: #00007f 1px solid; BORDER-TOP: #00007f 1px solid; MARGIN-TOP: 5px; BACKGROUND: white; BORDER-LEFT: #00007f 1px solid; WIDTH: 160px; BORDER-BOTTOM: #00007f 1px solid; BORDER-COLLAPSE: collapse
+}
+.left TD {
+	FONT-SIZE: x-small; COLOR: #000070; FONT-FAMILY: verdana,arial,helvetica,sans-serif; TEXT-ALIGN: left
+}
+.left TH {
+	FONT-SIZE: xx-small; BACKGROUND: url(/img/blue.gif) blue; COLOR: #ffffff; FONT-FAMILY: verdana,arial,helvetica,sans-serif; HEIGHT: 14px
+}
+.left TH A:link {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.left TH A:visited {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.left TH A:active {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.left TH A:hover {
+	COLOR: yellow; TEXT-DECORATION: none
+}
+.warning {
+	BORDER-RIGHT: red 2px solid; BORDER-TOP: red 2px solid; BACKGROUND: #ffc000; BORDER-LEFT: red 2px solid; BORDER-BOTTOM: red 2px solid
+}
+.content {
+	PADDING-RIGHT: 5px; PADDING-LEFT: 5px; PADDING-BOTTOM: 5px; PADDING-TOP: 5px
+}
+.boxed {
+	BORDER-COLLAPSE: collapse
+}
+.boxed TH {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BACKGROUND: #e0e0e0; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid
+}
+.boxed TD {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid
+}
+.code A:link {
+	COLOR: black; TEXT-DECORATION: none
+}
+.code A:visited {
+	COLOR: black; TEXT-DECORATION: none
+}
+.code A:active {
+	COLOR: black; TEXT-DECORATION: none
+}
+.code A:hover {
+	BACKGROUND: yellow; COLOR: black; TEXT-DECORATION: none
+}
+.codebox {
+	WIDTH: 100%
+}
+.snippet {
+	MARGIN-LEFT: 20px
+}
+.code {
+	BORDER-RIGHT: #c0c0d0 1px solid; BORDER-TOP: #c0c0d0 1px solid; BACKGROUND: #efefff; BORDER-LEFT: #c0c0d0 1px solid; BORDER-BOTTOM: #c0c0d0 1px solid
+}
+.result {
+	BORDER-RIGHT: #c0c0c0 1px solid; BORDER-TOP: #c0c0c0 1px solid; BACKGROUND: #e7e7e7; VERTICAL-ALIGN: top; BORDER-LEFT: #c0c0c0 1px solid; WIDTH: 50%; BORDER-BOTTOM: #c0c0c0 1px solid
+}
+.codebox {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-TOP-STYLE: none; PADDING-TOP: 0px; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-BOTTOM-STYLE: none
+}
+.kw {
+	COLOR: #0000b0
+}
+A.kw:hover {
+	COLOR: #0000b0
+}
+A.kw:link {
+	COLOR: #0000b0
+}
+A.kw:visited {
+	COLOR: #0000b0
+}
+A.kw:active {
+	COLOR: #0000b0
+}
+.prep {
+	COLOR: #500070
+}
+.comm {
+	COLOR: #007000
+}
+.str {
+	COLOR: #600030
+}
+</STYLE>
+
+<SCRIPT type=text/javascript>
+<!--
+function GetCookie(name) {
+  var dc = document.cookie;
+  var prefix = name + '=';
+  var begin = dc.indexOf('; ' + prefix);
+  if (begin == -1) {
+    begin = dc.indexOf(prefix);
+    if (begin != 0) return null;
+  } else
+    begin += 2;
+  var end = document.cookie.indexOf(';', begin);
+  if (end == -1)
+    end = dc.length;
+  var sret=unescape(dc.substring(begin + prefix.length, end));
+  var aret=sret.split('+'); sret=aret.join(' ');
+  return sret;
+}
+
+var user=GetCookie ('codehq_user');
+
+var mo = new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
+
+function When(ts) {
+ var dt = new Date(ts*1000);
+ document.write(mo[dt.getMonth()]+" "+dt.getDate()+", "+(dt.getYear()+(dt.getYear()<1900?1900:0)));
+ document.write(" at "+((dt.getHours()%12)==0?12:dt.getHours()%12)+":"+(dt.getMinutes()<10?"0":"")+dt.getMinutes()+(dt.getHours()<12?"am":"pm"));
+}
+
+function LoginBox() {
+if (!user)
+{
+	document.write ('<table cellspacing=2 cellpadding="0" valign="top">');
+	document.write ('<tr><td align="center"><b>user<\/b><\/td><td align="center"><b>pass<\/b><\/td><td align="center">[<a href="/member/signup.form">register<\/a>]<\/td><\/tr>');
+	document.write ('<tr><td align="center"><input class="txt" name="l" size="4" type="text"><\/td>');
+	document.write (' <td align="center"><input class="txt" name="p" size="4" type="password"><\/td>');
+	document.write (' <td align="center"><input class="btn" value="sign in" type="submit"><\/td><\/tr>');
+	document.write ('<\/table>');
+}
+else
+{
+	document.write ('<table width="150" cellspacing="2" cellpadding="0" valign="top">');
+	document.write ('<tr><td colspan="2" align="center">Logged in as: <b>'+user+'<\/b></td></tr>');	
+	document.write ('<tr><td align="right"><input class="btn" value="log out" type="submit"><input type="hidden" name="redirectto" value="/doc/tutorial/typecasting.html"><input type="hidden" name="logout" value="sign out"></td>');
+	document.write ('<td align="left">[<b><a href="/member/">profile<\/a><\/b>]<\/font>');
+	document.write ('<\/td><\/tr>');
+	document.write ('<\/table>');
+}
+}
+
+var lowuser=user.toLowerCase();
+var faaccess=new Boolean ( (( GetCookie('codehq_access') & 256 )==256 ));
+function SuOptions() {
+	if ((faaccess==true)||(lowuser=="juan soulie"))
+	{
+		document.write(' [<a href="/doc/publish.form?what=edit&itemid=22">Edit this document<\/a>] ');
+	}
+}
+//-->
+</SCRIPT>
+
+<META content="MSHTML 6.00.2900.2180" name=GENERATOR></HEAD>
+<BODY bgColor=#d7d7d7>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD class=imgbox vAlign=top bgColor=#b0c0d0 rowSpan=2><A 
+      href="http://www.cplusplus.com/"><IMG height=75 
+      src="Type Casting_files/headlogo1.gif" width=165 border=0></A></TD>
+    <TD class=imgbox vAlign=top bgColor=#ffffff><A 
+      href="http://www.cplusplus.com/"><IMG height=18 
+      src="Type Casting_files/headlogo2.gif" width=33 border=0></A></TD>
+    <TD width="95%" bgColor=#d7d7d7></TD>
+    <TD bgColor=#d7d7d7></TD></TR>
+  <TR>
+    <TD class=imgbox vAlign=top bgColor=#ffffff><A 
+      href="http://www.cplusplus.com/"><IMG height=57 
+      src="Type Casting_files/headlogo3.gif" width=33 border=0></A></TD>
+    <TD class=bar vAlign=top width="95%">&nbsp; <B><A 
+      href="http://www.cplusplus.com/">C++</A> : <A 
+      href="http://www.cplusplus.com/doc/">Documents</A> : <A 
+      href="http://www.cplusplus.com/doc/tutorial/">C++ Language Tutorial</A> : 
+      Type Casting </B><BR>
+      <FORM name=search action=/search/search.php method=get>&nbsp; Search: 
+      <INPUT class=txt size=13 name=q> <INPUT class=btn type=submit value=Search> </FORM></TD>
+    <TD class=bar vAlign=top>
+      <FORM name=login action=/member/login.form method=post><INPUT type=hidden 
+      value=1 name=login><INPUT type=hidden value=/doc/tutorial/typecasting.html 
+      name=redirectto>
+      <SCRIPT type=text/javascript>
+<!--
+LoginBox();
+// -->
+</SCRIPT>
+       </FORM><NOSCRIPT>
+      <CENTER>javascript and cookies 
+required</CENTER></NOSCRIPT></TD></TR></TBODY></TABLE>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD style="BORDER-RIGHT: black 1px solid; LINE-HEIGHT: 1px" width=165 
+    bgColor=#b0c0d0><IMG height=1 src="Type Casting_files/165x1.gif" 
+    width=165></TD>
+    <TD class=imgbox width="99%" bgColor=white><IMG height=1 
+      src="Type Casting_files/165x1.gif" width=165></TD></TR>
+  <TR><!-- left -->
+    <TD class=left vAlign=top align=middle width=165 bgColor=#b0c0d0>
+      <TABLE class=box>
+        <TBODY>
+        <TR>
+          <TH><A href="http://www.cplusplus.com/doc/tutorial/">C++ Language 
+            Tutorial</A></TH></TR>
+        <TR>
+          <TD><B>Introduction</B></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/introduction.html">· 
+            Instructions for use</A></TD></TR>
+        <TR>
+          <TD><B>Basics of C++</B></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/program_structure.html">· 
+            Structure of a program</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/variables.html">· 
+            Variables. Data Types.</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/constants.html">· 
+            Constants</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/operators.html">· 
+            Operators</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/basic_io.html">· 
+            Basic Input/Output</A></TD></TR>
+        <TR>
+          <TD><B>Control Structures</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/control.html">· 
+            Control Structures</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/functions.html">· 
+            Functions (I)</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/functions2.html">· 
+            Functions (II)</A></TD></TR>
+        <TR>
+          <TD><B>Compound Data Types</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/arrays.html">· 
+            Arrays</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/ntcs.html">· 
+            Character Sequences</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/pointers.html">· 
+            Pointers</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/dynamic.html">· 
+            Dynamic Memory</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/structures.html">· Data 
+            Structures</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/other_data_types.html">· 
+            Other Data Types</A></TD></TR>
+        <TR>
+          <TD><B>Object Oriented Programming</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/classes.html">· 
+            Classes (I)</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/classes2.html">· 
+            Classes (II)</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/inheritance.html">· 
+            Friendship and inheritance</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/polymorphism.html">· 
+            Polymorphism</A></TD></TR>
+        <TR>
+          <TD><B>Advanced Concepts</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/templates.html">· 
+            Templates</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/namespaces.html">· 
+            Namespaces</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/exceptions.html">· 
+            Exceptions</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/typecasting.html">· Type 
+            Casting</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/tutorial/preprocessor.html">· 
+            Preprocessor directives</A></TD></TR>
+        <TR>
+          <TD><B>C++ Standard Library</B></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/files.html">· 
+            Input/Output with files</A></TD></TR></TBODY></TABLE>
+      <TABLE class=box>
+        <TBODY>
+        <TR>
+          <TH><A href="http://www.cplusplus.com/doc/">Document 
+          categories</A></TH></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/information/">Information 
+            about C++</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/">C++ Language 
+            Tutorial</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/papers/">Additional 
+            Papers</A></TD></TR>
+        <TR>
+          <TD><A 
+            href="http://www.cplusplus.com/doc/general/">User-contributed</A></TD></TR></TBODY></TABLE>
+      <TABLE class=box>
+        <TBODY>
+        <TR>
+          <TH><A href="http://www.cplusplus.com/">cplusplus.com</A></TH></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/doc/">documents</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/ref/">reference</A></TD></TR>
+        <TR>
+          <TD><A href="http://www.cplusplus.com/src/">sourcecodes</A></TD></TR>
+        <TR>
+          <TD><A 
+      href="http://www.cplusplus.com/forum/">forum</A></TD></TR></TBODY></TABLE><BR><IMG 
+      height=1 src="Type Casting_files/165x1.gif" width=165>
+      <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-5777024789006368";
+google_ad_width = 125;
+google_ad_height = 125;
+google_ad_format = "125x125_as";
+google_ad_type = "text_image";
+google_ad_channel ="5923551140";
+google_color_border = "3333CC";
+google_color_bg = "FFFFFF";
+google_color_link = "3333CC";
+google_color_url = "000000";
+google_color_text = "000000";
+//--></SCRIPT>
+
+      <SCRIPT language=javascript src="Type Casting_files/1x1.js"></SCRIPT>
+       <NOSCRIPT><A 
+      href="http://media.fastclick.net/w/click.here?sid=4636&amp;m=3&amp;c=1" 
+      target=_top><IMG height=600 src="Type Casting_files/1x1.gif" width=160 
+      border=1></A></NOSCRIPT> <IMG height=1 src="Type Casting_files/165x1.gif" 
+      width=165> </TD><!-- /left -->
+    <TD vAlign=top width="99%" bgColor=white>
+      <CENTER>
+      <SCRIPT type=text/javascript><!--
+google_ad_client = "pub-5777024789006368";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_type = "text_image";
+google_ad_channel ="1922709837";
+google_color_border = "336699";
+google_color_bg = "FFFFFF";
+google_color_link = "0000FF";
+google_color_url = "000000";
+google_color_text = "000000";
+//--></SCRIPT>
+
+      <SCRIPT language=javascript src="Type Casting_files/show_ads.js"></SCRIPT>
+      <NOSCRIPT><A 
+      href="http://media.fastclick.net/w/click.here?sid=4636&amp;m=1&amp;c=1" 
+      target=_top><IMG height=90 
+      src="F:\New Folder\Type Casting_files\1x1(1).gif" width=728 
+      border=1></A></NOSCRIPT> </CENTER>
+      <DIV class=content>
+      <TABLE width="100%">
+        <TBODY>
+        <TR>
+          <TD>
+            <H1>Type Casting</H1></TD>
+          <TD align=right>
+            <TABLE>
+              <TBODY>
+              <TR>
+                <TD align=right>Published by <B><A 
+                  href="http://www.cplusplus.com/member/Juan_Soulie/">Juan 
+                  Soulie</A></B></TD></TR>
+              <TR>
+                <TD align=right><SMALL>Last update on
+                  <SCRIPT type=text/javascript>When(1130866947)</SCRIPT>
+                   </SMALL></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>Converting an 
+      expression of a given type into another type is known as 
+      <I>type-casting</I>. We have already seen some ways to type cast:
+      <P><A name=""></A>
+      <H3>Implicit conversion</H3>Implicit conversions do not require any 
+      operator. They are automatically performed when a value is copied to a 
+      compatible type. For example:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>short</SPAN> a=2000;
+<SPAN class=kw>int</SPAN> b;
+b=a;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Here, the value of <TT>a</TT> has been promoted from <TT>short</TT> to 
+      <TT>int</TT> and we have not had to specify any type-casting operator. 
+      This is known as a standard conversion. Standard conversions affect 
+      fundamental data types, and allow conversions such as the conversions 
+      between numerical types (<TT>short</TT> to <TT>int</TT>, <TT>int</TT> to 
+      <TT>float</TT>, <TT>double</TT> to <TT>int</TT>...), to or from 
+      <TT>bool</TT>, and some pointer conversions. Some of these conversions may 
+      imply a loss of precision, which the compiler can signal with a warning. 
+      This can be avoided with an explicit conversion.
+      <P>Implicit conversions also include constructor or operator conversions, 
+      which affect classes that include specific constructors or operator 
+      functions to perform conversions. For example:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>class</SPAN> A {};
+<SPAN class=kw>class</SPAN> B { <SPAN class=kw>public</SPAN>: B (A a) {} };
+
+A a;
+B b=a;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Here, a implicit conversion happened between objects of <TT>class 
+      A</TT> and <TT>class B</TT>, because <TT>B</TT> has a constructor that 
+      takes an object of class <TT>A</TT> as parameter. Therefore implicit 
+      conversions from <TT>A</TT> to <TT>B</TT> are allowed.
+      <P><A name=""></A>
+      <H3>Explicit conversion</H3>C++ is a strong-typed language. Many 
+      conversions, specially those that imply a different interpretation of the 
+      value, require an explicit conversion. We have already seen two notations 
+      for explicit type conversion: functional and c-like casting:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>short</SPAN> a=2000;
+<SPAN class=kw>int</SPAN> b;
+b = (<SPAN class=kw>int</SPAN>) a;    <SPAN class=comm>// c-like cast notation</SPAN>
+b = <SPAN class=kw>int</SPAN> (a);    <SPAN class=comm>// functional notation</SPAN>
+</PRE></TD></TR></TBODY></TABLE>
+      <P>The functionality of these explicit conversion operators is enough for 
+      most needs with fundamental data types. However, these operators can be 
+      applied indiscriminately on classes and pointers to classes, which can 
+      lead to code that while being syntactically correct can cause runtime 
+      errors. For example, the following code is syntactically correct: 
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// class type-casting</SPAN>
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>class</SPAN> CDummy {
+    <SPAN class=kw>float</SPAN> i,j;
+};
+
+<SPAN class=kw>class</SPAN> CAddition {
+	<SPAN class=kw>int</SPAN> x,y;
+  <SPAN class=kw>public</SPAN>:
+	CAddition (<SPAN class=kw>int</SPAN> a, <SPAN class=kw>int</SPAN> b) { x=a; y=b; }
+	<SPAN class=kw>int</SPAN> result() { <SPAN class=kw>return</SPAN> x+y;}
+};
+
+<SPAN class=kw>int</SPAN> main () {
+  CDummy d;
+  CAddition * padd;
+  padd = (CAddition*) &amp;d;
+  cout &lt;&lt; padd-&gt;result();
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE> 
+</PRE></TD></TR></TBODY></TABLE>
+      <P>The program declares a pointer to <TT>CAddition</TT>, but then it 
+      assigns to it a reference to an object of another incompatible type using 
+      explicit type-casting:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>padd = (CAddition*) &amp;d;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Traditional explicit type-casting allows to convert any pointer into 
+      any other pointer type, independently of the types they point to. The 
+      subsequent call to member <TT>result</TT> will produce either a run-time 
+      error or a unexpected result.
+      <P>In order to control these types of conversions between classes, we have 
+      four specific casting operators: <TT>dynamic_cast</TT>, 
+      <TT>reinterpret_cast</TT>, <TT>static_cast</TT> and <TT>const_cast</TT>. 
+      Their format is to follow the new type enclosed between angle-brackets 
+      (<TT>&lt;&gt;</TT>) and immediately after, the expression to be converted 
+      between parentheses.
+      <P><TT>dynamic_cast &lt;new_type&gt; (expression)<BR>reinterpret_cast 
+      &lt;new_type&gt; (expression)<BR>static_cast &lt;new_type&gt; 
+      (expression)<BR>const_cast &lt;new_type&gt; (expression)<BR></TT>
+      <P>The traditional type-casting equivalents to these expressions would 
+      be:<BR><BR><TT>(new_type) expression<BR>new_type (expression)<BR></TT>
+      <P>but each one with its own special characteristics:
+      <P><A name=""></A>
+      <H3>dynamic_cast</H3>
+      <P><TT>dynamic_cast</TT> can be used only with pointers and references to 
+      objects. Its purpose is to ensure that the result of the type conversion 
+      is a valid complete object of the requested class.
+      <P>Therefore, <TT>dynamic_cast</TT> is always successful when we cast a 
+      class to one of its base classes:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>class</SPAN> CBase { };
+<SPAN class=kw>class</SPAN> CDerived: <SPAN class=kw>public</SPAN> CBase { };
+
+CBase b; CBase* pb;
+CDerived d; CDerived* pd;
+
+pb = <SPAN class=kw>dynamic_cast</SPAN>&lt;CBase*&gt;(&amp;d);     <SPAN class=comm>// ok: derived-to-base</SPAN>
+pd = <SPAN class=kw>dynamic_cast</SPAN>&lt;CDerived*&gt;(&amp;b);  <SPAN class=comm>// wrong: base-to-derived</SPAN>
+</PRE></TD></TR></TBODY></TABLE>
+      <P>The second conversion in this piece of code would produce a compilation 
+      error since base-to-derived conversions are not allowed with 
+      <TT>dynamic_cast</TT> unless the base class is polymorphic.
+      <P>When a class is polymorphic, <TT>dynamic_cast</TT> performs a special 
+      checking during runtime to ensure that the expression yields a valid 
+      complete object of the requested class:
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// dynamic_cast</SPAN>
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=prep>#include &lt;exception&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>class</SPAN> CBase { <SPAN class=kw>virtual</SPAN> dummy() {} };
+<SPAN class=kw>class</SPAN> CDerived: <SPAN class=kw>public</SPAN> CBase { <SPAN class=kw>int</SPAN> a; };
+
+<SPAN class=kw>int</SPAN> main () {
+  <SPAN class=kw>try</SPAN> {
+    CBase * pba = <SPAN class=kw>new</SPAN> CDerived;
+    CBase * pbb = <SPAN class=kw>new</SPAN> CBase;
+    CDerived * pd;
+
+    pd = <SPAN class=kw>dynamic_cast</SPAN>&lt;CDerived*&gt;(pba);
+    <SPAN class=kw>if</SPAN> (pd==0) cout &lt;&lt; <SPAN class=str>"Null pointer on first type-cast"</SPAN> &lt;&lt; endl;
+
+    pd = <SPAN class=kw>dynamic_cast</SPAN>&lt;CDerived*&gt;(pbb);
+    <SPAN class=kw>if</SPAN> (pd==0) cout &lt;&lt; <SPAN class=str>"Null pointer on second type-cast"</SPAN> &lt;&lt; endl;
+
+  } <SPAN class=kw>catch</SPAN> (exception&amp; e) {cout &lt;&lt; <SPAN class=str>"Exception: "</SPAN> &lt;&lt; e.what();}
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>Null pointer on second type-cast
+</PRE></TD></TR></TBODY></TABLE>
+      <P><B>Compatibility note:</B> <TT>dynamic_cast</TT> requires the Run-Time 
+      Type Information (RTTI) to keep track of dynamic types. Some compilers 
+      include this feature as an option which is disabled by default. This 
+      feature must be enabled for runtime type checking using 
+      <TT>dynamic_cast</TT>.
+      <P>The code tries to perform two dynamic casts from pointer objects of 
+      type <TT>CBase*</TT> (<TT>pba</TT> and <TT>pbb</TT>) to a pointer object 
+      of type <TT>CDerived*</TT>, but only the second one is successful. Notice 
+      their respective initializations:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE>CBase * pba = <SPAN class=kw>new</SPAN> CDerived;
+CBase * pbb = <SPAN class=kw>new</SPAN> CBase;
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Even though both are pointers of type <TT>CBase*</TT>, <TT>pba</TT> 
+      points to an object of type <TT>CDerived</TT>, while <TT>pbb</TT> points 
+      to an object of type <TT>CBase</TT>. Thus, when their respective 
+      type-castings are performed using <TT>dynamic_cast</TT>, <TT>pba</TT> is 
+      pointing to a full object of class <TT>CDerived</TT>, whereas <TT>pbb</TT> 
+      is pointing to an object of class <TT>CBase</TT>, which is an incomplete 
+      object of class <TT>CDerived</TT>.<BR><BR>When <TT>dynamic_cast</TT> 
+      cannot cast a pointer because it is not a complete object of the required 
+      class -as in the second conversion in the previous example- it returns a 
+      null pointer to indicate the failure. If <TT>dynamic_cast</TT> is used to 
+      convert to a reference type and the conversion is not possible, an 
+      exception of type <TT>bad_alloc</TT> is thrown instead.
+      <P><TT>dynamic_cast</TT> can also cast null pointers even between pointers 
+      to unrelated classes, and can also cast pointers of any type to void 
+      pointers (<TT>void*</TT>).
+      <P><A name=""></A>
+      <H3>static_cast</H3><TT>static_cast</TT> can perform conversions between 
+      pointers to related classes, not only from the derived class to its base, 
+      but also from a base class to its derived. This ensures that at least the 
+      classes are compatible if the proper object is converted, but no safety 
+      check is performed during runtime to check if the object being converted 
+      is in fact a full object of the destination type. Therefore, it is up to 
+      the programmer to ensure that the conversion is safe. On the other side, 
+      the overhead of the type-safety checks of <TT>dynamic_cast</TT> is 
+avoided.
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>class</SPAN> CBase {};
+<SPAN class=kw>class</SPAN> CDerived: <SPAN class=kw>public</SPAN> CBase {};
+CBase * a = <SPAN class=kw>new</SPAN> CBase;
+CDerived * b = <SPAN class=kw>static_cast</SPAN>&lt;CDerived*&gt;(a);
+</PRE></TD></TR></TBODY></TABLE>
+      <P>This would be valid, although <TT>b</TT> would point to an incomplete 
+      object of the class and could lead to runtime errors if dereferenced.
+      <P><TT>static_cast</TT> can also be used to perform any other non-pointer 
+      conversion that could also be performed implicitly, like for example 
+      standard conversion between fundamental types:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>double</SPAN> d=3.14159265;
+<SPAN class=kw>int</SPAN> i = <SPAN class=kw>static_cast</SPAN>&lt;<SPAN class=kw>int</SPAN>&gt;(d); 
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Or any conversion between classes with explicit constructors or 
+      operator functions as described in "implicit conversions" above.
+      <P><A name=""></A>
+      <H3>reinterpret_cast</H3><TT>reinterpret_cast</TT> converts any pointer 
+      type to any other pointer type, even of unrelated classes. The operation 
+      result is a simple binary copy of the value from one pointer to the other. 
+      All pointer conversions are allowed: neither the content pointed nor the 
+      pointer type itself is checked.
+      <P>It can also cast pointers to or from integer types. The format in which 
+      this integer value represents a pointer is platform-specific. The only 
+      guarantee is that a pointer cast to an integer type large enough to fully 
+      contain it, is granted to be able to be cast back to a valid pointer.
+      <P>The conversions that can be performed by <TT>reinterpret_cast</TT> but 
+      not by <TT>static_cast</TT> have no specific uses in C++ are low-level 
+      operations, whose interpretation results in code which is generally 
+      system-specific, and thus non-portable. For example:
+      <P>
+      <TABLE class=snippet>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=kw>class</SPAN> A {};
+<SPAN class=kw>class</SPAN> B {};
+A * a = <SPAN class=kw>new</SPAN> A;
+B * b = <SPAN class=kw>reinterpret_cast</SPAN>&lt;B*&gt;(a);
+</PRE></TD></TR></TBODY></TABLE>
+      <P>This is valid C++ code, although it does not make much sense, since now 
+      we have a pointer that points to an object of an incompatible class, and 
+      thus dereferencing it is unsafe.
+      <P><A name=""></A>
+      <H3>const_cast</H3>This type of casting manipulates the constness of an 
+      object, either to be set or to be removed. For example, in order to pass a 
+      const argument to a function that expects a non-constant parameter:
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// const_cast</SPAN>
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>void</SPAN> print (<SPAN class=kw>char</SPAN> * str)
+{
+  cout &lt;&lt; str &lt;&lt; endl;
+}
+
+<SPAN class=kw>int</SPAN> main () {
+  <SPAN class=kw>const</SPAN> <SPAN class=kw>char</SPAN> * c = <SPAN class=str>"sample text"</SPAN>;
+  print ( <SPAN class=kw>const_cast</SPAN>&lt;<SPAN class=kw>char</SPAN> *&gt; (c) );
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>sample text
+</PRE></TD></TR></TBODY></TABLE>
+      <P><A name=""></A>
+      <H3>typeid</H3><TT>typeid</TT> allows to check the type of an expression: 
+      <P><TT>typeid (expression)<BR></TT>
+      <P>This operator returns a reference to a constant object of type 
+      <TT>type_info</TT> that is defined in the standard header file 
+      <TT>&lt;typeinfo&gt;</TT>. This returned value can be compared with 
+      another one using operators <TT>==</TT> and <TT>!=</TT> or can serve to 
+      obtain a null-terminated character sequence representing the data type or 
+      class name by using its <TT>name()</TT> member.
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// typeid</SPAN>
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=prep>#include &lt;typeinfo&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>int</SPAN> main () {
+  <SPAN class=kw>int</SPAN> * a,b;
+  a=0; b=0;
+  <SPAN class=kw>if</SPAN> (<SPAN class=kw>typeid</SPAN>(a) != <SPAN class=kw>typeid</SPAN>(b))
+  {
+    cout &lt;&lt; <SPAN class=str>"a and b are of different types:\n"</SPAN>;
+    cout &lt;&lt; <SPAN class=str>"a is: "</SPAN> &lt;&lt; <SPAN class=kw>typeid</SPAN>(a).name() &lt;&lt; <SPAN class=str>'\n'</SPAN>;
+    cout &lt;&lt; <SPAN class=str>"b is: "</SPAN> &lt;&lt; <SPAN class=kw>typeid</SPAN>(b).name() &lt;&lt; <SPAN class=str>'\n'</SPAN>;
+  }
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>a and b are of different types:
+a is: int *
+b is: int  
+</PRE></TD></TR></TBODY></TABLE>
+      <P>When <TT>typeid</TT> is applied to classes <TT>typeid</TT> uses the 
+      RTTI to keep track of the type of dynamic objects. When typeid is applied 
+      to an expression whose type is a polymorphic class, the result is the type 
+      of the most derived complete object:
+      <P>
+      <TABLE class=codebox>
+        <TBODY>
+        <TR>
+          <TD class=code><PRE><SPAN class=comm>// typeid, polymorphic class</SPAN>
+<SPAN class=prep>#include &lt;iostream&gt;</SPAN>
+<SPAN class=prep>#include &lt;typeinfo&gt;</SPAN>
+<SPAN class=prep>#include &lt;exception&gt;</SPAN>
+<SPAN class=kw>using</SPAN> <SPAN class=kw>namespace</SPAN> std;
+
+<SPAN class=kw>class</SPAN> CBase {<SPAN class=kw>virtual</SPAN> f(){} };
+<SPAN class=kw>class</SPAN> CDerived : <SPAN class=kw>public</SPAN> CBase {};
+
+<SPAN class=kw>int</SPAN> main () {
+  <SPAN class=kw>try</SPAN> {
+    CBase* a = <SPAN class=kw>new</SPAN> CBase;
+    CBase* b = <SPAN class=kw>new</SPAN> CDerived;
+    cout &lt;&lt; <SPAN class=str>"a is: "</SPAN> &lt;&lt; <SPAN class=kw>typeid</SPAN>(a).name() &lt;&lt; <SPAN class=str>'\n'</SPAN>;
+    cout &lt;&lt; <SPAN class=str>"b is: "</SPAN> &lt;&lt; <SPAN class=kw>typeid</SPAN>(b).name() &lt;&lt; <SPAN class=str>'\n'</SPAN>;
+    cout &lt;&lt; <SPAN class=str>"*a is: "</SPAN> &lt;&lt; <SPAN class=kw>typeid</SPAN>(*a).name() &lt;&lt; <SPAN class=str>'\n'</SPAN>;
+    cout &lt;&lt; <SPAN class=str>"*b is: "</SPAN> &lt;&lt; <SPAN class=kw>typeid</SPAN>(*b).name() &lt;&lt; <SPAN class=str>'\n'</SPAN>;
+  } <SPAN class=kw>catch</SPAN> (exception&amp; e) { cout &lt;&lt; <SPAN class=str>"Exception: "</SPAN> &lt;&lt; e.what() &lt;&lt; endl; }
+  <SPAN class=kw>return</SPAN> 0;
+}
+</PRE></TD>
+          <TD class=result><PRE>a is: class CBase *
+b is: class CBase *
+*a is: class CBase
+*b is: class CDerived
+</PRE></TD></TR></TBODY></TABLE>
+      <P>Notice how the type that <TT>typeid</TT> considers for pointers is the 
+      pointer type itself (both <TT>a</TT> and <TT>b</TT> are of type <TT>class 
+      CBase *</TT>). However, when <TT>typeid</TT> is applied to objects (like 
+      <TT>*a</TT> and <TT>*b</TT>) <TT>typeid</TT> yields their dynamic type 
+      (i.e. the type of their most derived complete object).
+      <P>If the type <TT>typeid</TT> evaluates is a pointer preceded by the 
+      dereference operator (<TT>*</TT>), and this pointer has a null value, 
+      <TT>typeid</TT> throws a <TT>bad_typeid</TT> exception.<BR>
+      <P>
+      <CENTER>
+      <TABLE>
+        <TBODY>
+        <TR>
+          <TD align=right width="49%"><A 
+            href="http://www.cplusplus.com/doc/tutorial/exceptions.html"><IMG 
+            src="Type Casting_files/navigate_previous.gif" align=right 
+            border=0>Previous:<BR><B>Exceptions</B></A> </TD>
+          <TD><A href="http://www.cplusplus.com/doc/tutorial/"><IMG 
+            src="Type Casting_files/navigate_index.gif" 
+border=0><BR>index</A></TD>
+          <TD align=left width="49%"><A 
+            href="http://www.cplusplus.com/doc/tutorial/preprocessor.html"><IMG 
+            src="Type Casting_files/navigate_next.gif" align=left 
+            border=0>Next:<BR><B>Preprocessor directives</B></A> 
+      </TD></TR></TBODY></TABLE></CENTER>
+      <P></P>
+      <P>
+      <SCRIPT type=text/javascript>
+<!--
+SuOptions()
+-->
+</SCRIPT>
+      </P></DIV></TD></TR>
+  <TR>
+    <TD 
+    style="BORDER-TOP: black 1px solid; BACKGROUND: #d7d7d7; PADDING-BOTTOM: 5px" 
+    align=middle colSpan=2><SMALL>© The C++ Resources Network, 2000-2005 - All 
+      rights reserved</SMALL></TD></TR></TBODY></TABLE></BODY></HTML>
